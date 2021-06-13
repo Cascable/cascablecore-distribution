@@ -1,0 +1,6 @@
+framework module StopKit {
+  umbrella header "StopKit.h"
+
+  export *
+  module * { export * }
+}
