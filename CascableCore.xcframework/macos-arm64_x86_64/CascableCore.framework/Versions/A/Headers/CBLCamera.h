@@ -21,10 +21,36 @@
 @protocol CBLCameraConnectionWarning;
 @protocol CBLCameraProperty;
 
+/**
+ The block callback signature when camera connection completes or fails.
+
+ @param error The error that occurred, if any.
+ @param warnings Any non-fatal connection warnings.
+ */
 typedef void (^CBLCameraConnectionCompleteBlock)(NSError * _Nullable error, NSArray <id <CBLCameraConnectionWarning>> * _Nullable warnings) NS_SWIFT_NAME(ConnectionCompleteCallback);
+
+/**
+ The block callback signature when the connection process needs user intervention (i.e., the user needs to perform an
+ action on the camera itself). For details on how this works, see CascableCore's user guides and examples.
+
+ If invoked, this block will usually be called twice — once when the connection attempt is paused due to user
+ intervention being required (for example, if the user needs to confirm pairing on the camera), and again when
+ the intervention is complete and the connection process is continuing.
+
+ @param shouldDisplayUserInterventionDialog If `YES`, display a dialog to the user informing them they need to
+                                            look at the camera and follow its instructions. If `NO`, close your
+                                            previously-shown dialog.
+
+ @param cancelConnectionBlock If non-nil (typically when `shouldDisplayUserInterventionDialog` is `YES`), this block
+                              can be called to cancel the connection attempt. If non-nil, you can show a "Cancel"
+                              button in your dialog and call this block if the user taps it.
+ */
 typedef void (^CBLCameraConnectionUserInterventionBlock)(BOOL shouldDisplayUserInterventionDialog, _Nullable dispatch_block_t cancelConnectionBlock) NS_SWIFT_NAME(ConnectionUserInterventionCallback);
+
+/**
+The block callback signature when a camera has a shot preview to deliver. See `CBLCameraShotPreviewDelivery` for details.
+ */
 typedef void (^CBLCameraShotPreviewAvailableBlock)(_Nonnull id <CBLCameraShotPreviewDelivery>) NS_SWIFT_NAME(ShotPreviewAvailableCallback);
-// ^ This line trips up appledoc. Removing it allows the file to be parsed correctly.
 
 /** Which advanced features are supported. */
 typedef NS_OPTIONS(NSUInteger, CBLCameraSupportedFunctionality) {
@@ -59,19 +85,29 @@ typedef NS_OPTIONS(NSUInteger, CBLCameraSupportedFunctionality) {
     CBLCameraSupportedFunctionalityAll = NSUIntegerMax
 } NS_SWIFT_NAME(SupportedFunctionality);
 
+/** Camera connection states. */
 typedef NS_ENUM(NSUInteger, CBLCameraConnectionState) {
+    /** The camera is not connected. */
     CBLCameraConnectionStateNotConnected = 0,
+    /** The camera is in the process of connecting. */
     CBLCameraConnectionStateConnectionInProgress,
+    /** The camera is connected, and commands can be issued to it. */
     CBLCameraConnectionStateConnected,
+    /** The camera is in the process of disconnecting. */
     CBLCameraConnectionStateDisconnectionInProgress
 } NS_SWIFT_NAME(ConnectionState);
 
+/** Bitfield values for camera command categories. Cameras can have zero, one, or multiple available command categories at the same time. */
 typedef NS_OPTIONS(NSUInteger, CBLCameraAvailableCommandCategory) {
+    /** The camera currently has no available command categories.  */
     CBLCameraAvailableCommandCategoryNone = 0,
+    /** If this value is present in the options, the camera can perform remote shooting operations. */
     CBLCameraAvailableCommandCategoryRemoteShooting = 1 << 0,
+    /** If this value is present in the options, the camera can perform filesystem actions. */
     CBLCameraAvailableCommandCategoryFilesystemAccess = 1 << 1
 } NS_SWIFT_NAME(AvailableCommandCategory);
 
+/** Non-fatal warning types that can occur during connection. */
 typedef NS_ENUM(NSUInteger, CBLCameraConnectionWarningType) {
     /** The camera has lower than expected functionality. Use the `supportedFunctionality` methods to check. */
     CBLCameraConnectionWarningTypeLowerThanExpectedFunctionality,
@@ -81,6 +117,7 @@ typedef NS_ENUM(NSUInteger, CBLCameraConnectionWarningType) {
     CBLCameraConnectionWarningTypeClockSyncNotSupported
 } NS_SWIFT_NAME(ConnectionWarningType);
 
+/** Non-fatal warning categories that can occur during connection. */
 typedef NS_ENUM(NSUInteger, CBLCameraConnectionWarningCategory) {
     /** The warning is in the 'remote control' category, affecting shooting functionality. */
     CBLCameraConnectionWarningCategoryRemoteControl,
@@ -95,6 +132,7 @@ typedef NS_ENUM(NSUInteger, CBLCameraConnectionWarningCategory) {
  */
 typedef NSString CBLCameraObserverToken NS_SWIFT_NAME(ObserverToken);
 
+/** A non-fatal connection warning. */
 NS_SWIFT_NAME(ConnectionWarning)
 @protocol CBLCameraConnectionWarning <NSObject>
 
@@ -114,7 +152,15 @@ static NSString * _Nonnull const CBLDisconnectionFlagPowerOffCamera = @"CBLDisco
 
 @protocol CBLCameraCore, CBLCameraLiveView, CBLCameraProperties, CBLCameraFileSystem, CBLCameraFocusAndShutter;
 
-/** The catch-all protocol for a camera object in CascableCore. Functionality is broken down into sub-protocols. */
+/** The catch-all protocol for a camera object in CascableCore. Functionality is broken down into sub-protocols:
+
+ - `CBLCameraCore` for core functionality, such as connection/disconnection, supported functionality, etc.
+ - `CBLCameraLiveView` for operations involving live view streaming.
+ - `CBLCameraFocusAndShutter` for operations involving shooting images.
+ - `CBLCameraProperties` for operations involving getting and setting camera settings/properties.
+ - `CBLCameraFileSystem` for operations involving accessing the camera's file system.
+
+ */
 NS_SWIFT_NAME(Camera)
 @protocol CBLCamera <NSObject, CBLCameraCore, CBLCameraLiveView, CBLCameraProperties, CBLCameraFileSystem, CBLCameraFocusAndShutter>
 @end
@@ -275,16 +321,13 @@ NS_SWIFT_NAME(connect(completionCallback:userInterventionCallback:));
 // @name Live View
 // -------------
 
-/**
- Reasons the live view stream can stop.
-
- - CBLCameraLiveViewTerminationReasonFailed: The stream failed, due to disconnection or another failure.
- - CBLCameraLiveViewTerminationReasonEndedNormally: The stream ended normally, due to mode switching or an explicit call to `endLiveViewStream`.
- - CBLCameraLiveViewTerminationReasonAlreadyStreaming: The stream could not start because there is already a stream running from this camera.
- */
+/** Reasons the live view stream can stop. */
 typedef NS_ENUM(NSInteger, CBLCameraLiveViewTerminationReason) {
+    /** The stream ended normally, due to mode switching or an explicit call to `endLiveViewStream`. */
     CBLCameraLiveViewTerminationReasonEndedNormally,
+    /** The stream could not start because there is already a stream running from this camera. */
     CBLCameraLiveViewTerminationReasonAlreadyStreaming,
+    /** The stream failed, due to disconnection or another failure. */
     CBLCameraLiveViewTerminationReasonFailed
 } NS_SWIFT_NAME(LiveViewTerminationReason);
 
@@ -499,27 +542,21 @@ NS_SWIFT_NAME(CameraFileSystem)
 
 @end
 
-/**
- A focus drive direction.
-
- - CBLFocusDriveDirectionTowardsCamera: Drive the focus towards the camera.
- - CBLFocusDriveDirectionTowardsInfinity: Drive the focus towards infinity.
- */
+/** A focus drive direction. */
 typedef NS_ENUM(NSInteger, CBLFocusDriveDirection) {
+    /** Drive the focus towards the camera. */
     CBLFocusDriveDirectionTowardsCamera,
+    /** Drive the focus towards infinity. */
     CBLFocusDriveDirectionTowardsInfinity
 } NS_SWIFT_NAME(FocusDriveDirection);
 
-/**
- A focus drive amount.
-
- - CBLFocusDriveAmountSmall: A very small amount of movement.
- - CBLFocusDriveAmountMedium: A medium amount of movement.
- - CBLFocusDriveAmountLarge: A large amount of movement.
- */
+/** A focus drive amount. */
 typedef NS_ENUM(NSInteger, CBLFocusDriveAmount) {
+    /** A very small amount of movement. */
     CBLFocusDriveAmountSmall,
+    /** A medium amount of movement. */
     CBLFocusDriveAmountMedium,
+    /** A large amount of movement. */
     CBLFocusDriveAmountLarge
 } NS_SWIFT_NAME(FocusDriveAmount);
 

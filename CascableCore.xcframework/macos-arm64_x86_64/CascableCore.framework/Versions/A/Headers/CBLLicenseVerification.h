@@ -12,16 +12,13 @@
 NS_SWIFT_NAME(CascableCoreLicenseVerification)
 @interface CBLLicenseVerification : NSObject
 
-/**
- A result from a license registration.
-
- - CBLLicenseVerificationResultSuccess: The license was applied successfully.
- - CBLLicenseVerificationResultExpired: The license expired.
- - CBLLicenseVerificationResultInvalidLicense: The license is invalid.
- */
+/** A result from a license registration. */
 typedef NS_ENUM(NSUInteger, CBLLicenseVerificationResult) {
+    /** The license was applied successfully. */
     CBLLicenseVerificationResultSuccess,
+    /** The license expired. */
     CBLLicenseVerificationResultExpired,
+    /* The license is invalid. */
     CBLLicenseVerificationResultInvalidLicense
 } NS_SWIFT_NAME(LicenseVerificationResult);
 

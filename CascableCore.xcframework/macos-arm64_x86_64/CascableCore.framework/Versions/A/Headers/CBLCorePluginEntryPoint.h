@@ -11,8 +11,13 @@
 #import <CascableCore/CBLCameraDiscovery.h>
 #import <CascableCore/CBLCameraManualDiscovery.h>
 
+/** The plugin info dictionary Info.plist key.  */
 static NSString * _Nonnull const CBLCorePluginInfoDictionaryKey = @"CBLCorePluginInfo";
+
+/** The Info.plist plugin info dictionary key for the plugin's entrypoint @objc class name. */
 static NSString * _Nonnull const CBLCorePluginEntryPointClassNameKey = @"CBLCorePluginEntryPointClassName";
+
+/** The Info.plist plugin info dictionary key for the plugin's display name. */
 static NSString * _Nonnull const CBLCorePluginDisplayNameKey = @"CBLCorePluginDisplayName";
 
 @class CBLCameraDescriptor;

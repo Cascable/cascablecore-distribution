@@ -8,61 +8,37 @@
 
 @import Foundation;
 
-typedef void (^CBLErrorableOperationCallback)(NSError * _Nullable) NS_SWIFT_NAME(ErrorableOperationCallback);
-static NSString * _Nonnull const CBLErrorDomain NS_SWIFT_NAME(CascableCoreErrorDomain) = @"se.cascable";
-static NSString * _Nonnull const CBLUnderlyingResponseCodeKey NS_SWIFT_NAME(UnderlyingResponseCodeKey) = @"PTPResponseCode";
-static NSString * _Nonnull const CBLUnderlyingResponseCodeDescriptionKey NS_SWIFT_NAME(UnderlyingResponseCodeDescriptionKey) = @"PTPResponseDescription";
-static NSString * _Nonnull const CBLErrorCodeDescriptionKey NS_SWIFT_NAME(ErrorCodeDescriptionKey) = @"ErrorCodeDescription";
+/**
+ The block callback signature for an async operation that can fail with an error.
 
+ @param error The error that occurred, if any. If `nil`, the operation succeeded.
+ */
+typedef void (^CBLErrorableOperationCallback)(NSError * _Nullable error) NS_SWIFT_NAME(ErrorableOperationCallback);
+
+/// A value representing a camera family, usually grouped by camera manufacturer.
 typedef NSInteger CBLCameraFamily NS_SWIFT_NAME(CameraFamily);
 
+/// The camera is a Canon camera.
 static CBLCameraFamily const CBLCameraFamilyCanon NS_SWIFT_NAME(CameraFamilyCanon) = 0;
+
+/// The camera is an Olympus camera.
 static CBLCameraFamily const CBLCameraFamilyOlympus NS_SWIFT_NAME(CameraFamilyOlympus) = 1;
+
+/// The camera is a Nikon camera.
 static CBLCameraFamily const CBLCameraFamilyNikon NS_SWIFT_NAME(CameraFamilyNikon) = 2;
+
+/// The camera is a Sony camera.
 static CBLCameraFamily const CBLCameraFamilySony NS_SWIFT_NAME(CameraFamilySony) = 3;
+
+/// The camera is a Panasonic camera.
 static CBLCameraFamily const CBLCameraFamilyPanasonic NS_SWIFT_NAME(CameraFamilyPanasonic) = 4;
+
+/// The camera is a Fujifilm camera.
 static CBLCameraFamily const CBLCameraFamilyFuji NS_SWIFT_NAME(CameraFamilyFuji) = 5;
+
+/// The camera is a "generic" camera (typically an import-only camera connected via USB).
 static CBLCameraFamily const CBLCameraFamilyGeneric NS_SWIFT_NAME(CameraFamilyGeneric) = 6;
 
-typedef NS_ENUM(NSInteger, CBLCameraTransport) {
-    /** The camera is communicating via a TCP/IP network, either using WiFi or Ethernet. */
-    CBLCameraTransportNetwork = 0,
-    /** The camera is communicating via USB. */
-    CBLCameraTransportUSB = 1
-} NS_SWIFT_NAME(CameraTransport);
-
-typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
-    CBLPropertyIdentifierISOSpeed,
-    CBLPropertyIdentifierShutterSpeed,
-    CBLPropertyIdentifierAperture,
-    CBLPropertyIdentifierExposureCompensation,
-    CBLPropertyIdentifierBatteryLevel,
-    CBLPropertyIdentifierPowerSource,
-    CBLPropertyIdentifierAFSystem,
-    CBLPropertyIdentifierFocusMode,
-    CBLPropertyIdentifierDriveMode,
-    CBLPropertyIdentifierAutoExposureMode,
-    CBLPropertyIdentifierInCameraBracketingEnabled,
-    CBLPropertyIdentifierMirrorLockupEnabled,
-    CBLPropertyIdentifierMirrorLockupStage,
-    CBLPropertyIdentifierDOFPreviewEnabled,
-    CBLPropertyIdentifierShotsAvailable,
-    CBLPropertyIdentifierLensStatus,
-    CBLPropertyIdentifierColorTone,
-    CBLPropertyIdentifierArtFilter,
-    CBLPropertyIdentifierDigitalZoom,
-    CBLPropertyIdentifierWhiteBalance,
-    CBLPropertyIdentifierNoiseReduction,
-    CBLPropertyIdentifierImageQuality,
-    CBLPropertyIdentifierLightMeterStatus,
-    CBLPropertyIdentifierLightMeterReading,
-    CBLPropertyIdentifierExposureMeteringMode,
-    CBLPropertyIdentifierReadyForCapture,
-    CBLPropertyIdentifierMax,
-
-    CBLPropertyIdentifierUnknown = NSNotFound
-} NS_SWIFT_NAME(PropertyIdentifier);
-
-#define STANDARD_FLOAT_WIGGLE_ROOM 0.0000001
+/// Compare the given double values within the given amount of precision.
 static inline BOOL CBLFloatAlmostEqual(double x, double y, double delta) { return fabs(x - y) <= delta; }
-
+#define STANDARD_FLOAT_WIGGLE_ROOM 0.0000001

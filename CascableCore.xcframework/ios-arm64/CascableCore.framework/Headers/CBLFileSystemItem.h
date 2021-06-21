@@ -14,21 +14,89 @@
 @protocol CBLFileSystemFolderItem;
 @protocol CBLFileStorage;
 
+/** File streaming instructions. */
 typedef NS_ENUM(NSUInteger, CBLFileStreamInstruction) {
+    /** Inform CascableCore to continue the streaming operation. */
     CBLFileStreamInstructionContinue,
+    /** Inform CascableCore to cancel the streaming operation. This will trigger the operation's completion handler. */
     CBLFileStreamInstructionCancel
 } NS_SWIFT_NAME(FileStreamInstruction);
 
+/**
+ The callback block preflight signature for fetching image previews. This will be called just before an image preview
+ is about to be fetched.
+
+ This can be useful when implementing (example) a scrolling list of thumbnails — if the user is scrolling quickly,
+ you can cancel requests for thumbnails that are no longer onscreen.
+
+ @param item The filesystem item the preview will be fetched for.
+ @return Return `YES` to continue to fetch the preview, otherwise `NO` to cancel.
+ */
 typedef BOOL (^CBLPreviewImagePreflight)(id <CBLFileSystemItem> _Nonnull  item) NS_SWIFT_NAME(PreviewImagePreflight);
+
+/**
+ The callback block signature for a completed or failed image previews.
+
+ @param item The filesystem item the preview is for.
+ @param error If the operation failed, an error object that describes the failure.
+ @param imageData If the operation succeeded, JPEG data for the preview.
+ */
 typedef void (^CBLPreviewImageDelivery)(id <CBLFileSystemItem> _Nonnull item,  NSError * _Nullable error,  NSData * _Nullable imageData) NS_SWIFT_NAME(PreviewImageDelivery);
 
+/**
+ The callback block preflight signature for fetching image EXIF metadata. This will be called just before the metadata
+ is about to be fetched.
+
+ This can be useful when implementing (example) a scrolling list of iamges — if the user is scrolling quickly,
+ you can cancel metadata requests for images that are no longer onscreen.
+
+ @param item The filesystem item the metadata will be fetched for.
+ @return Return `YES` to continue to fetch the metadata, otherwise `NO` to cancel.
+ */
 typedef BOOL (^CBLEXIFPreflight)(id <CBLFileSystemItem> _Nonnull  item) NS_SWIFT_NAME(EXIFPreflight);
+
+/**
+ The callback block signature for a completed or failed image metadata requests.
+
+ @param item The filesystem item the metadata is for.
+ @param error If the operation failed, an error object that describes the failure.
+ @param imageMetadata If the operation succeeded, ImageIO-compatible metadata.
+ */
 typedef void (^CBLEXIFDelivery)(id <CBLFileSystemItem> _Nonnull item,  NSError * _Nullable error,  NSDictionary <NSString *, id> * _Nullable imageMetadata) NS_SWIFT_NAME(EXIFDelivery);
 
+/**
+ The callback block preflight signature for streaming files from the camera. This will be called just before the stream
+ is about to begin.
+
+ @param item The filesystem item that will be streamed.
+ @return Return any object to use as a "context" for the operation, including `nil`. This object will be passed to chunk
+         delivery callbacks. For example, you may want to set up a file handle or data storage object here for chunks
+         to be written to later.
+ */
 typedef _Nullable id (^CBLFileStreamPreflight)(id <CBLFileSystemItem> _Nonnull item) NS_SWIFT_NAME(FileStreamPreflight);
+
+/**
+ The callback block signature for data chunk delivery when streaming files from the camera. This will be called multiple
+ times in sequence once an operation starts.
+
+ @param item The filesystem item being streamed.
+ @param chunk The chunk of file data delivered from the camera.
+ @param context The context object returned from the streaming preflight block.
+ @return Return `CBLFileStreamInstructionContinue` to continue the operation and get more chunks, or
+         `CBLFileStreamInstructionCancel` to cancel the operation.
+ */
 typedef CBLFileStreamInstruction (^CBLFileStreamChunkDelivery)(id <CBLFileSystemItem> _Nonnull item, NSData * _Nonnull chunk, id _Nullable context) NS_SWIFT_NAME(FileStreamChunkDelivery);
+
+/**
+ The callback block signature that will be called when a file streaming operation completes for fails.
+
+ @param item The filesystem item being streamed.
+ @param error If the operation failed (including being cancelled), an error describing the failure.
+ @param context The context object returned from the streaming preflight block.
+ */
 typedef void (^CBLFileStreamCompletion)(id <CBLFileSystemItem> _Nonnull item, NSError * _Nullable error, id _Nullable context) NS_SWIFT_NAME(FileStreamCompletion);
 
+/** A filesystem item represents a file or folder on the camera's storage. */
 NS_SWIFT_NAME(FileSystemItem)
 @protocol CBLFileSystemItem <NSObject>
 

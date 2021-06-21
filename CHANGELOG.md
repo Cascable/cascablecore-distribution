@@ -1,3 +1,12 @@
+# CascableCore 10.0.1
+
+### Bug Fixes
+
+- Fixed an issue that could cause user authorisation for USB cameras on iOS 14+ to not be obtained correctly. [CORE-313]
+
+- Fixed an issue that caused the exposure mode property to be incorrectly reported from Phase One cameras in some instances. [CORE-318]
+
+
 # CascableCore 10.0
 
 This version of CascableCore contains a significant number of large breaking changes.

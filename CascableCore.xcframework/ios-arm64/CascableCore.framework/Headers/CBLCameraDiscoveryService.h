@@ -11,6 +11,14 @@
 
 @protocol CBLCameraDiscoveryService;
 
+/** Possible camera transport values. */
+typedef NS_ENUM(NSInteger, CBLCameraTransport) {
+    /** The camera is communicating via a TCP/IP network, either using WiFi or Ethernet. */
+    CBLCameraTransportNetwork = 0,
+    /** The camera is communicating via USB. */
+    CBLCameraTransportUSB = 1
+} NS_SWIFT_NAME(CameraTransport);
+
 /** The discovery service's delegate protocol. Typically, this should not be interfered with. */
 NS_SWIFT_NAME(CameraDiscoveryServiceDelegate)
 @protocol CBLCameraDiscoveryServiceDelegate <NSObject>
@@ -24,7 +32,20 @@ NS_SWIFT_NAME(CameraDiscoveryServiceDelegate)
 
 @end
 
+/**
+ The block callback signature when a service has completed or failed resolving.
+
+ @param service The service that completed or failed resolving.
+ @param error If the operation failed, an error object describing the operation.
+ */
 typedef void (^CBLCameraDiscoveryServiceResolveCallback)(id <CBLCameraDiscoveryService> _Nonnull service, NSError * _Nullable error) NS_SWIFT_NAME(CameraDiscoveryServiceResolveCallback);
+
+/**
+ The block callback signature when a service has completed or failed resolving metadata.
+
+ @param service The service that completed or failed resolving.
+ @param error If the operation failed, an error object describing the operation.
+ */
 typedef void (^CBLCameraDiscoveryMetadataResolveCallback)(id <CBLCameraDiscoveryService> _Nonnull service, NSError * _Nullable error) NS_SWIFT_NAME(CameraDiscoveryMetadataResolveCallback);
 
 /** A camera discovery service represents a camera that has been found on the network, but has not been connected to. A meta-camera, if you will. */

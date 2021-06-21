@@ -13,15 +13,23 @@
 @protocol CBLFileStorage;
 @protocol CBLCamera;
 
+/** Filesystem operation types for storage modified observers. */
 typedef NS_ENUM(NSUInteger, CBLFileSystemModificationOperation) {
+    /** The modification was of an unknown type. */
     CBLFileSystemModificationUnknown,
+    /** File(s) were added to the storage. */
     CBLFileSystemModificationFilesAdded,
+    /** File(s) were removed from the storage. */
     CBLFileSystemModificationFilesRemoved
 } NS_SWIFT_NAME(FileSystemModificationOperation);
 
+/** Identifiers for camera slots. */
 typedef NS_ENUM(NSInteger, CBLStorageSlot) {
+    /** The numbering of the storage's slot is unknown. */
     CBLStorageSlotUnknown,
+    /** The storage is in the camera storage slot marked 'Slot 1'. */
     CBLStorageSlotSlot1,
+    /** The storage is in the camera storage slot marked 'Slot 2'. */
     CBLStorageSlotSlot2
 } NS_SWIFT_NAME(StorageSlot);
 

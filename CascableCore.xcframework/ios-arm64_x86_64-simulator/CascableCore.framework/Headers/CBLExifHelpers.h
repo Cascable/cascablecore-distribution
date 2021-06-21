@@ -9,11 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <CascableCore/CBLCameraLiveViewFrame.h>
 
+/** EXIF rotation constants. */
 typedef NS_ENUM(NSInteger, CBLExifRotation) {
+    /** The image has an unknown rotation. */
     CBLExifRotationUnknown = 0,
+    /** The image is landscape. */
     CBLExifRotationLandscape = 1,
+    /** The image is rotated 180°. */
     CBLExifRotationLandscapeUpsideDown = 3,
+    /** The image is "portrait right" (i.e., the camera was rotated clockwise). */
     CBLExifRotationPortraitRight = 6,
+    /** The image is "portrait right" (i.e., the camera was rotated anticlockwise). */
     CBLExifRotationPortraitLeft = 8
 } NS_SWIFT_NAME(ExifRotation);
 

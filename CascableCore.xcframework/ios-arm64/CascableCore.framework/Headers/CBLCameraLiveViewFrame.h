@@ -84,12 +84,12 @@ NS_SWIFT_NAME(LiveViewFrame)
 @property (nonatomic, strong, nonnull, readonly) NSData *rawPixelData;
 
 /**
- Returns the broad pixel format of the data in the `pixelData` property. If the value is a raw pixel buffer, see
+ Returns the broad pixel format of the data in the `rawPixelData` property. If the value is a raw pixel buffer, see
  the `rawPixelFormatDescription` for additional details.
  */
 @property (nonatomic, readonly) CBLCameraLiveViewFramePixelFormat rawPixelFormat;
 
-/** Returns the detailed pixel format of the data in the `pixelData` property.  */
+/** Returns the detailed pixel format of the data in the `rawPixelData` property.  */
 @property (nonatomic, readonly, nonnull) __attribute__((NSObject)) CMFormatDescriptionRef rawPixelFormatDescription;
 
 /** Returns the size of the image contained in the `rawPixelData` property, in pixels. */

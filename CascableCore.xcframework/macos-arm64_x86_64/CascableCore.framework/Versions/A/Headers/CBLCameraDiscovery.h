@@ -13,6 +13,7 @@
 @protocol CBLCamera;
 @protocol CBLCameraManualDiscovery;
 
+/** Options for discovering cameras. */
 typedef NS_ENUM(NSInteger, CBLCameraDiscoveryMode) {
     /** Only search for cameras on the network. */
     CBLCameraDiscoveryModeNetworkOnly = 0,
@@ -50,6 +51,9 @@ NS_SWIFT_NAME(CameraDiscoveryDelegate)
  The value of this constant is the same as its name, and is only valid when running in the Simulator. */
 extern NSString * _Nonnull const CBLNetworkConfigurationSimulatorWiFiInterfaceOverride;
 
+/**
+ The block callback signature when the discovery object changes the list of available cameras.
+ */
 typedef void (^CBLCameraDiscoveryAvailableDevicesChangedCallback)(NSArray <id <CBLCamera>> * _Nonnull) NS_SWIFT_NAME(CameraDiscoveryAvailableDevicesChangedCallback);
 
 /** Discovery of supported cameras on the network. */
@@ -104,7 +108,7 @@ NS_SWIFT_NAME(CameraDiscovery)
  Attempt to gain authorization to work with wired cameras. Depending on the operating system in use and the
  current authorization status, this may trigger one or more dialog boxes to the user.
 
- This method is for convenience to control the user experience when onboarding, etc. Causing
+ This method is for convenience to control the user experience when onboarding, etc.
 
  @param completionHandler The completion handler that will be called on the main thread when authorization succeeds or fails.
 */

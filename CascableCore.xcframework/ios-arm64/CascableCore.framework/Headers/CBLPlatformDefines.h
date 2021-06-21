@@ -21,5 +21,7 @@
 
 #endif
 
+/// Returns a CascableCore localised string from the given table. Typically this shouldn't be used - use the various
+/// localised value properties in the framework instead.
 extern NSString * CBLCoreLocalizedString(NSString *key, NSString *table);
 #define CBLCoreLocalizedStringWithFormat(key, table, ...) [NSString stringWithFormat:CBLCoreLocalizedString(key, table), __VA_ARGS__]

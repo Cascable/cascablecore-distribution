@@ -8,6 +8,13 @@
 
 #import <CascableCore/CBLPlatformDefines.h>
 
+/**
+ The block callback signature when the shot preview delivery object has completed loading the image preview.
+
+ @param sourceData If the operation succeeded, the raw image JPEG data.
+ @param preview If the operation succeeded, the preview as an `NSImage` or `UIImage` object.
+ @param error If the operation failed, an error object describing the operation.
+ */
 typedef void (^CBLCameraShotPreviewDeliveryCallback)(NSData * _Nullable sourceData, PLATFORM_IMAGE * _Nullable preview, NSError * _Nullable error) NS_SWIFT_NAME(ShotPreviewDeliveryCallback);
 
 /** When a new shot preview is available, the camera will provide an `id <CBLCameraShotPreviewDelivery>` object. */

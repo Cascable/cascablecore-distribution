@@ -11,6 +11,7 @@
 
 @protocol CBLCamera;
 
+/// Camera location identifiers for performing manual camera lookups.
 typedef NS_ENUM(NSInteger, CBLCameraLocation) {
     /// The camera is located at a known IP address.
     CBLCameraLocationSpecifiedIPAddress = 0,
@@ -63,7 +64,11 @@ NS_SWIFT_NAME(CameraDescriptor)
 
 @end
 
-typedef void (^CBLCameraCreationOperationCallback)(id <CBLCamera> _Nullable, NSError * _Nullable) NS_SWIFT_NAME(CameraCreationOperationCallback);
+/// The callback block signature that is called when a manual camera lookup succeeds or fails.
+///
+/// @param camera The camera that was created, if the operation was successful.
+/// @param error An error, if the operation failed.
+typedef void (^CBLCameraCreationOperationCallback)(id <CBLCamera> _Nullable camera, NSError * _Nullable error) NS_SWIFT_NAME(CameraCreationOperationCallback);
 
 /// Use the `CBLCameraManualDiscovery` object when you need to connect to a camera in situations where using
 /// automatic discovery protocols is neither available or desired. Typically, this is paired with user interface

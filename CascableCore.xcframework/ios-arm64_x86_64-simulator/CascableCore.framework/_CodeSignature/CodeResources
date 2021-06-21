@@ -218,7 +218,7 @@
 		</data>
 		<key>Headers/CBLCamera.h</key>
 		<data>
-		Jge3nq8Lo+kM7RF4AKn+unJh4Oc=
+		5dONZkcT284ZfIWERerfjUGiAvg=
 		</data>
 		<key>Headers/CBLCameraAEResult.h</key>
 		<data>
@@ -226,11 +226,11 @@
 		</data>
 		<key>Headers/CBLCameraDiscovery.h</key>
 		<data>
-		qv0thnnt1F7Xe65TV8fIupgU40s=
+		jbpwHeIRJV1OFbumLvENJJe3mxA=
 		</data>
 		<key>Headers/CBLCameraDiscoveryService.h</key>
 		<data>
-		9W/fYpXumKcKOrAfDtnODDtSl3g=
+		Ew8ckXLfjA8H757RmnabYpq50Mw=
 		</data>
 		<key>Headers/CBLCameraLiveViewAFArea.h</key>
 		<data>
@@ -238,15 +238,15 @@
 		</data>
 		<key>Headers/CBLCameraLiveViewFrame.h</key>
 		<data>
-		+oEBu/QynnnYkM0OmgvbqccfiEo=
+		jit+fGS6mYLMPTnXZQu9XSorWm0=
 		</data>
 		<key>Headers/CBLCameraManualDiscovery.h</key>
 		<data>
-		FA0QdeHy5UY//u1tUoPBKEXNr+U=
+		pucZ7Rt9wl59W7x77a91BaX9qJQ=
 		</data>
 		<key>Headers/CBLCameraPropertyAPI.h</key>
 		<data>
-		8GtcI2H40ajBpfgQtNkIbyGPgSg=
+		RXAON/9+fqAjXHU3RzoTpKdshYQ=
 		</data>
 		<key>Headers/CBLCameraQRDecoding.h</key>
 		<data>
@@ -254,19 +254,19 @@
 		</data>
 		<key>Headers/CBLCameraShotPreviewDelivery.h</key>
 		<data>
-		rCbTeQLZlfBNaHcm2Juo7W7G3ZM=
+		q+o+bvftehIN1XDu8j8oB6J5PeY=
 		</data>
 		<key>Headers/CBLConstants.h</key>
 		<data>
-		Zt9sueMmytp57SU47cgZytZ+6nA=
+		vvxeGa0tEZ2qYgceBzXAYPzKDy0=
 		</data>
 		<key>Headers/CBLCorePluginEntryPoint.h</key>
 		<data>
-		V/2LMleBvyVsyLvvpNpFbn8iyFo=
+		oOW7mulz4vkqqDntyCfdFKhZia4=
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		XOItt7ReJp3olV+sHR14f6QAnE0=
+		qn5ZyTIS418w8H8QusmXTJgDfQ0=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -274,11 +274,11 @@
 		</data>
 		<key>Headers/CBLExifHelpers.h</key>
 		<data>
-		wEESyfFd+14kKbCBLsnlxDA5/io=
+		x4Hrj+RNOkdHKhzo3rmXHx3L60Q=
 		</data>
 		<key>Headers/CBLFileStorage.h</key>
 		<data>
-		F9RQYTjqYwJbPI2aBxpamOTLH6s=
+		N3IEloq8oQ7ypABcEGhY3M+Hn+I=
 		</data>
 		<key>Headers/CBLFileSystemFolderItem.h</key>
 		<data>
@@ -286,7 +286,7 @@
 		</data>
 		<key>Headers/CBLFileSystemItem.h</key>
 		<data>
-		USLRcfYiYJYNOq6HxnSusk5J0AQ=
+		hBleWoCaRQ3m69TGyf3Aety9FJE=
 		</data>
 		<key>Headers/CBLFocusInfo.h</key>
 		<data>
@@ -306,7 +306,7 @@
 		</data>
 		<key>Headers/CBLLicenseVerification.h</key>
 		<data>
-		WEKhwgLpVKcqoWYi9Phq7RujaG0=
+		50+oAm5XIif8ei/Xw6MfPTSQBmo=
 		</data>
 		<key>Headers/CBLNetworkConfigurationHelper.h</key>
 		<data>
@@ -314,7 +314,7 @@
 		</data>
 		<key>Headers/CBLPlatformDefines.h</key>
 		<data>
-		Spys8trdTg0qJrc2SJC6qK82g9k=
+		XYg6lNEuizUtpMCHBY685Bhh2qY=
 		</data>
 		<key>Headers/CBLRAWImageDescription.h</key>
 		<data>
@@ -334,11 +334,11 @@
 		</data>
 		<key>Headers/NSError+CBLExtensions.h</key>
 		<data>
-		s9H7GiHoL9Jj3FCQYJDvbBJ5B1w=
+		iuWdFEuHWGqdQ9CcxkL5ezWnTqs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		b5zG08omlYq5m3cM8R3Do0Ls4ZY=
+		Ux7vE0Ci5NmN1iyuge1Wwzf0oCw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1402,11 +1402,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Jge3nq8Lo+kM7RF4AKn+unJh4Oc=
+			5dONZkcT284ZfIWERerfjUGiAvg=
 			</data>
 			<key>hash2</key>
 			<data>
-			vMQJIv2Uc8elXJB6jTpwal9dBDV6cnFDSlLL5kv03QM=
+			KqgvBnA7cRCVcm/83exibas1rktlhOPbjtrFrWSL7w4=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraAEResult.h</key>
@@ -1424,22 +1424,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qv0thnnt1F7Xe65TV8fIupgU40s=
+			jbpwHeIRJV1OFbumLvENJJe3mxA=
 			</data>
 			<key>hash2</key>
 			<data>
-			qDgzgsQzOBVA7WO18V5IoUk9z/AOq0FPC3urJfgE750=
+			mjXxQT75kkdZ/96JxrIInha5U2+EApDuDbPg7CD0Ogo=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraDiscoveryService.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			9W/fYpXumKcKOrAfDtnODDtSl3g=
+			Ew8ckXLfjA8H757RmnabYpq50Mw=
 			</data>
 			<key>hash2</key>
 			<data>
-			UZ8G0UHnQkvoZPqJimrbhML5Orr3WM1EdA8E1BqxZdc=
+			mSXuJVQiNlN4XTCeekP1iJJF6IMrDxfU91dB40FIF0E=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraLiveViewAFArea.h</key>
@@ -1457,33 +1457,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+oEBu/QynnnYkM0OmgvbqccfiEo=
+			jit+fGS6mYLMPTnXZQu9XSorWm0=
 			</data>
 			<key>hash2</key>
 			<data>
-			CZmVjpRbVQLWZGjkr8SpxGxPGk9lw+GZGejHHohuC4g=
+			TMvktZXfgRuNHcE9eyjp5JqG1enwKiaxh7tX3QhDOvk=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraManualDiscovery.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			FA0QdeHy5UY//u1tUoPBKEXNr+U=
+			pucZ7Rt9wl59W7x77a91BaX9qJQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			JeiFZK874oYptk5xlYvJHqOSUybJws4/5cxCHaipe5M=
+			9KMnlJcMiliiiHdp8hj5uz3I9rwgFIYhGpQ/y/DVx+c=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraPropertyAPI.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			8GtcI2H40ajBpfgQtNkIbyGPgSg=
+			RXAON/9+fqAjXHU3RzoTpKdshYQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			jCpV3Icc1kHoXW0vM/zJM5pbLisZrQiwRHG5mwWxZw0=
+			Fk2Dvn9Dr0LlTCXENeEn7SpClOgI2o9BeUn+9w2sJpM=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraQRDecoding.h</key>
@@ -1501,44 +1501,44 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rCbTeQLZlfBNaHcm2Juo7W7G3ZM=
+			q+o+bvftehIN1XDu8j8oB6J5PeY=
 			</data>
 			<key>hash2</key>
 			<data>
-			dC/RIhsKEWUHMm8idg0qPJsIN0+JpsEu8fhVhEXNATs=
+			XYIYT+DC5a2q1QHibIfeXSidzVamY2HBAsA//r1ewEI=
 			</data>
 		</dict>
 		<key>Headers/CBLConstants.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			Zt9sueMmytp57SU47cgZytZ+6nA=
+			vvxeGa0tEZ2qYgceBzXAYPzKDy0=
 			</data>
 			<key>hash2</key>
 			<data>
-			nx/2Ml9pa3XeT06VbeZOZsCDVXmZqqBEf9vX8o+oTuA=
+			0q1rhwrfqaiR3SLco8fsppFLD2xc/+6eMAZ6enzSLFg=
 			</data>
 		</dict>
 		<key>Headers/CBLCorePluginEntryPoint.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			V/2LMleBvyVsyLvvpNpFbn8iyFo=
+			oOW7mulz4vkqqDntyCfdFKhZia4=
 			</data>
 			<key>hash2</key>
 			<data>
-			NmoHRdm4peIincYvfEE6mpcrsqYG1f9H1oM9b1Ni820=
+			/g2RkP8Yzwwmx46CCiEDfea6lwNzsS1V2+iBsGDOIwk=
 			</data>
 		</dict>
 		<key>Headers/CBLCoreVersions.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XOItt7ReJp3olV+sHR14f6QAnE0=
+			qn5ZyTIS418w8H8QusmXTJgDfQ0=
 			</data>
 			<key>hash2</key>
 			<data>
-			jW8ZLLGO+tCPG5dxpaX+rCsM9Dc3BJNRTQlQr50WXTg=
+			4UTfz1y8VS6qmtLoTZGPlbAoU9sSzaERbrU5ECufyjw=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1556,22 +1556,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wEESyfFd+14kKbCBLsnlxDA5/io=
+			x4Hrj+RNOkdHKhzo3rmXHx3L60Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			sGX23QMDpO40G4Xbe3ZOtZIhkngyuTyZQJWaX7E3DA0=
+			eyKPxe9eXI64khMGd7waUhl3YsRBsFChXPjacgqsLaE=
 			</data>
 		</dict>
 		<key>Headers/CBLFileStorage.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F9RQYTjqYwJbPI2aBxpamOTLH6s=
+			N3IEloq8oQ7ypABcEGhY3M+Hn+I=
 			</data>
 			<key>hash2</key>
 			<data>
-			yynNpy8FAnUA0Cy49UnoUAF4eb8k3TGD2ftr+aDLLj8=
+			wRQkCz/Yd0BrX+EtQwV6sL9fvhG+a07jnr2gpxTHrFM=
 			</data>
 		</dict>
 		<key>Headers/CBLFileSystemFolderItem.h</key>
@@ -1589,11 +1589,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			USLRcfYiYJYNOq6HxnSusk5J0AQ=
+			hBleWoCaRQ3m69TGyf3Aety9FJE=
 			</data>
 			<key>hash2</key>
 			<data>
-			YFHvC+9sIkd2gj6In/U5rQNDeutC9QKaysXc/1AqUUU=
+			Ty8+kbM+mZScn1hj1kAx61wYbRhwaAw7afq1NQ6xRZM=
 			</data>
 		</dict>
 		<key>Headers/CBLFocusInfo.h</key>
@@ -1644,11 +1644,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WEKhwgLpVKcqoWYi9Phq7RujaG0=
+			50+oAm5XIif8ei/Xw6MfPTSQBmo=
 			</data>
 			<key>hash2</key>
 			<data>
-			aePOy475EbdE6f3rGv1B5A7yEyXNua3Dm8JgiJQOQg4=
+			24RfGUbY+3bL31J2qVT8xjL6Y5/4knoEcv0Le5KcCgE=
 			</data>
 		</dict>
 		<key>Headers/CBLNetworkConfigurationHelper.h</key>
@@ -1666,11 +1666,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Spys8trdTg0qJrc2SJC6qK82g9k=
+			XYg6lNEuizUtpMCHBY685Bhh2qY=
 			</data>
 			<key>hash2</key>
 			<data>
-			HLewyAZEwrULQi4W15hE1mQtOiLKMHVErqEvyXskv3M=
+			Q0VJWySixGUB4ekGN5C2/pfnIy8b/y0X9sBoB7FKW3I=
 			</data>
 		</dict>
 		<key>Headers/CBLRAWImageDescription.h</key>
@@ -1721,11 +1721,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			s9H7GiHoL9Jj3FCQYJDvbBJ5B1w=
+			iuWdFEuHWGqdQ9CcxkL5ezWnTqs=
 			</data>
 			<key>hash2</key>
 			<data>
-			8lqjHd7bBC8ufSE6K2eZeZrnU8si4Sho4BCJnTxkWKc=
+			mirWrsBNQlcpOnTRzABwjBSb/5GEH+K2CUBnVoUZ3Oo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
