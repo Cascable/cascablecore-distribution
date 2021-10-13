@@ -1,3 +1,22 @@
+# CascableCore 10.0.2
+
+### New Features
+
+- Nikon cameras can now be operated with full remote control functionality over USB on iOS 15.0 and higher. [CORE-207]
+
+- Added support for live view zoom (`CBLCameraSupportedFunctionalityZoomableLiveView`) on newer Nikon cameras, including the Z series. [CORE-50]
+
+### Changes
+
+- Added support for "focusless half-press" for the EOS M50 (i.e., photos can be taken without autofocus even if the camera is set to autofocus). [CORE-326]
+
+### Bug Fixes
+
+- Fixed a bug that could cause the EOS M5 and EOS M6 Mark II to not correctly start live view. [CORE-302, CORE-325]
+
+- Fixed a bug where certain Canon cameras would be extremely slugglish to respond to events when connected via USB on iOS. [CORE-326]
+
+
 # CascableCore 10.0.1
 
 ### Bug Fixes

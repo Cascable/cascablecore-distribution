@@ -266,7 +266,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		qn5ZyTIS418w8H8QusmXTJgDfQ0=
+		rdX3IW9CZCV3BKb1EfFGPvo+sRE=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -326,7 +326,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		kmsPWN5/HKr/dCYOyrja5G8Yk94=
+		k7eP7ZWqYDT8QxXJ/DHyNfzFnrc=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -338,7 +338,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Ux7vE0Ci5NmN1iyuge1Wwzf0oCw=
+		ao4OkQUMrZT6LoPf3nThBxuhwa4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1534,11 +1534,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			qn5ZyTIS418w8H8QusmXTJgDfQ0=
+			rdX3IW9CZCV3BKb1EfFGPvo+sRE=
 			</data>
 			<key>hash2</key>
 			<data>
-			4UTfz1y8VS6qmtLoTZGPlbAoU9sSzaERbrU5ECufyjw=
+			hahPt64F0Z21EK6dAOB1XpSP7So5+1Vc/tcJBZREsPQ=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1699,11 +1699,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			kmsPWN5/HKr/dCYOyrja5G8Yk94=
+			k7eP7ZWqYDT8QxXJ/DHyNfzFnrc=
 			</data>
 			<key>hash2</key>
 			<data>
-			KrjDGmWp0RpxW62d9RYSi3JSzQUTCYW3WbI8x/N2eqY=
+			EyN3qltHbdpQTNKHXQiqi6RTwlS2n2Gj0IJQ3qQcjBY=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>
