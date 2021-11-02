@@ -1,3 +1,26 @@
+# CascableCore 10.1
+
+### New Features
+
+- Added full support for Canon's Fv mode, including a new common value for flexible priority autoexposure modes (`CBLPropertyCommonValueAutoExposureModeFlexiblePriority`). [CORE-341]
+
+- Autoexposure results now report whether autoexposure is clipped (i.e., values are blinking) on Canon cameras. [CORE-342]
+
+### Bug Fixes 
+
+- Fixed an issue that could cause "Automatic" shutter speed and aperture values to be represented incorrectly on some Canon cameras. [CORE-341]
+
+- Fixed an issue that could cause incorrect autoexposure results on Canon EOS R5 and R6 cameras. [CORE-342]
+
+- Added support for live view on older Nikon cameras, including the D800 and D810. [CORE-337]
+
+- Fixed `CBLImageQualityTIFF` not being represented properly on some Nikon cameras. [CORE-337]
+
+- Fixed the disconnection callback never being fired on USB-connected cameras on macOS Monterey. [CORE-345]
+
+- Nikon cameras are no longer explicitly put into "Application Mode" when connected to via USB. [CORE-345]
+
+
 # CascableCore 10.0.2
 
 ### New Features

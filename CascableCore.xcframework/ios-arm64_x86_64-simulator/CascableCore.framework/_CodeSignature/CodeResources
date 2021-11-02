@@ -246,7 +246,7 @@
 		</data>
 		<key>Headers/CBLCameraPropertyAPI.h</key>
 		<data>
-		RXAON/9+fqAjXHU3RzoTpKdshYQ=
+		9pbFwv0xKYkfxH0xBPogOdlGNAA=
 		</data>
 		<key>Headers/CBLCameraQRDecoding.h</key>
 		<data>
@@ -266,7 +266,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		rdX3IW9CZCV3BKb1EfFGPvo+sRE=
+		opAV3I9UKFJAjKDgCWtM9RrUBhk=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -326,7 +326,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		k7eP7ZWqYDT8QxXJ/DHyNfzFnrc=
+		nMNWhOvx9OtPCY9CEBmnurtLcFw=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -338,7 +338,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ao4OkQUMrZT6LoPf3nThBxuhwa4=
+		BznQsbQEubf3XZ4Naj7wE3LqvII=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1479,11 +1479,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RXAON/9+fqAjXHU3RzoTpKdshYQ=
+			9pbFwv0xKYkfxH0xBPogOdlGNAA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Fk2Dvn9Dr0LlTCXENeEn7SpClOgI2o9BeUn+9w2sJpM=
+			TAz1OBiURzrR255T+T8R7oTf+tfo88dmV7icUa6GZ3g=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraQRDecoding.h</key>
@@ -1534,11 +1534,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rdX3IW9CZCV3BKb1EfFGPvo+sRE=
+			opAV3I9UKFJAjKDgCWtM9RrUBhk=
 			</data>
 			<key>hash2</key>
 			<data>
-			hahPt64F0Z21EK6dAOB1XpSP7So5+1Vc/tcJBZREsPQ=
+			WOTWSTE8TqKoG/oMgd5xi0w/1/4xogUzDkPifxZEnSo=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1699,11 +1699,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			k7eP7ZWqYDT8QxXJ/DHyNfzFnrc=
+			nMNWhOvx9OtPCY9CEBmnurtLcFw=
 			</data>
 			<key>hash2</key>
 			<data>
-			EyN3qltHbdpQTNKHXQiqi6RTwlS2n2Gj0IJQ3qQcjBY=
+			ULYiEH4K0kH/6S9Hvym8NsIgNyz/8daEDZ/QUBIiMCM=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>
