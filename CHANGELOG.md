@@ -1,3 +1,10 @@
+# CascableCore 10.1.1
+
+### Bug Fixes 
+
+- Fixed an issue that would cause live view to get into an odd state on the Nikon D800 after taking a photo. [CORE-337]
+
+
 # CascableCore 10.1
 
 ### New Features

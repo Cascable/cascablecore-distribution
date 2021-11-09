@@ -1,4 +1,4 @@
 /// Returns a detailed version string for the SDK.
-static NSString * const CBLCoreVerboseVersion NS_SWIFT_NAME(CascableCoreVerboseVersion) = @"10.1-g94e8193";
+static NSString * const CBLCoreVerboseVersion NS_SWIFT_NAME(CascableCoreVerboseVersion) = @"10.1.1-g4253122";
 /// Returns the build number for the SDK.
-static NSString * const CBLCoreBundleVersion NS_SWIFT_NAME(CascableCoreBundleVersion) = @"1390";
+static NSString * const CBLCoreBundleVersion NS_SWIFT_NAME(CascableCoreBundleVersion) = @"1395";

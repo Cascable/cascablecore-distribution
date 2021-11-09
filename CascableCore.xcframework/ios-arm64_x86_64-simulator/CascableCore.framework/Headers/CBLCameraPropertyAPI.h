@@ -276,7 +276,7 @@ typedef NS_ENUM(CBLPropertyCommonValue, CBLPropertyCommonValueAutoExposureMode) 
     CBLPropertyCommonValueAutoExposureModeFullyManual,
     /// The value is equivalent to the B/bulb mode.
     CBLPropertyCommonValueAutoExposureModeBulb,
-    // The value is equivalent to a "flexible priority" mode, such as Canon's Fv.
+    /// The value is equivalent to a "flexible priority" mode, such as Canon's Fv.
     CBLPropertyCommonValueAutoExposureModeFlexiblePriority
 } NS_SWIFT_NAME(PropertyCommonValueAutoExposureMode);
 
