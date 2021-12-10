@@ -18,7 +18,7 @@ typedef NS_ENUM(NSUInteger, CBLLicenseVerificationResult) {
     CBLLicenseVerificationResultSuccess,
     /** The license expired. */
     CBLLicenseVerificationResultExpired,
-    /* The license is invalid. */
+    /** The license is invalid. */
     CBLLicenseVerificationResultInvalidLicense
 } NS_SWIFT_NAME(LicenseVerificationResult);
 

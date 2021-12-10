@@ -266,7 +266,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		WKwP91Y+utbVoipokKud85AmCD8=
+		Nr7TbqCQpthU1BLo2uv3tAeRNNY=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -306,7 +306,7 @@
 		</data>
 		<key>Headers/CBLLicenseVerification.h</key>
 		<data>
-		50+oAm5XIif8ei/Xw6MfPTSQBmo=
+		X08T8gLvWlO3z6uRJav1HmkC55g=
 		</data>
 		<key>Headers/CBLNetworkConfigurationHelper.h</key>
 		<data>
@@ -326,7 +326,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		nMNWhOvx9OtPCY9CEBmnurtLcFw=
+		KJzJrU+i2VZHtZCAq8y2/XZKlTU=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -338,7 +338,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HFuJlWxm6fjAYRmc+W5gVKa3ckw=
+		uP0auGOnVdcSzlqOnwvyVR9pVmY=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1534,11 +1534,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WKwP91Y+utbVoipokKud85AmCD8=
+			Nr7TbqCQpthU1BLo2uv3tAeRNNY=
 			</data>
 			<key>hash2</key>
 			<data>
-			2NoYP/RIn1GwozJ9U/I12StZ9eR0ZbOtD4DNbUrtmyg=
+			DVM4obWTEJd8IeofUKIbWHpe/ackddmdT04QGX8j6RU=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1644,11 +1644,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			50+oAm5XIif8ei/Xw6MfPTSQBmo=
+			X08T8gLvWlO3z6uRJav1HmkC55g=
 			</data>
 			<key>hash2</key>
 			<data>
-			24RfGUbY+3bL31J2qVT8xjL6Y5/4knoEcv0Le5KcCgE=
+			IHnngnVCSYINNVt3SIxfkyIUWnVhr1uohQiY+siGL5g=
 			</data>
 		</dict>
 		<key>Headers/CBLNetworkConfigurationHelper.h</key>
@@ -1699,11 +1699,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nMNWhOvx9OtPCY9CEBmnurtLcFw=
+			KJzJrU+i2VZHtZCAq8y2/XZKlTU=
 			</data>
 			<key>hash2</key>
 			<data>
-			ULYiEH4K0kH/6S9Hvym8NsIgNyz/8daEDZ/QUBIiMCM=
+			mXaSEATKk3k0LORI+XO4LFZaS7bfoN6SOYstd537n/Q=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>

@@ -1,3 +1,10 @@
+# CascableCore 10.1.2
+
+### Camera Compatibility
+
+- Added support for "focusless half-press" for the EOS M6 Mark II (i.e., photos can be taken without autofocus even if the camera is set to autofocus). [CORE-353]
+
+
 # CascableCore 10.1.1
 
 ### Bug Fixes 
