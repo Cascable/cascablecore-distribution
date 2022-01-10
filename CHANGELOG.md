@@ -1,3 +1,64 @@
+# CascableCore 11.0
+
+### Video Recording
+
+Added an initial, basic API for working with video recording. This API has currently been implemented for Canon EOS and Nikon cameras.
+
+To see if a camera supports video recording, check for `CBLCameraSupportedFunctionalityVideoRecording`. To switch a camera into a mode that allows video recording, use `CBLCameraAvailableCommandCategoryVideoRecording`.
+
+Once the camera is in a mode in which video recording can go ahead, start and stop video recording with `-startVideoRecording:` and `-endVideoRecording:`. Whether or not the camera is currently recording video can be observed with `-isRecordingVideo`. 
+
+Video recording has ramifications across the entire API surface of a camera, and particularly changes a number of assumptions you may have been making when working with Canon cameras. In particular: 
+
+- A number of APIs are unavailable while video is recording, including all filesystem access. See the new error code `CBLErrorCodeVideoRecordingInProgress`.
+
+- Canon EOS and Nikon cameras can now be placed into a mode where taking photos isn't allowed. Previously, these cameras always allowed both stills shooting and filesystem access.
+
+- Older Canon EOS cameras don't allow video recording while WiFi is active. If you try to start recording video via a WiFi connection, the `CBLErrorCodeDisallowedOnCurrentTransport` error will be returned.
+
+- Some cameras require moving a physical switch to move the camera in or out of video mode. If that's the case, attempting to switch the available command categories to or from `CBLCameraAvailableCommandCategoryVideoRecording` may produce the error `CBLErrorCodeRequiresPhysicalInteraction`. If this happens, instruct the user to flip the relavent switch manually. The `-currentCommandCategories` property is observable with Key-Value Observing, and will change automatically when the video mode is changed by the user.
+
+#### New API
+
+- Added `CBLCameraSupportedFunctionalityVideoRecording` to enable checks to see if video recording is supported by a particular camera.
+
+- Added `CBLCameraAvailableCommandCategoryVideoRecording` to put a camera into video recording mode.
+
+- Added the `-isRecordingVideo` and `-currentVideoTimerValue` properties to `id <CBLCamera>`, which are observable with Key-Value Observing.
+
+- Added `-startVideoRecording:` and `endVideoRecording:` to `id <CBLCamera>` to start and stop video recording.
+
+- Added the error codes `CBLErrorCodeVideoRecordingInProgress`, `CBLErrorCodeRequiresPhysicalInteraction`, `CBLErrorCodeDisallowedOnCurrentTransport`, `CBLErrorCodeRequiresLiveView`, `CBLErrorCodeCardError`, and `CBLErrorCodeStorageFull`.
+
+#### Breaking API changes:
+
+- `CBLCameraAvailableCommandCategoryRemoteShooting` has been renamed to `CBLCameraAvailableCommandCategoryStillsShooting`.
+
+- A number of existing situations where a camera would return a `CBLErrorCodeNotAvailable` error code have been changed so a more accurate error code is returned instead. Particularly, `CBLErrorCodeRequiresLiveView` and `CBLErrorCodeVideoRecordingInProgress` have replaced a number of more generic existing error paths.
+
+#### Known Issues
+
+- Some older Canon cameras will automatically terminate live view when exiting video mode. If this happens, re-start live view.
+
+- Newer Nikon cameras have separate properties for video exposure settings, which aren't currently exposed by CascableCore. They will be added in a future release.
+
+### Camera Compatibility
+
+- Added support for the Canon EOS R3.
+
+- Added `CBLCameraSupportedFunctionalityRemoteControlWithoutLiveView` to the Canon EOS 5D Mark II. [CORE-363]
+
+- Greatly improved file transfer performance from a number of Nikon cameras. [CORE-354]
+
+### Bug Fixes
+
+- CascableCore will no longer attempt to deliver shot preview callbacks for video or other non-image file types from Canon or Nikon cameras.
+
+- Improved the accuracy of the `focused` and `active` properties of `id <CBLCameraLiveViewAFArea>` objects from Canon cameras.
+
+- Fixed some missing autoexposure mode localized display values for certain Nikon cameras. [CORE-347]
+
+
 # CascableCore 10.1.2
 
 ### Camera Compatibility

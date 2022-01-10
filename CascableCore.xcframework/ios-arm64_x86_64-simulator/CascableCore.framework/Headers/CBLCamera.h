@@ -82,6 +82,8 @@ typedef NS_OPTIONS(NSUInteger, CBLCameraSupportedFunctionality) {
     CBLCameraSupportedFunctionalityShotPreview = 1 << 15,
     /** The camera supports zooming live view via crop rectangles. */
     CBLCameraSupportedFunctionalityCroppableLiveView = 1 << 16,
+    /** The camera supports video recording. */
+    CBLCameraSupportedFunctionalityVideoRecording = 1 << 17,
     CBLCameraSupportedFunctionalityAll = NSUIntegerMax
 } NS_SWIFT_NAME(SupportedFunctionality);
 
@@ -101,10 +103,12 @@ typedef NS_ENUM(NSUInteger, CBLCameraConnectionState) {
 typedef NS_OPTIONS(NSUInteger, CBLCameraAvailableCommandCategory) {
     /** The camera currently has no available command categories.  */
     CBLCameraAvailableCommandCategoryNone = 0,
-    /** If this value is present in the options, the camera can perform remote shooting operations. */
-    CBLCameraAvailableCommandCategoryRemoteShooting = 1 << 0,
+    /** If this value is present in the options, the camera can perform stills shooting operations. */
+    CBLCameraAvailableCommandCategoryStillsShooting = 1 << 0,
     /** If this value is present in the options, the camera can perform filesystem actions. */
-    CBLCameraAvailableCommandCategoryFilesystemAccess = 1 << 1
+    CBLCameraAvailableCommandCategoryFilesystemAccess = 1 << 1,
+    /** If this value is present in the options, the camera can perform video recording operations. */
+    CBLCameraAvailableCommandCategoryVideoRecording = 1 << 2
 } NS_SWIFT_NAME(AvailableCommandCategory);
 
 /** Non-fatal warning types that can occur during connection. */
@@ -150,7 +154,7 @@ static NSString * _Nonnull const CBLConnectionFlagSyncCameraClockToSystemClock =
 /** Powers off the camera during disconnect, if supported by the camera. Requires `CBLCameraSupportedFunctionalityPowerOffOnDisconnect`. */
 static NSString * _Nonnull const CBLDisconnectionFlagPowerOffCamera = @"CBLDisconnectionFlagPowerOffCamera";
 
-@protocol CBLCameraCore, CBLCameraLiveView, CBLCameraProperties, CBLCameraFileSystem, CBLCameraFocusAndShutter;
+@protocol CBLCameraCore, CBLCameraLiveView, CBLCameraProperties, CBLCameraFileSystem, CBLCameraFocusAndShutter, CBLCameraVideoRecording;
 
 /** The catch-all protocol for a camera object in CascableCore. Functionality is broken down into sub-protocols:
 
@@ -159,10 +163,11 @@ static NSString * _Nonnull const CBLDisconnectionFlagPowerOffCamera = @"CBLDisco
  - `CBLCameraFocusAndShutter` for operations involving shooting images.
  - `CBLCameraProperties` for operations involving getting and setting camera settings/properties.
  - `CBLCameraFileSystem` for operations involving accessing the camera's file system.
+ - `CBLCameraVideoRecording` for operations involving video recording.
 
  */
 NS_SWIFT_NAME(Camera)
-@protocol CBLCamera <NSObject, CBLCameraCore, CBLCameraLiveView, CBLCameraProperties, CBLCameraFileSystem, CBLCameraFocusAndShutter>
+@protocol CBLCamera <NSObject, CBLCameraCore, CBLCameraLiveView, CBLCameraProperties, CBLCameraFileSystem, CBLCameraFocusAndShutter, CBLCameraVideoRecording>
 @end
 
 /** Camera connection, disconnection and status methods. */
@@ -308,7 +313,19 @@ NS_SWIFT_NAME(connect(completionCallback:userInterventionCallback:));
  */
 -(BOOL)supportsCommandCategories:(CBLCameraAvailableCommandCategory)categories;
 
-/** Attempt to switch the camera into a mode that supports the given category combination. 
+/** Attempt to switch the camera into a mode that supports the given category combination.
+
+ It is not guaranteed that the camera's current command categories will end up exactly the same as what's passed
+ in, but if the method succeeds you can expect that they will contain the requested category/categories.
+
+ For example, some cameras support both stills shooting and filesystem access at the same time. Requesting the
+ command category `.stillsShooting` will succeed, but the camera will end up with current command categories of
+ `[.stillsShooting, .filesystemAccess]`.
+
+ In general, it's safe to call this method with a single category (for example, if you want to shoot video,
+ `.videoRecording`) — CascableCore will put the camera into the closest sensible mode that supports that category.
+
+ To check if the camera supports your desired command category/categories, use `-supportsCommandCategories:`.
  
  @param categories The command categories the camera should accept.
  @param block The block to be called when the camera has switched modes and is able to accept commands in the given categories, or an error occurs.
@@ -693,5 +710,61 @@ NS_SWIFT_NAME(CameraFocusAndShutter)
               inDirection:(CBLFocusDriveDirection)direction
        completionCallback:(nullable CBLErrorableOperationCallback)callback
 NS_SWIFT_NAME(driveFocus(amount:direction:completionCallback:));
+
+@end
+
+/** Video recording timer types. */
+typedef NS_ENUM(NSInteger, CBLVideoTimerType) {
+    /** No video timer is currently available. */
+    CBLVideoTimerTypeNone,
+    /** The video timer is counting down to zero (i.e., is counting the recording time remaining). */
+    CBLVideoTimerTypeCountingDown,
+    /** The video timer is counting up from zero (i.e., is counting the length of the current clip). */
+    CBLVideoTimerTypeCountingUp
+} NS_SWIFT_NAME(VideoTimerType);
+
+/** A video timer value. Only valid during video recording. */
+NS_SWIFT_NAME(VideoTimerValue)
+@protocol CBLVideoTimerValue <NSObject, NSCopying>
+
+/** The timer type. */
+@property (nonatomic, readonly) CBLVideoTimerType type;
+
+/** The current value of the timer. Will be zero if the video timer is invalid. */
+@property (nonatomic, readonly) NSTimeInterval value;
+
+@end
+
+/** Video recording methods. */
+NS_SWIFT_NAME(CameraVideoRecording)
+@protocol CBLCameraVideoRecording <NSObject>
+
+/**
+ Returns `YES` if the camera is currently recording video, otherwise `NO`. Will update if video recording is started
+ or stopped using the camera's on-body controls, or if video recording stopped due to the card being full etc.
+
+ Can be observed with Key-Value Observing.
+ */
+@property (nonatomic, readonly) BOOL isRecordingVideo;
+
+/**
+ If available, returns the current value of the camera's video recording timer. Can be observed with Key-Value Observing.
+
+ The returned value is immutable — a new value will be created when the timer updates.
+
+ Will be `nil` when the camera isn't recording video.
+ */
+@property (nonatomic, readonly, nullable, copy) id <CBLVideoTimerValue> currentVideoTimerValue;
+
+/**
+ Start video recording.
+
+ Will fail if the camera is already recording video, the camera isn't in a mode that allows video recording, or if
+ some other condition prevents video recording to start (not enough space on the camera's storage card, etc).
+ */
+-(void)startVideoRecording:(nullable CBLErrorableOperationCallback)completionHandler NS_SWIFT_NAME(startVideoRecording(_:));
+
+/** End video recording. */
+-(void)endVideoRecording:(nullable CBLErrorableOperationCallback)completionHandler NS_SWIFT_NAME(endVideoRecording(_:));
 
 @end

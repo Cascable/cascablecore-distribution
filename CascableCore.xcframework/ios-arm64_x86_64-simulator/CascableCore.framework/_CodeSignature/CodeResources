@@ -58,7 +58,7 @@
 		</data>
 		<key>Base.lproj/CanonShortPropertyCodes.strings</key>
 		<data>
-		pts0szA+bVqk0SINl+VfFbWVDD0=
+		rojGekklaYCrvKmYkqBLg84RjFw=
 		</data>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
 		<data>
@@ -82,7 +82,7 @@
 		</data>
 		<key>Base.lproj/NikonAEModes.strings</key>
 		<data>
-		ALPIx7bbANiTSGyhmwgWoVzoTRw=
+		gTFh0UdOpG2dHmgDIiNBkumA58I=
 		</data>
 		<key>Base.lproj/NikonAFSystems.strings</key>
 		<data>
@@ -206,7 +206,7 @@
 		</data>
 		<key>Base.lproj/UniversalProperties.strings</key>
 		<data>
-		rsFPHv7s7zw8NCuJyZN8GirMqX8=
+		CtShhCz7ipLWp83tMSnThSn9C34=
 		</data>
 		<key>Base.lproj/UniversalShutterSpeeds.strings</key>
 		<data>
@@ -218,7 +218,7 @@
 		</data>
 		<key>Headers/CBLCamera.h</key>
 		<data>
-		5dONZkcT284ZfIWERerfjUGiAvg=
+		8/yCeRrERE0S5aqB5sutJdigOrE=
 		</data>
 		<key>Headers/CBLCameraAEResult.h</key>
 		<data>
@@ -266,7 +266,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		Nr7TbqCQpthU1BLo2uv3tAeRNNY=
+		l1gSRGWNUKxy/T6Nv2wS9gWwDjU=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -330,15 +330,15 @@
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
-		Qoh8+eiIx2vuI8bz+L9z6pujIto=
+		j6k9kO4ZbN15zJvV3E08Fx+orrA=
 		</data>
 		<key>Headers/NSError+CBLExtensions.h</key>
 		<data>
-		iuWdFEuHWGqdQ9CcxkL5ezWnTqs=
+		ICgPT2sXzfo9kODwefHq5WtSVeM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		uP0auGOnVdcSzlqOnwvyVR9pVmY=
+		Hlrh170MmH/EeV6HVdwXbTusdyA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -465,7 +465,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VzZ56EoVNAgonohd/u4OUoi+sdg=
+			G6i265WzqIix2dq0PIhNQOoePus=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -519,7 +519,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6KisBJodI5qzae3x83rw9VQGbT0=
+			4RZBKVD9HydfL+xLZAqYuxf2+ec=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -798,7 +798,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			T5HF5mLi8xQfFMXWCJmQZSMqQ70=
+			vqosYRejUIQg8kfs6E8BSI+NyfY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -962,11 +962,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pts0szA+bVqk0SINl+VfFbWVDD0=
+			rojGekklaYCrvKmYkqBLg84RjFw=
 			</data>
 			<key>hash2</key>
 			<data>
-			lywSocDR3YtsDoXewlWqxhGr5YqFQ2+nnBJWbPZLMTQ=
+			z21QUUZ+R0jOQscDV82AT4HFA6aoieccZ5LpCQ6yG+w=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
@@ -1028,11 +1028,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ALPIx7bbANiTSGyhmwgWoVzoTRw=
+			gTFh0UdOpG2dHmgDIiNBkumA58I=
 			</data>
 			<key>hash2</key>
 			<data>
-			PFj7R7SqJkMJPrpRB5u4wOIFfLDXQrPr+b1ZJIjGcbA=
+			u4MllougM78+DC9sF1NU18ox5ZmBfSEPne2z9uy8xw4=
 			</data>
 		</dict>
 		<key>Base.lproj/NikonAFSystems.strings</key>
@@ -1369,11 +1369,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rsFPHv7s7zw8NCuJyZN8GirMqX8=
+			CtShhCz7ipLWp83tMSnThSn9C34=
 			</data>
 			<key>hash2</key>
 			<data>
-			8Gu/ulAv1GiwyiC3MGlmDadmkWpBWiBfRi558AuBH34=
+			WFcN01//fJeDMvNJHDqwJSzBhVN+r1Cd/2TWda0/xVw=
 			</data>
 		</dict>
 		<key>Base.lproj/UniversalShutterSpeeds.strings</key>
@@ -1402,11 +1402,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5dONZkcT284ZfIWERerfjUGiAvg=
+			8/yCeRrERE0S5aqB5sutJdigOrE=
 			</data>
 			<key>hash2</key>
 			<data>
-			KqgvBnA7cRCVcm/83exibas1rktlhOPbjtrFrWSL7w4=
+			yj/HymQOi7WODY0MjFwmQEv0eIk5SfyCN2Cgj0XMKPA=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraAEResult.h</key>
@@ -1534,11 +1534,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Nr7TbqCQpthU1BLo2uv3tAeRNNY=
+			l1gSRGWNUKxy/T6Nv2wS9gWwDjU=
 			</data>
 			<key>hash2</key>
 			<data>
-			DVM4obWTEJd8IeofUKIbWHpe/ackddmdT04QGX8j6RU=
+			ajgnyIg/jaV+T1iP4S/66vYT9P8HAs+ylT5nIH9GT08=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1710,22 +1710,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Qoh8+eiIx2vuI8bz+L9z6pujIto=
+			j6k9kO4ZbN15zJvV3E08Fx+orrA=
 			</data>
 			<key>hash2</key>
 			<data>
-			jWSqoJfvARh/v+KM8OH1pod0H9nd27TtDNvYBeDFqek=
+			/XRqXGionFQaCjJE+S7veDERNfCBYGU9dbC+VR5br1o=
 			</data>
 		</dict>
 		<key>Headers/NSError+CBLExtensions.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			iuWdFEuHWGqdQ9CcxkL5ezWnTqs=
+			ICgPT2sXzfo9kODwefHq5WtSVeM=
 			</data>
 			<key>hash2</key>
 			<data>
-			mirWrsBNQlcpOnTRzABwjBSb/5GEH+K2CUBnVoUZ3Oo=
+			Z/CC+WR9n1qj4ZL0NDB87Z9ML1axzbFcT4LwFGTVJGQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1912,11 +1912,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VzZ56EoVNAgonohd/u4OUoi+sdg=
+			G6i265WzqIix2dq0PIhNQOoePus=
 			</data>
 			<key>hash2</key>
 			<data>
-			PoTI3P13VX3O98bLE5NXJE2RHVJDz4SNQ0qEmT2raOQ=
+			9opCnEzVjm4h+aVl5JHYRRjkGDoxDCJgZW+Hrj3Re/I=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1990,11 +1990,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6KisBJodI5qzae3x83rw9VQGbT0=
+			4RZBKVD9HydfL+xLZAqYuxf2+ec=
 			</data>
 			<key>hash2</key>
 			<data>
-			qLIV3FCPRTLyZhsPJpkK52XY+tohRDJWt79+ipfyM5Q=
+			m89RZ/wZ0Zag/JsgQ61BDzB4mpbPaDLw6p4bEPLL7zQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2393,11 +2393,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			T5HF5mLi8xQfFMXWCJmQZSMqQ70=
+			vqosYRejUIQg8kfs6E8BSI+NyfY=
 			</data>
 			<key>hash2</key>
 			<data>
-			waMPAnpG87mEFIx30AcfevgQkHe3mXyS8Rx9gsxgzJE=
+			tvdKPoMbaM6KQ/PmRNUnh6XR20zSzMXmCouQWxqLzbk=
 			</data>
 			<key>optional</key>
 			<true/>

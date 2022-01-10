@@ -42,7 +42,6 @@
 #import <CascableCore/CBLFileStorage.h>
 
 // Helpers
-
 #import <CascableCore/CBLRAWImageDescription.h>
 #import <CascableCore/CBLImageMetadataWritingHelpers.h>
 #import <CascableCore/CBLExifHelpers.h>

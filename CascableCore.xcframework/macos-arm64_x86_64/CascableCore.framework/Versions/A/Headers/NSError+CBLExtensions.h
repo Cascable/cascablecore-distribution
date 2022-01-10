@@ -53,7 +53,7 @@ typedef NS_ENUM(NSUInteger, CBLErrorCode) {
     /** The operation failed because the camera does not support the requested operation. */
     CBLErrorCodeNotAvailable,
     /** The operation failed because the camera isn't in a command category that supports the requested operation.
-     For example, you're trying to take a photo while the camera doesn't currently allow remote shooting commands. */
+     For example, you're trying to take a photo while the camera doesn't currently allow stills shooting commands. */
     CBLErrorCodeIncorrectCommandCategory,
     /** The focus operation failed, perhaps because the camera's autofocus is unable to being anything into focus. */
     CBLErrorCodeAutoFocusFailed,
@@ -74,7 +74,21 @@ typedef NS_ENUM(NSUInteger, CBLErrorCode) {
     /** The operation failed because metadata could not be retrieved for the requested file. */
     CBLErrorCodeNoMetadata,
     /** The camera connection failed because it is paired with something else. A new pairing is required. */
-    CBLErrorCodeNeedsNewPairing
+    CBLErrorCodeNeedsNewPairing,
+    /** The operation failed because the camera is currently recording video. */
+    CBLErrorCodeVideoRecordingInProgress,
+    /** The operation failed because the camera can only perform the given action by having the user flip a switch
+        or push a button on the camera directly. */
+    CBLErrorCodeRequiresPhysicalInteraction,
+    /** The operation failed because the camera doesn't allow the operation over the current transport. For example,
+     older Canon cameras don't allow video recording over WiFi. */
+    CBLErrorCodeDisallowedOnCurrentTransport,
+    /** The operation failed because it requires live view to be running. Start live view and try again. */
+    CBLErrorCodeRequiresLiveView,
+    /** The operation failed because of a card error. Either the storage card is missing, damaged, or unformatted. */
+    CBLErrorCodeCardError,
+    /** The operation failed because the camera's storage is full. */
+    CBLErrorCodeStorageFull
 } NS_SWIFT_NAME(CascableCoreErrorCode);
 
 /** NSError helpers for CascableCore. */
