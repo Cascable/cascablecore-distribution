@@ -88,7 +88,14 @@ typedef NS_ENUM(NSUInteger, CBLErrorCode) {
     /** The operation failed because of a card error. Either the storage card is missing, damaged, or unformatted. */
     CBLErrorCodeCardError,
     /** The operation failed because the camera's storage is full. */
-    CBLErrorCodeStorageFull
+    CBLErrorCodeStorageFull,
+    /** The operation failed because the camera is in an incompatible communication mode. This error is usually
+        encountered when a camera has multiple options on how to communicate over USB or the network, and the chosen
+        mode is incompatible with CascableCore. */
+    CBLErrorCodeIncorrectCommunicationMode,
+    /** The operation failed because the result would be too large for the given context. For example, trying to
+        read an extremely large file into memory in its entirety. */
+    CBLErrorCodeObjectTooLarge
 } NS_SWIFT_NAME(CascableCoreErrorCode);
 
 /** NSError helpers for CascableCore. */

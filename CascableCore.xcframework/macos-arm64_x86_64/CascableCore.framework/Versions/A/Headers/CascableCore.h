@@ -26,7 +26,7 @@
 // Camera and Properties
 #import <CascableCore/CBLCamera.h>
 #import <CascableCore/CBLCamera+Diagnostics.h>
-#import <CascableCore/CBLCameraShotPreviewDelivery.h>
+#import <CascableCore/CBLCameraInitiatedTransfer.h>
 #import <CascableCore/CBLDeviceInfo.h>
 
 // Specific Structures

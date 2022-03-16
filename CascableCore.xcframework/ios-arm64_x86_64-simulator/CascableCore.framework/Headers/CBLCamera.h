@@ -14,7 +14,7 @@
 #import <CascableCore/CBLCameraDiscoveryService.h>
 #import <CascableCore/CBLFileStorage.h>
 #import <CascableCore/CBLFocusInfo.h>
-#import <CascableCore/CBLCameraShotPreviewDelivery.h>
+#import <CascableCore/CBLCameraInitiatedTransfer.h>
 #import <CascableCore/CBLCameraPropertyAPI.h>
 
 @protocol CBLFileStorage;
@@ -48,9 +48,11 @@ typedef void (^CBLCameraConnectionCompleteBlock)(NSError * _Nullable error, NSAr
 typedef void (^CBLCameraConnectionUserInterventionBlock)(BOOL shouldDisplayUserInterventionDialog, _Nullable dispatch_block_t cancelConnectionBlock) NS_SWIFT_NAME(ConnectionUserInterventionCallback);
 
 /**
-The block callback signature when a camera has a shot preview to deliver. See `CBLCameraShotPreviewDelivery` for details.
+The block callback signature when a camera has a new camera-initiated transfer request. See `CBLCameraInitiatedTransferRequest`
+for details.
  */
-typedef void (^CBLCameraShotPreviewAvailableBlock)(_Nonnull id <CBLCameraShotPreviewDelivery>) NS_SWIFT_NAME(ShotPreviewAvailableCallback);
+typedef void (^CBLCameraInitiatedTransferRequestHandler)(_Nonnull id <CBLCameraInitiatedTransferRequest>)
+    NS_SWIFT_NAME(CameraInitiatedTransferRequestHandler);
 
 /** Which advanced features are supported. */
 typedef NS_OPTIONS(NSUInteger, CBLCameraSupportedFunctionality) {
@@ -78,8 +80,8 @@ typedef NS_OPTIONS(NSUInteger, CBLCameraSupportedFunctionality) {
     CBLCameraSupportedFunctionalityPowerOffOnDisconnect = 1 << 13,
     /** The camera supports exposure control through aperture, shutter speed, ISO, and exposure compensation. */
     CBLCameraSupportedFunctionalityExposureControl = 1 << 14,
-    /** The camera supports shot preview callbacks. */
-    CBLCameraSupportedFunctionalityShotPreview = 1 << 15,
+    /** The camera supports camera-initiated transfer callbacks. */
+    CBLCameraSupportedFunctionalityCameraInitiatedTransfer = 1 << 15,
     /** The camera supports zooming live view via crop rectangles. */
     CBLCameraSupportedFunctionalityCroppableLiveView = 1 << 16,
     /** The camera supports video recording. */
@@ -672,22 +674,26 @@ NS_SWIFT_NAME(CameraFocusAndShutter)
                                     completionCallback:(nullable CBLErrorableOperationCallback)block;
 
 // -------------
-// @name Shot Previews
+// @name Camera-Initiated Transfer
 // -------------
 
-/** Adds an observer to be notified when a shot preview is available.
+/** Adds an observer to be notified when a camera-initiated transfer request is received.
 
- @note Only cameras that support the `CBLCameraSupportedFunctionalityShotPreview` functionality flag will trigger shot preview callbacks.
+ @note Only cameras that support the `CBLCameraSupportedFunctionalityCameraInitiatedTransfer` functionality flag
+       will trigger these callbacks.
  
- @param block The block to be called when a shot preview is available. Will be called on the main thread.
+ @param handler The handler to be called when a camera-initiated transfer request is received.
+                Will be called on the main thread.
  */
--(nonnull CBLCameraObserverToken *)addShotPreviewObserver:(nonnull CBLCameraShotPreviewAvailableBlock)block;
+-(nonnull CBLCameraObserverToken *)addCameraInitiatedTransferHandler:(nonnull CBLCameraInitiatedTransferRequestHandler)handler
+    NS_SWIFT_NAME(addCameraInitiatedTransferHandler(_:));
 
-/** Removes a previously registered shot preview observer.
+/** Removes a previously registered camera-initiated transfer handler.
 
- @param token The token for the observer block to be removed.
+ @param token The token for the hander to be removed.
  */
--(void)removeShotPreviewObserverWithToken:(nonnull CBLCameraObserverToken *)token NS_SWIFT_NAME(removeShotPreviewObserver(with:));
+-(void)removeCameraInitiatedTransferHandlerWithToken:(nonnull CBLCameraObserverToken *)token
+    NS_SWIFT_NAME(removeCameraInitiatedTransferHandler(with:));
 
 // -------------
 // @name Direct Focus Manipulation

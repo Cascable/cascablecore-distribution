@@ -69,6 +69,8 @@ typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
     CBLPropertyIdentifierExposureMeteringMode,
     /// Whether the camera is ready to take a shot. Common values will be of type `CBLPropertyCommonValueBoolean`.
     CBLPropertyIdentifierReadyForCapture,
+    /// The target destination for images when connected to a host like CascableCore. Common values will be of type `CBLPropertyCommonValueImageDestination`.
+    CBLPropertyIdentifierImageDestination,
     CBLPropertyIdentifierMax,
 
     CBLPropertyIdentifierUnknown = NSNotFound
@@ -97,9 +99,21 @@ typedef NS_OPTIONS(NSUInteger, CBLPropertyChangeType) {
     CBLPropertyChangeTypeValue = 1 << 0,
     /// If the option set contains this value, the pending value of the property changed.
     CBLPropertyChangeTypePendingValue = 1 << 1,
-    /// If the option set contains this value, the valid settable values of the property changed.
+    /// If the option set contains this value, the valid settable values and/or the valueSetType of the property changed.
     CBLPropertyChangeTypeValidSettableValues = 1 << 2
 } NS_SWIFT_NAME(PropertyChangeType);
+
+/// Option set identifying how the property can be changed.
+typedef NS_OPTIONS(NSInteger, CBLPropertyValueSetType) {
+    /// The property is read-only, information about the property has not yet been loaded, or the property isn't
+    /// supported by the camera.
+    CBLPropertyValueSetTypeNone = 0,
+    /// The property provides a list of values to be set via the `validSettableValues` property, and values can be
+    /// set with the `-setValue:…` methods.
+    CBLPropertyValueSetTypeEnumeration = 1 << 0,
+    /// The property's value can be increased or decreased with the `incrementValue:…` and `decrementValue:…` methods.
+    CBLPropertyValueSetTypeStepping = 1 << 1
+} NS_SWIFT_NAME(PropertyValueSetType);
 
 /// A property common value. Values will be from one of the appropriate common value enums as defined below.
 typedef NSInteger CBLPropertyCommonValue NS_SWIFT_NAME(PropertyCommonValue);
@@ -140,14 +154,11 @@ NS_SWIFT_NAME(CameraProperty)
 /// The property's display name.
 @property (nonatomic, readonly, copy, nullable) NSString *localizedDisplayName;
 
+/// Returns the property's set type. Observable with key-value observing.
+@property (nonatomic, readonly) CBLPropertyValueSetType valueSetType;
+
 /// The current value of the property. Observable with key-value observing.
 @property (nonatomic, readonly, nullable) id <CBLPropertyValue> currentValue;
-
-/// Returns the value currently in the process of being set, if any. Observable with key-value observing.
-@property (nonatomic, readonly, nullable) id <CBLPropertyValue> pendingValue;
-
-/// The values that are considered valid for this property. Observable with key-value observing.
-@property (nonatomic, readonly, copy, nullable) NSArray <id <CBLPropertyValue>> *validSettableValues;
 
 /// Add an observer to the property.
 ///
@@ -166,13 +177,26 @@ NS_SWIFT_NAME(CameraProperty)
 /// @param observer The observer to remove.
 -(void)removeObserver:(id <CBLCameraPropertyObservation> _Nonnull)observer;
 
+// -------------
+// @name Property Setting: CBLPropertyValueSetTypeEnumeration
+// -------------
+
+/// Returns the value currently in the process of being set, if any. Observable with key-value observing. Only valid
+/// if the property's `valueSetType` is `CBLPropertyValueSetTypeEnumeration`.
+@property (nonatomic, readonly, nullable) id <CBLPropertyValue> pendingValue;
+
+/// The values that are considered valid for this property. Observable with key-value observing. Only valid if the
+/// property's `valueSetType` is `CBLPropertyValueSetTypeEnumeration`.
+@property (nonatomic, readonly, copy, nullable) NSArray <id <CBLPropertyValue>> *validSettableValues;
+
 /// Attempt to find a valid settable value for the given common value.
 ///
 /// @param commonValue The common value to find a value for. The intent must match the property identifier.
 /// @return Returns a valid settable value for the given intent, or `nil` if no value matches.
 -(id <CBLPropertyValue> _Nullable)validValueMatchingCommonValue:(CBLPropertyCommonValue)commonValue;
 
-/// Attempt to set a new value for the property. The value must be in the `validSettableValues` property.
+/// Attempt to set a new value for the property. The value must be in the `validSettableValues` property. As such,
+/// this method is only useable if the property's `valueSetType` contains `CBLPropertyValueSetTypeEnumeration`.
 ///
 /// @param newValue The value to set.
 /// @param queue The queue on which to call the completion handler.
@@ -180,11 +204,64 @@ NS_SWIFT_NAME(CameraProperty)
 -(void)setValue:(id <CBLPropertyValue> _Nonnull)newValue completionQueue:(dispatch_queue_t _Nonnull)queue
     completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler;
 
-/// Attempt to set a new value for the property. The value must be in the `validSettableValues` property.
+/// Attempt to set a new value for the property. The value must be in the `validSettableValues` property. As such,
+/// this method is only useable if the property's `valueSetType` contains `CBLPropertyValueSetTypeEnumeration`.
 ///
 /// @param newValue The value to set.
 /// @param completionHandler The completion handler to call on the main queue when the operation succeeds or fails.
 -(void)setValue:(id <CBLPropertyValue> _Nonnull)newValue completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler;
+
+// -------------
+// @name Property Setting: CBLPropertyValueSetTypeStepping
+// -------------
+
+/// Increment the property's value by one step. Only useable if the property's `valueSetType` contains
+/// `CBLPropertyValueSetTypeStepping`.
+///
+/// @note If you're constructing a UI in a left-to-right locale (such as English) like this, this method should
+/// be called when the user taps on the right arrow: `[<] f/2.8 [>]`, or the down arrow: `[↑] f/2.8 [↓]`. In other
+/// words, this method is moving the value towards the end of a list of values.
+///
+/// @param completionHandler The completion handler to call on the main queue when the operation succeeds or fails.
+-(void)incrementValue:(CBLErrorableOperationCallback _Nonnull)completionHandler
+    NS_SWIFT_NAME(incrementValue(completionHandler:));
+
+/// Increment the property's value by one step. Only useable if the property's `valueSetType` contains
+/// `CBLPropertyValueSetTypeStepping`.
+///
+/// @note If you're constructing a UI in a left-to-right locale (such as English) like this, this method should
+/// be called when the user taps on the right arrow: `[<] f/2.8 [>]`, or the down arrow: `[↑] f/2.8 [↓]`. In other
+/// words, this method is moving the value towards the end of a list of values.
+///
+/// @param completionQueue The queue on which to call the completion handler.
+/// @param completionHandler The completion handler to call when the operation succeeds or fails.
+-(void)incrementValueWithCompletionQueue:(dispatch_queue_t _Nonnull)completionQueue
+                       completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler
+    NS_SWIFT_NAME(incrementValue(completionQueue:completionHandler:));
+
+/// Decrement the property's value by one step. Only useable if the property's `valueSetType` contains
+/// `CBLPropertyValueSetTypeStepping`.
+///
+/// @note If you're constructing a UI in a left-to-right locale (such as English) like this, this method should
+/// be called when the user taps on the left arrow: `[<] f/2.8 [>]`, or the up arrow: `[↑] f/2.8 [↓]`. In other
+/// words, this method is moving the value towards the beginning of a list of values.
+///
+/// @param completionHandler The completion handler to call on the main queue when the operation succeeds or fails.
+-(void)decrementValue:(CBLErrorableOperationCallback _Nonnull)completionHandler
+    NS_SWIFT_NAME(decrementValue(completionHandler:));
+
+/// Decrement the property's value by one step. Only useable if the property's `valueSetType` contains
+/// `CBLPropertyValueSetTypeStepping`.
+///
+/// @note If you're constructing a UI in a left-to-right locale (such as English) like this, this method should
+/// be called when the user taps on the left arrow: `[<] f/2.8 [>]`, or the up arrow: `[↑] f/2.8 [↓]`. In other
+/// words, this method is moving the value towards the beginning of a list of values.
+///
+/// @param completionQueue The queue on which to call the completion handler.
+/// @param completionHandler The completion handler to call when the operation succeeds or fails.
+-(void)decrementValueWithCompletionQueue:(dispatch_queue_t _Nonnull)completionQueue
+                       completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler
+    NS_SWIFT_NAME(decrementValue(completionQueue:completionHandler:));
 
 @end
 
@@ -410,3 +487,13 @@ typedef NS_ENUM(CBLPropertyCommonValue, CBLPropertyCommonValueDriveMode) {
     /// The value is equivalent to a timer drive mode, that takes a burst of shots at the end.
     CBLPropertyCommonValueDriveModeTimerWithContinuousShooting
 } NS_SWIFT_NAME(PropertyCommonValueDriveMode);
+
+/// Image destination setting common values.
+typedef NS_ENUM(CBLPropertyCommonValue, CBLPropertyCommonValueImageDestination) {
+    /// Images will be saved to the camera storage only.
+    CBLPropertyCommonValueImageDestinationCamera = 501,
+    /// Images will be saved to the connected host (i.e., the CascableCore client) and *not* camera storage.
+    CBLPropertyCommonValueImageDestinationConnectedHost = 502,
+    /// Images will be saved to both camera storage and the connected host (i.e., the CascableCore client).
+    CBLPropertyCommonValueImageDestinationCameraAndHost = 503
+} NS_SWIFT_NAME(PropertyCommonValueImageDestination);

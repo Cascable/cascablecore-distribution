@@ -1,3 +1,71 @@
+# CascableCore 12.0
+
+### Increased Compatibility with Sony Cameras
+
+CascableCore 12 greatly expands support for Sony cameras. USB remote control via **PC Remote (USB)** has been added for the following already-supported models:
+
+- α7 II, α7 III
+- α7R II, α7R III
+- α7S, α7S II
+- α6000, α6300, α6500
+
+In addition, USB remote control via **PC Remote (USB)** and network remote control via **Control with Smartphone**, and **PC Remote (WiFi)** (where available) has been added for these newly-supported models:
+
+- α7 IV
+- α7R IV
+- α7S III
+- α7C
+- α9, α9 II
+- α1
+- α6100, α6400, α6600
+- ZV-E10, ZV-1
+- RX100 V, RX100 VI, RX100 VII
+
+### Other Camera Compatibility
+
+- Added support for the OM System OM-1. This camera is identified as an Olympus camera (`CBLCameraFamilyOlympus`) by CascableCore.
+
+### New API: Camera-Initiated Transfer
+
+Shot preview (`id <CBLCameraShotPreviewDelivery>`) has been removed and replaced by a more powerful API that's more suited to the fact that original images can be transferred as well as previews.
+
+The new API uses the terminology of "camera-initiated transfers", and is designed to handle both previews of shots added to a memory card as well as the transfer of full image files — including cameras set to "Host Only" saving – i.e., the full image needs to be transferred to the host to avoid data loss. The new API can handle simple cases ("I just want a preview") and more complex ones ("I want a preview, and if the image would otherwise be lost, the original image too").
+
+This new API is defined in `CBLCameraInitiatedTransfer.h`. The flow is as follows:
+
+- The client receives a callback from the camera notifying it of a new camera-initiated transfer request. This will be an object of type `id <CBLCameraInitiatedTransferRequest>`, which contains some metadata about the incoming image, whether or not transferring it is required to avoid data loss (i.e., "Host Only" saving), and which representations the request contains.
+
+- The client then executes the request, informing it which representations are wanted. Current representations are "preview" and "original". The image transfer is then performed, optimising data transfer if possible (for instance, if the client only requests the preview representation of a RAW image, CascableCore will try to avoid transferring the entire RAW image).
+
+- When the request is complete, a result object of type `id <CBLCameraInitiatedTransferResult>` will be delivered. The result object contains additional metadata about the transferred image, as well as helpers for writing representations to disk, getting them as in-memory data, and getting preview images.
+
+Previous uses of the shot preview API can be migrated to camera-initiated transfers with no loss in functionality by transferring preview representations (`CBLCameraInitiatedTransferRepresentationPreview`), then using either `-generatePreviewImage:` or `-generateDataForRepresentation:completionHandler:` on the result.
+
+### New API: Stepped Properties
+
+CascableCore now supports "stepped properties" — properties that don't have a list of valid values, and are instead changed by adjusting the property "up" or "down" in steps. 
+
+This change has been implemented in a backwards-compatible way, and with no code changes stepped properties will appear read-only (i.e., will have an empty `validSettableValues` value).
+
+To implement stepped properties, see the new `valueSetType` property on `id <CBLCameraProperty>`. If that returns `CBLPropertyValueSetTypeStepping`, you can use the `incrementValue:` and `decrementValue:` methods to change that property's value.
+
+### Other API Changes
+
+- Added the `CBLPropertyIdentifierImageDestination` property. Values are typically along the lines of "Host", "Camera", and "Camera & Host". Common values are of type `CBLPropertyCommonValueImageDestination`.
+
+- Added the error code `CBLErrorCodeIncorrectCommunicationMode`, of which connections will fail on a Sony USB camera not in PC Remote mode.
+
+- Added the error code `CBLErrorCodeObjectTooLarge`, which can be returned when requesting very large assets as in-memory data objects from an `id <CBLCameraInitiatedTransferResult>` object.
+
+### Known Issues
+
+- There is no video timer on some Sony cameras when being controlled via USB. Video recording still works, if available.
+
+- Live view zoom is not yet implemented for newly-supported Sony cameras.
+
+- Extremely new cameras (such as the α7 IV) support touch AF via remote control, but this is not yet supported in CascableCore.
+
+
 # CascableCore 11.0
 
 ### Video Recording
