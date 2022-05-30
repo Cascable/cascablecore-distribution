@@ -266,7 +266,7 @@
 		</data>
 		<key>Headers/CBLCamera.h</key>
 		<data>
-		fndRlilD5hdyg4w3XAEVbvl6ILI=
+		69vVyanuiQn9IF3VB7X16v18spc=
 		</data>
 		<key>Headers/CBLCameraAEResult.h</key>
 		<data>
@@ -282,7 +282,7 @@
 		</data>
 		<key>Headers/CBLCameraInitiatedTransfer.h</key>
 		<data>
-		wnxsYfR2C4SLelFPtDLa3Tb21Xk=
+		oYs7iXrB75MspbbJU14HY/g8g4U=
 		</data>
 		<key>Headers/CBLCameraLiveViewAFArea.h</key>
 		<data>
@@ -314,7 +314,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		7A1dAzq2HXIf842pw1n58AVOeEU=
+		BjZpekqkXCegdzDAXDVUJOxJWaQ=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -334,7 +334,7 @@
 		</data>
 		<key>Headers/CBLFileSystemItem.h</key>
 		<data>
-		hBleWoCaRQ3m69TGyf3Aety9FJE=
+		UhtoZW7cDcEH6D1rGvuBdBWLstY=
 		</data>
 		<key>Headers/CBLFocusInfo.h</key>
 		<data>
@@ -374,7 +374,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		xVtMURnWnaQ9r+qqaaXx3XB1LpQ=
+		2iwwHXdT0ebrLq+WFE/yS5svv9c=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -386,7 +386,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		O+lX02XbURn+Gn/b62Zsvy2lJsk=
+		Q/PpJSnVxpU4M1KOzUGXJcOVpGw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1690,11 +1690,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fndRlilD5hdyg4w3XAEVbvl6ILI=
+			69vVyanuiQn9IF3VB7X16v18spc=
 			</data>
 			<key>hash2</key>
 			<data>
-			3ABXZAI4/OrAErEQe06+678g8rimu//1oONRkGUa9pc=
+			p7QhjuowkTPzdsLCdhlw8e1cA2ChI8+tJ1IILRma4jk=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraAEResult.h</key>
@@ -1734,11 +1734,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wnxsYfR2C4SLelFPtDLa3Tb21Xk=
+			oYs7iXrB75MspbbJU14HY/g8g4U=
 			</data>
 			<key>hash2</key>
 			<data>
-			3tCK9el5QFZODD8G6EoI8kNmZG+iL4N5x1VAtFXM5So=
+			0yI012Mva0I6DAfMivs34/7+phY3tteJkA0cgjyDKO8=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraLiveViewAFArea.h</key>
@@ -1822,11 +1822,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7A1dAzq2HXIf842pw1n58AVOeEU=
+			BjZpekqkXCegdzDAXDVUJOxJWaQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			qHePlMpTGdTpTgG2Jz17+Ir7rxpizik35coG5Dbh1Ms=
+			tOjkncQ5PHI0fY6xj8eiJ/uwoWwwVl6qFmLXCW6XqtI=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1877,11 +1877,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hBleWoCaRQ3m69TGyf3Aety9FJE=
+			UhtoZW7cDcEH6D1rGvuBdBWLstY=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ty8+kbM+mZScn1hj1kAx61wYbRhwaAw7afq1NQ6xRZM=
+			khI+wRgcUyHN0u5QGt/dkMfqMhcrR+OiyKkkNNmuFJw=
 			</data>
 		</dict>
 		<key>Headers/CBLFocusInfo.h</key>
@@ -1987,11 +1987,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xVtMURnWnaQ9r+qqaaXx3XB1LpQ=
+			2iwwHXdT0ebrLq+WFE/yS5svv9c=
 			</data>
 			<key>hash2</key>
 			<data>
-			8okfvgZrukq/Db5QYQxy/AdqiCLT8tiBGdz5LPB4yCg=
+			v9ZGUuId8T2UvudVoRiukCbGjqfxdEPiITnrh1tv9Bg=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>

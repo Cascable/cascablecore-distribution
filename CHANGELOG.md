@@ -1,3 +1,20 @@
+# CascableCore 12.1
+
+### API Changes
+
+- Methods for streaming files (`-streamItemWithPreflightBlock:…`) now return an `NSProgress` object for easier progress reporting.
+
+### Documentation Changes
+
+- Clarified that file streaming (`-streamItemWithPreflightBlock:…`, etc) can, in some circumstances, deliver empty data objects during streaming. This is not an error — client code should handle this circumstance correctly and return the desired streaming instruction.
+
+### Bug Fixes
+
+- Fixed "Delegate Updated" messages flooding the system console when connected to a camera via USB.
+
+- Fixed a crash when serialising certain exposure property values from some cameras via `NSCoding`. [CORE-378]
+
+
 # CascableCore 12.0
 
 ### Increased Compatibility with Sony Cameras

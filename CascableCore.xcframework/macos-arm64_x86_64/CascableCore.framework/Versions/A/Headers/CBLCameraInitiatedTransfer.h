@@ -29,6 +29,8 @@ typedef NS_ENUM(NSInteger, CBLCameraInitiatedTransferState) {
 
 @protocol CBLCameraInitiatedTransferResult;
 
+/// The block callback signature for handling the result of a request to execute a camera-initiated transfer, containing
+/// either the result of the transfer, or an error describing the failure.
 typedef void (^CBLCameraInitiatedTransferCompletionHandler)(id <CBLCameraInitiatedTransferResult> _Nullable, NSError * _Nullable)
     NS_SWIFT_NAME(CameraInitiatedTransferCompletionHandler);
 
