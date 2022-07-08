@@ -194,7 +194,7 @@
 		</data>
 		<key>Base.lproj/SonyPTPExposureModes.strings</key>
 		<data>
-		z9GfTFNF0TBbxqdr3z8EIzB2O9s=
+		y7iFxQQrkmWWeF6USqpU94x8B40=
 		</data>
 		<key>Base.lproj/SonyPTPExposureValues.strings</key>
 		<data>
@@ -214,7 +214,7 @@
 		</data>
 		<key>Base.lproj/SonyPTPImageFormats.strings</key>
 		<data>
-		5HDjIiNvaBZYMUA76s0mRK69I88=
+		G9k5cCnpbbG++HSBJqjs7SFw24w=
 		</data>
 		<key>Base.lproj/SonyPTPMeteringModes.strings</key>
 		<data>
@@ -314,7 +314,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		BjZpekqkXCegdzDAXDVUJOxJWaQ=
+		BjKCk+kB36X3Bbw3WSPh2SIPDmg=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -386,7 +386,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Q/PpJSnVxpU4M1KOzUGXJcOVpGw=
+		K+IhCq9mJersQ+/LRreuMxRuNdc=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -819,7 +819,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8+m00FXN5M/P6cl6DJsUEjLtpys=
+			RYVvTTq/ZOAsZcwDTTeYvtEfhO4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -864,7 +864,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5HDjIiNvaBZYMUA76s0mRK69I88=
+			G9k5cCnpbbG++HSBJqjs7SFw24w=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1492,11 +1492,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			z9GfTFNF0TBbxqdr3z8EIzB2O9s=
+			y7iFxQQrkmWWeF6USqpU94x8B40=
 			</data>
 			<key>hash2</key>
 			<data>
-			45qnngR/VW6fIggWIuJIaDzJaW6Mh8pIwvRfUWHE0tc=
+			fIPTpYTMDVsF2ASPaekRT6+/ks/Ngxx0SzjXtYhg++c=
 			</data>
 		</dict>
 		<key>Base.lproj/SonyPTPExposureValues.strings</key>
@@ -1547,11 +1547,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5HDjIiNvaBZYMUA76s0mRK69I88=
+			G9k5cCnpbbG++HSBJqjs7SFw24w=
 			</data>
 			<key>hash2</key>
 			<data>
-			rhE3vuihrCIvGIDKlTfhiFMSsOhs5kNO7Gj1O1X6fXo=
+			nEnRHgx6dnhzl1Y2sUEXzGtIjU1GavzbUPfG/wGBzv4=
 			</data>
 		</dict>
 		<key>Base.lproj/SonyPTPMeteringModes.strings</key>
@@ -1822,11 +1822,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BjZpekqkXCegdzDAXDVUJOxJWaQ=
+			BjKCk+kB36X3Bbw3WSPh2SIPDmg=
 			</data>
 			<key>hash2</key>
 			<data>
-			tOjkncQ5PHI0fY6xj8eiJ/uwoWwwVl6qFmLXCW6XqtI=
+			gTMgrXzUqpdS8KQ25Me0LoITUMqKiakRafugOLydOjk=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -2642,11 +2642,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8+m00FXN5M/P6cl6DJsUEjLtpys=
+			RYVvTTq/ZOAsZcwDTTeYvtEfhO4=
 			</data>
 			<key>hash2</key>
 			<data>
-			g4kDhzMQhsT8Vglaa18h4m324G8zG+3dFTY6nNvgj/M=
+			Y+1GBdoS0hdTTEnWDfHyoNElZkvZo+0tExaZXagWCUE=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2707,11 +2707,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			5HDjIiNvaBZYMUA76s0mRK69I88=
+			G9k5cCnpbbG++HSBJqjs7SFw24w=
 			</data>
 			<key>hash2</key>
 			<data>
-			rhE3vuihrCIvGIDKlTfhiFMSsOhs5kNO7Gj1O1X6fXo=
+			nEnRHgx6dnhzl1Y2sUEXzGtIjU1GavzbUPfG/wGBzv4=
 			</data>
 			<key>optional</key>
 			<true/>

@@ -1,3 +1,18 @@
+# CascableCore 12.2
+
+### Improvements
+
+- Improved support for HEIF images when shooting with Sony cameras. This includes correct property display values when the camera is in HEIF mode, and camera-initiated transfers from these cameras may now report an original representation UTI of `public.heic` and a suggested filename extension of `HEIC`.
+
+    **Note:** Sony cameras use the extension `.HIF` for HEIF images, which isn't recognised by macOS or iOS as a valid extension for these files — it should be `.HEIC`. CascableCore currently exposes these filenames as-is — for example, a camera-initiated transfer of a HEIF image from a Sony camera would report a suggested filename extension of `HEIC`, but the `fileNameHint` will report a value like `DSCXXXXX.HIF`.
+
+### Bug Fixes
+
+- Fixed the reported display values of some shutter speeds faster than 1/8000 via an updated StopKit.
+
+- Fixed a bug that would cause camera-initiated transfers to fail from the Sony α1 when connected via USB. [CORE-376]
+
+
 # CascableCore 12.1
 
 ### API Changes
