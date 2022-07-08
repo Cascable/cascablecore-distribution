@@ -120,9 +120,7 @@ typedef NS_ENUM(NSUInteger, CBLCameraConnectionWarningType) {
     /** The camera supports clock sync, but attempting to do so during connection failed. */
     CBLCameraConnectionWarningTypeClockSyncFailed,
     /** The camera doesn't support clock sync. */
-    CBLCameraConnectionWarningTypeClockSyncNotSupported,
-    /** The connection succeeded, but more features will be available if the camera's firmware is updated. */
-    CBLCameraConnectionWarningTypeFirmwareUpdateRecommended
+    CBLCameraConnectionWarningTypeClockSyncNotSupported
 } NS_SWIFT_NAME(ConnectionWarningType);
 
 /** Non-fatal warning categories that can occur during connection. */

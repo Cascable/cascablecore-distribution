@@ -30,6 +30,11 @@
 - Fixed a crash when serialising certain exposure property values from some cameras via `NSCoding`. [CORE-378]
 
 
+# CascableCore 12.0.1
+
+This release backports the bug fixes from 12.1 and 12.2 without including the API changes from 12.1.
+
+
 # CascableCore 12.0
 
 ### Increased Compatibility with Sony Cameras
