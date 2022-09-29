@@ -79,6 +79,10 @@ typedef _Nullable id (^CBLFileStreamPreflight)(id <CBLFileSystemItem> _Nonnull i
  The callback block signature for data chunk delivery when streaming files from the camera. This will be called multiple
  times in sequence once an operation starts.
 
+ IMPORTANT: In some circumstances, this delivery block may be invoked with an empty/zero-length chunk of data. Make
+ sure your code handles this case properly. Such a delivery should not be treated as an error, and you should return
+ the desired instruction.
+
  @param item The filesystem item being streamed.
  @param chunk The chunk of file data delivered from the camera.
  @param context The context object returned from the streaming preflight block.
@@ -230,15 +234,20 @@ NS_SWIFT_NAME(FileSystemItem)
 
  @param chunkDelivery This block will be called zero or more times in succession to deliver the file's
  data. The `context` parameter of this block will contain the value returned in the `preflight` block.
+ In some circumstances, this block may be invoked with an empty/zero-length chunk of data. Make sure
+ your code handles this case properly. Such a delivery should not be treated as an error, and you
+ should return the desired instruction as normal.
 
  @param complete Block to be called exactly once after the last data chunk has been delivered (if any).
  If the stream failed or was cancelled, the `error` parameter will be non-nil and you should delete
  anything written to disk as the file won't be complete. The `context` parameter of this block will
  contain the value returned in the `preflight` block.
+
+ @returns Returns a progress object that can be use to track the progress of the transfer.
  */
--(void)streamItemWithPreflightBlock:(nonnull CBLFileStreamPreflight)preflight
-                 chunkDeliveryBlock:(nonnull CBLFileStreamChunkDelivery)chunkDelivery
-                      completeBlock:(nonnull CBLFileStreamCompletion)complete;
+-(NSProgress * _Nonnull)streamItemWithPreflightBlock:(nonnull CBLFileStreamPreflight)preflight
+                                  chunkDeliveryBlock:(nonnull CBLFileStreamChunkDelivery)chunkDelivery
+                                       completeBlock:(nonnull CBLFileStreamCompletion)complete;
 
 /**
  Stream a file from the device.
@@ -254,6 +263,9 @@ NS_SWIFT_NAME(FileSystemItem)
 
  @param chunkDelivery This block will be called zero or more times in succession to deliver the file's
  data. The `context` parameter of this block will contain the value returned in the `preflight` block.
+ In some circumstances, this block may be invoked with an empty/zero-length chunk of data. Make sure
+ your code handles this case properly. Such a delivery should not be treated as an error, and you
+ should return the desired instruction as normal.
 
  @param deliveryQueue The queue on which to execute the delivery block.
 
@@ -263,12 +275,14 @@ NS_SWIFT_NAME(FileSystemItem)
  contain the value returned in the `preflight` block.
 
  @param completeQueue The queue on which to execute the completion block.
+
+ @returns Returns a progress object that can be use to track the progress of the transfer.
  */
--(void)streamItemWithPreflightBlock:(nonnull CBLFileStreamPreflight)preflight
-                     preflightQueue:(nonnull dispatch_queue_t)preflightQueue
-                 chunkDeliveryBlock:(nonnull CBLFileStreamChunkDelivery)chunkDelivery
-                      deliveryQueue:(nonnull dispatch_queue_t)deliveryQueue
-                      completeBlock:(nonnull CBLFileStreamCompletion)complete
-                      completeQueue:(nonnull dispatch_queue_t)completeQueue;
+-(NSProgress * _Nonnull)streamItemWithPreflightBlock:(nonnull CBLFileStreamPreflight)preflight
+                                      preflightQueue:(nonnull dispatch_queue_t)preflightQueue
+                                  chunkDeliveryBlock:(nonnull CBLFileStreamChunkDelivery)chunkDelivery
+                                       deliveryQueue:(nonnull dispatch_queue_t)deliveryQueue
+                                       completeBlock:(nonnull CBLFileStreamCompletion)complete
+                                       completeQueue:(nonnull dispatch_queue_t)completeQueue;
 
 @end

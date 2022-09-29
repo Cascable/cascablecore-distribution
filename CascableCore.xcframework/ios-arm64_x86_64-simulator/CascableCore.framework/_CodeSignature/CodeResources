@@ -266,7 +266,7 @@
 		</data>
 		<key>Headers/CBLCamera.h</key>
 		<data>
-		fndRlilD5hdyg4w3XAEVbvl6ILI=
+		69vVyanuiQn9IF3VB7X16v18spc=
 		</data>
 		<key>Headers/CBLCameraAEResult.h</key>
 		<data>
@@ -314,7 +314,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		hm7lym7d6NXYM17C1vpDjNHZtkY=
+		gxaNgGujjSy9btaHfOYjnHk09dQ=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -334,7 +334,7 @@
 		</data>
 		<key>Headers/CBLFileSystemItem.h</key>
 		<data>
-		hBleWoCaRQ3m69TGyf3Aety9FJE=
+		UhtoZW7cDcEH6D1rGvuBdBWLstY=
 		</data>
 		<key>Headers/CBLFocusInfo.h</key>
 		<data>
@@ -374,7 +374,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		2iwwHXdT0ebrLq+WFE/yS5svv9c=
+		U6//wuO4U2xcxgrId9/saXG/6Lk=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -386,11 +386,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		TVn5RlfKpnTokkc3LvNGEznacbc=
+		Dz6NKseDfNGG7jtd/FeZy+N3LmU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		/RuKMIubhESTd3Ok+B9WEEgMQU0=
+		X6ob5jfmsGADJEFeD507GwmcKag=
 		</data>
 		<key>de.lproj/CanonAEModes.strings</key>
 		<dict>
@@ -973,10 +973,6 @@
 	<dict>
 		<key>Base.lproj/CanonAEModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			f+cBAiZ9tUjNFYXoT5XXp2WUbJU=
-			</data>
 			<key>hash2</key>
 			<data>
 			DeUN030IckBok4/5SXdEfk518DjGJko7ed3ihN4TjT0=
@@ -984,10 +980,6 @@
 		</dict>
 		<key>Base.lproj/CanonApertureValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			lTAAIOjR3EJJ9+RpDpKSoscGtso=
-			</data>
 			<key>hash2</key>
 			<data>
 			d+yi2zrhknPuktUEqA/rsxG0ZGSOwimFWd9svA7Bvoc=
@@ -995,10 +987,6 @@
 		</dict>
 		<key>Base.lproj/CanonBatteryPowers.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			a/Djed+4jmbPwxbbkg/iri6Ufhg=
-			</data>
 			<key>hash2</key>
 			<data>
 			fSnx4LdJE5qkvNdvYscAHnhiWp90YeEbN4X8Jd7vEL0=
@@ -1006,10 +994,6 @@
 		</dict>
 		<key>Base.lproj/CanonBatterySelects.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			6+t1r9XIC62acOSQ1w3t3pVZl/0=
-			</data>
 			<key>hash2</key>
 			<data>
 			8RMK4ZpCT4xfOvske/49W+7y8nQau6IWTmxkm2MGGSs=
@@ -1017,10 +1001,6 @@
 		</dict>
 		<key>Base.lproj/CanonBracketModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			CuWaTebW9tDAhMV2UgQrVP7LF4o=
-			</data>
 			<key>hash2</key>
 			<data>
 			BoixAyHiKHO6tZbhC5YcWkxWdhwY3hYnqIP/s0Ohzmo=
@@ -1028,10 +1008,6 @@
 		</dict>
 		<key>Base.lproj/CanonDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			XkTZ6Zts6fYxyfoHOVIH85Wnu/k=
-			</data>
 			<key>hash2</key>
 			<data>
 			sjfk/3boA8w5Jk6K53qvrTAQziePrhBMfZwDtkrAReg=
@@ -1039,10 +1015,6 @@
 		</dict>
 		<key>Base.lproj/CanonExposureCompensationValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			VbBhNnR1Xct357zSvvL0LJwg3TU=
-			</data>
 			<key>hash2</key>
 			<data>
 			hj1R/dbl+IDCuCLIBwvaoZzzjK2qcyX90dflpxq+L+I=
@@ -1050,10 +1022,6 @@
 		</dict>
 		<key>Base.lproj/CanonFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			M/uHw/rOv+LYd1NZe99fsdvzUJA=
-			</data>
 			<key>hash2</key>
 			<data>
 			6jCKywRToPHzd7ApLYFv8R12paZbsdSxYGw5w5u/p7Y=
@@ -1061,10 +1029,6 @@
 		</dict>
 		<key>Base.lproj/CanonISOValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			vWFECHNVXam+0SHqhoTY1llbftE=
-			</data>
 			<key>hash2</key>
 			<data>
 			tTCkEtSU9ZtP1PBAvUn0DOZHyXBmXh9fwFmfEM1kHx4=
@@ -1072,10 +1036,6 @@
 		</dict>
 		<key>Base.lproj/CanonLVAFSystems.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			9btxOxLgC1ywrhbtKhf26ICaipc=
-			</data>
 			<key>hash2</key>
 			<data>
 			Di8THPJEmAj+8ydpBaFiS1ks/kLQ1wFLhRUysOwI1tU=
@@ -1083,10 +1043,6 @@
 		</dict>
 		<key>Base.lproj/CanonLensStatuses.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			rOzt1T6kmHVIzhvrvbQrcCMjjK0=
-			</data>
 			<key>hash2</key>
 			<data>
 			Mj2l5FuGrpjZEdw1JJEnw1zYpmlheCh7A/m9dRLkmqY=
@@ -1094,10 +1050,6 @@
 		</dict>
 		<key>Base.lproj/CanonMirrorLockupEnabledStates.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HsXzR5yJXDg8IUyS6i3l/Js1mXw=
-			</data>
 			<key>hash2</key>
 			<data>
 			lA4m3sNDbVUlp+adKB64LguS+uAXXHPZQLDfZIOiBrg=
@@ -1105,10 +1057,6 @@
 		</dict>
 		<key>Base.lproj/CanonMirrorLockupStages.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			wr5Yu8+QGLyOuYYJmFv5owFx7yk=
-			</data>
 			<key>hash2</key>
 			<data>
 			9QP6WiEVyccRz64f42/2im8TSJsWeLdbfJvnv0XpH+A=
@@ -1116,10 +1064,6 @@
 		</dict>
 		<key>Base.lproj/CanonShortPropertyCodes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			rojGekklaYCrvKmYkqBLg84RjFw=
-			</data>
 			<key>hash2</key>
 			<data>
 			z21QUUZ+R0jOQscDV82AT4HFA6aoieccZ5LpCQ6yG+w=
@@ -1127,10 +1071,6 @@
 		</dict>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			GAz5YfCbbpYHiRecQ2hHYHvvcHA=
-			</data>
 			<key>hash2</key>
 			<data>
 			h1OymVlNgpk4I87qep3xSjjMWtMEPWkBTA6y8JJ6T8w=
@@ -1138,10 +1078,6 @@
 		</dict>
 		<key>Base.lproj/CanonWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			a5eCG3Oo1sKscTEL7GAMw5Y00Zg=
-			</data>
 			<key>hash2</key>
 			<data>
 			/uuO14cErWUlalJuiFn0xJzB27VzTHGH+NoxrSjPwEE=
@@ -1149,10 +1085,6 @@
 		</dict>
 		<key>Base.lproj/FujiColorTones.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			AJ0CKyGZfSBRFl+UAf5l0OZgPho=
-			</data>
 			<key>hash2</key>
 			<data>
 			2V46vn3QjuPt9PPI/Lc8oGu12XBJ1GTn306K0/WrRa0=
@@ -1160,10 +1092,6 @@
 		</dict>
 		<key>Base.lproj/FujiProperties.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			LlClnyGNAbAU+hIGrpnjgrP7ShI=
-			</data>
 			<key>hash2</key>
 			<data>
 			Mgyb8h/UCIR6rWtcjfsMHbbQ33+KMmhw9vVb71VRokA=
@@ -1171,10 +1099,6 @@
 		</dict>
 		<key>Base.lproj/FujiWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			9LBzWwgR3Oy4dcgCqfGLFIzD1pk=
-			</data>
 			<key>hash2</key>
 			<data>
 			L2TgZnEVeDRHddDOWjGRbIEqxS1jLhx1O0wrD/k90xg=
@@ -1182,10 +1106,6 @@
 		</dict>
 		<key>Base.lproj/NikonAEModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			gTFh0UdOpG2dHmgDIiNBkumA58I=
-			</data>
 			<key>hash2</key>
 			<data>
 			u4MllougM78+DC9sF1NU18ox5ZmBfSEPne2z9uy8xw4=
@@ -1193,10 +1113,6 @@
 		</dict>
 		<key>Base.lproj/NikonAFSystems.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			+qjh0b3/unX3t+J+TRSGxeds7CQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			uvHsPt+adyOIcZAOXAbE0/xGPtFuFTxsacQR3P1G5Bk=
@@ -1204,10 +1120,6 @@
 		</dict>
 		<key>Base.lproj/NikonBatteryLevels.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			M6lxN76jOQV4JJuiQoU26trdCOo=
-			</data>
 			<key>hash2</key>
 			<data>
 			Sei0ynTuAJi2rFXUNs2JLUV0rhZMJZmk8d1yPUDn3SU=
@@ -1215,10 +1127,6 @@
 		</dict>
 		<key>Base.lproj/NikonDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			NdsQ/0WS5hJbtC0gnKwB02P1TA4=
-			</data>
 			<key>hash2</key>
 			<data>
 			LAH/hOef82e6unkgVBKI+FMI/Q/AEI4ARbciMG84MpY=
@@ -1226,10 +1134,6 @@
 		</dict>
 		<key>Base.lproj/NikonEVFOutputs.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			6KRLYlD5Xm/l8XXpCedOyQdXFOY=
-			</data>
 			<key>hash2</key>
 			<data>
 			SD7MqQ4mnquarcLunSnqgjG93fDGLppRQJzoOHaAapw=
@@ -1237,10 +1141,6 @@
 		</dict>
 		<key>Base.lproj/NikonFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			LW6JUUk7jyqLWvnBfYxVMq56JMs=
-			</data>
 			<key>hash2</key>
 			<data>
 			baRjF/OUECPw9hwg1dOSWRCkRTwvcefAt4KuYjShSTs=
@@ -1248,10 +1148,6 @@
 		</dict>
 		<key>Base.lproj/NikonImageQualities.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			7jAHlEFpqXTMl4/Gfp1IctP3/Zg=
-			</data>
 			<key>hash2</key>
 			<data>
 			Nf6WJdSH5BW3xjc702GCn2lpsWVZvQlddS5xUt8UaIU=
@@ -1259,10 +1155,6 @@
 		</dict>
 		<key>Base.lproj/NikonPowerSources.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			T4p4tDn7AHazsCUpRl5XB2mb2sQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			R9rigtFC9ErUUh37ibpZNhB8qL/Uo/3tcAid4fUI63Y=
@@ -1270,10 +1162,6 @@
 		</dict>
 		<key>Base.lproj/NikonWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			8hP7gJ1powaDoG+xHo4414FHcMo=
-			</data>
 			<key>hash2</key>
 			<data>
 			9PcSYHOWPoWW5Ep7U49P/t489RQ/cqFNZDztBSzASZs=
@@ -1281,10 +1169,6 @@
 		</dict>
 		<key>Base.lproj/OlympusAEModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			qCQH3N8EWzHiAl6+8IPfWGtAPrI=
-			</data>
 			<key>hash2</key>
 			<data>
 			OcR8AR0pqgXaPxlhiUeT0A8rPosvdA8ALt/2hwFDCAE=
@@ -1292,10 +1176,6 @@
 		</dict>
 		<key>Base.lproj/OlympusArtFilters.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			mMKng6Zo9KgcG/8uF05+w88PUIw=
-			</data>
 			<key>hash2</key>
 			<data>
 			gUNR+qn4TLuPg9Pv/SI2iZ2sgp+xQKVAtozm8WVu3tM=
@@ -1303,10 +1183,6 @@
 		</dict>
 		<key>Base.lproj/OlympusBatteryLevels.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			M6lxN76jOQV4JJuiQoU26trdCOo=
-			</data>
 			<key>hash2</key>
 			<data>
 			Sei0ynTuAJi2rFXUNs2JLUV0rhZMJZmk8d1yPUDn3SU=
@@ -1314,10 +1190,6 @@
 		</dict>
 		<key>Base.lproj/OlympusColorTones.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			EtTun2y2He2p2e6egW9e7jDNGlE=
-			</data>
 			<key>hash2</key>
 			<data>
 			QXZbAhY97UYNQ1tV6RjpQcj/ekPadPSTVEgVR3dmGII=
@@ -1325,10 +1197,6 @@
 		</dict>
 		<key>Base.lproj/OlympusDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			GCHhSzIj/pmioedsap+/zLGtl6k=
-			</data>
 			<key>hash2</key>
 			<data>
 			ir00MjPPTyZybA2zdYBPgwYz5wM1D6ar4/jvbDiZM8E=
@@ -1336,10 +1204,6 @@
 		</dict>
 		<key>Base.lproj/OlympusEVFOutputs.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			6KRLYlD5Xm/l8XXpCedOyQdXFOY=
-			</data>
 			<key>hash2</key>
 			<data>
 			SD7MqQ4mnquarcLunSnqgjG93fDGLppRQJzoOHaAapw=
@@ -1347,10 +1211,6 @@
 		</dict>
 		<key>Base.lproj/OlympusFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			DWoTUswS5Wx3WHuvNFCSGitKALk=
-			</data>
 			<key>hash2</key>
 			<data>
 			ovCTayRkkgZDe7QG0uBD43/vuLbMDQiNdp3n+VF3K6s=
@@ -1358,10 +1218,6 @@
 		</dict>
 		<key>Base.lproj/OlympusLensStatuses.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			u4AMOvJ6r62406825TbNsJ7dG+g=
-			</data>
 			<key>hash2</key>
 			<data>
 			WxPcVqlDGDIHqLBdZzHB0a7eVODf0AN68UpasKqwcQ8=
@@ -1369,10 +1225,6 @@
 		</dict>
 		<key>Base.lproj/OlympusNoiseReductions.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			z37IebA9I52z5+pHzDqL6GpQ3VY=
-			</data>
 			<key>hash2</key>
 			<data>
 			iL0a7X0zeHFVcsRu5YR14i/IGMlPLLM8VU07dsyMD5k=
@@ -1380,10 +1232,6 @@
 		</dict>
 		<key>Base.lproj/OlympusPowerSources.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			zi699MC8Na0GBtIL6ebWTBtCSYA=
-			</data>
 			<key>hash2</key>
 			<data>
 			t/885FoGxGCDYFQicDPIP0H/hOwf5nMoPBNrWDefRng=
@@ -1391,10 +1239,6 @@
 		</dict>
 		<key>Base.lproj/OlympusTeleconverters.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Zmcoky+RsnMfWmE/RLLtUcBtY3U=
-			</data>
 			<key>hash2</key>
 			<data>
 			V0d6hYt7A/Fq+RGq6remyF0EHTTwrM42ZxoZ5rCcHbo=
@@ -1402,10 +1246,6 @@
 		</dict>
 		<key>Base.lproj/OlympusWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			GJdVdwWYCALy3OjvH44tezuQy00=
-			</data>
 			<key>hash2</key>
 			<data>
 			ToEpGq419w7MMnY4rZozGdY+pXqBWVsE8NS8e0pVvJI=
@@ -1413,10 +1253,6 @@
 		</dict>
 		<key>Base.lproj/PanasonicAutoExposureModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			wXgPBpuvbxMZ9O09wHWFs1QfXHg=
-			</data>
 			<key>hash2</key>
 			<data>
 			oBIgkbeyJcoJiPNkUDpXtDxiKhiSo811xrx25gpv8Ko=
@@ -1424,10 +1260,6 @@
 		</dict>
 		<key>Base.lproj/PanasonicFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			CzOCG5RxwQW+AI4O01r3//cUTj0=
-			</data>
 			<key>hash2</key>
 			<data>
 			4PhQMtcADPUx+iAyver9xh5afTWStWNcgRgpiUzIErY=
@@ -1435,10 +1267,6 @@
 		</dict>
 		<key>Base.lproj/SonyAutoExposureModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			XyDz1RFmBWxN54JlCVXb7ZsGI+s=
-			</data>
 			<key>hash2</key>
 			<data>
 			DuCJMGeaCmK1PKhbvXahhoi/CP/QedxskcjVcFmrL3Y=
@@ -1446,10 +1274,6 @@
 		</dict>
 		<key>Base.lproj/SonyDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			857+gM287y/LZXQ1UBYJO6iIRvw=
-			</data>
 			<key>hash2</key>
 			<data>
 			Ofkend1n4MYoIEW2N2c6GIdO87Dl7uNh3BXqrQ9RduI=
@@ -1457,10 +1281,6 @@
 		</dict>
 		<key>Base.lproj/SonyFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			QhDeedVH+069txpFPxF9BDXJO6A=
-			</data>
 			<key>hash2</key>
 			<data>
 			NTWbIdBQijl5pCBm6nQlzBHXu9gXwViIjRPRbpBxjXA=
@@ -1468,10 +1288,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPCompressionSettings.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Xt9CTOH/zLwWYwITrLgvSNnIgNE=
-			</data>
 			<key>hash2</key>
 			<data>
 			zWiOl8SAm+gUU9SBSouXewfunJim1sCvMxfv8N/3AYE=
@@ -1479,10 +1295,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			SEJTtjgnckuqbAehlApCfD/aG4Y=
-			</data>
 			<key>hash2</key>
 			<data>
 			4Pzz6OICR0JUX6GZpXjtHgrUHtg6dCdfpzrBb1dvRSM=
@@ -1490,10 +1302,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPExposureModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			y7iFxQQrkmWWeF6USqpU94x8B40=
-			</data>
 			<key>hash2</key>
 			<data>
 			fIPTpYTMDVsF2ASPaekRT6+/ks/Ngxx0SzjXtYhg++c=
@@ -1501,10 +1309,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPExposureValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			mr5PTi/teTI/X60v6RGeKnAu4N8=
-			</data>
 			<key>hash2</key>
 			<data>
 			0IKA0nQwJb7AMUYtSJxVJcQO6UvXMSmh8myLqgWGuH0=
@@ -1512,10 +1316,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPFocusAreas.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			C5xFx+bijHQY8faNznB/FUKut54=
-			</data>
 			<key>hash2</key>
 			<data>
 			MtRDMfny3dCvbGO297FaA5Qu7nlYoUWz+QWCfFfugAQ=
@@ -1523,10 +1323,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			iXMsxxTpWwNnKxpgVJtw5ThhJZw=
-			</data>
 			<key>hash2</key>
 			<data>
 			z5A0dshlRU84KClyXSTSS2A409dAY56s9vGqQtvcSow=
@@ -1534,10 +1330,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPImageDestinations.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			3Z1/cb7zvtI6FcuR07ufJSFsaIw=
-			</data>
 			<key>hash2</key>
 			<data>
 			MZL3ubyJ58L5ycncyvvxuDcpfeLUAkBhTvU7uUzA6Xc=
@@ -1545,10 +1337,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPImageFormats.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			G9k5cCnpbbG++HSBJqjs7SFw24w=
-			</data>
 			<key>hash2</key>
 			<data>
 			nEnRHgx6dnhzl1Y2sUEXzGtIjU1GavzbUPfG/wGBzv4=
@@ -1556,10 +1344,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPMeteringModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			aGWH1Pvse3GPd/SUkMaJXxgkYjc=
-			</data>
 			<key>hash2</key>
 			<data>
 			Pe6H2m7ZX+CyMyUQ4CP7J9iIBuCKVaUMBe4BTsW+ZHA=
@@ -1567,10 +1351,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPPictureEffects.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			2sEKo2wshNpan+nGVhhLsjW0Wnc=
-			</data>
 			<key>hash2</key>
 			<data>
 			w2WdsZefSqQcJqf/3wOjowpHUKNwuEnEE9FUOkv2RRk=
@@ -1578,10 +1358,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPPowerSources.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			n9yZ04jga1szQsVqhNWK+JwJ+xc=
-			</data>
 			<key>hash2</key>
 			<data>
 			Vyo9ajmYXzCm6J3oMVAJkW8BrQtRDV0c3Dy/0LjEPNU=
@@ -1589,10 +1365,6 @@
 		</dict>
 		<key>Base.lproj/SonyPTPWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			DK+AYCsSp5ljkeaGJPuJUMYVp7w=
-			</data>
 			<key>hash2</key>
 			<data>
 			qUqxLFsIEcP+LyJOpkVFaAFnoCJBqJqlQ4okM3YkFnQ=
@@ -1600,10 +1372,6 @@
 		</dict>
 		<key>Base.lproj/SonyProperties.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			PowBvj1qkj2ScBen30SjHINBRwA=
-			</data>
 			<key>hash2</key>
 			<data>
 			pispmLKJ9iehgdxe554nPB7rj3F82qIMrDh3tO6S3Ao=
@@ -1611,10 +1379,6 @@
 		</dict>
 		<key>Base.lproj/SonyWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			/3QW9qS19DuvBVPXmhc0QaB1+wQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			O4cvY10/D+xzSMXxkARiB2bN03uthM2u/JJKhq6rWEA=
@@ -1622,10 +1386,6 @@
 		</dict>
 		<key>Base.lproj/UniversalExposureCompensations.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			E14oXyC7/OzezEzCGWOf06dhEiI=
-			</data>
 			<key>hash2</key>
 			<data>
 			RNLlis7eB6YZdLd0sQ6BLaU9x/8H8rDUZfuN5Rj3U1Y=
@@ -1633,10 +1393,6 @@
 		</dict>
 		<key>Base.lproj/UniversalISOValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ftEcuheIQQtfUCc3SpoVB2NOvwk=
-			</data>
 			<key>hash2</key>
 			<data>
 			bxf/gB9QBe4U1oVEAQQYIvzf5KOa4dz9LoK3GoDwJ08=
@@ -1644,10 +1400,6 @@
 		</dict>
 		<key>Base.lproj/UniversalLightMeterStatuses.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			URGV7AAlh/XsOb2MCkGnGJ46+mg=
-			</data>
 			<key>hash2</key>
 			<data>
 			CeNPY5MBQaWvebZhHHDH+9/PTkkFKZJgn2ehYjXzSJk=
@@ -1655,10 +1407,6 @@
 		</dict>
 		<key>Base.lproj/UniversalProperties.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			+ciXqMW016n1KEGYKzoFImJxUrI=
-			</data>
 			<key>hash2</key>
 			<data>
 			DZfIcND0f6dAlxLydTJhnsTZGamtxHLETj+2zPaH7kU=
@@ -1666,10 +1414,6 @@
 		</dict>
 		<key>Base.lproj/UniversalShutterSpeeds.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			YGreI0lgg6luUDWcNTTLO6PIqOs=
-			</data>
 			<key>hash2</key>
 			<data>
 			BE5LzVZmxqmEBeRAOX+RuL6NyKQjmtrFA0Rwy+owLlU=
@@ -1677,10 +1421,6 @@
 		</dict>
 		<key>Headers/CBLCamera+Diagnostics.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			n6Vyy9vLJQu8Kfs5aeqPN+EqiyM=
-			</data>
 			<key>hash2</key>
 			<data>
 			skrWer2QMGTvYLehIwdYUioCw2zHLk5edwby5wpNJU8=
@@ -1688,21 +1428,13 @@
 		</dict>
 		<key>Headers/CBLCamera.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			fndRlilD5hdyg4w3XAEVbvl6ILI=
-			</data>
 			<key>hash2</key>
 			<data>
-			3ABXZAI4/OrAErEQe06+678g8rimu//1oONRkGUa9pc=
+			p7QhjuowkTPzdsLCdhlw8e1cA2ChI8+tJ1IILRma4jk=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraAEResult.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HUyemiS6yAydH7nI5pJ08Yn5Fiw=
-			</data>
 			<key>hash2</key>
 			<data>
 			gVUMcwZmn9rWsr5lJcMt88UvyTwtWjR1gFvCE/xR1ME=
@@ -1710,10 +1442,6 @@
 		</dict>
 		<key>Headers/CBLCameraDiscovery.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			jbpwHeIRJV1OFbumLvENJJe3mxA=
-			</data>
 			<key>hash2</key>
 			<data>
 			mjXxQT75kkdZ/96JxrIInha5U2+EApDuDbPg7CD0Ogo=
@@ -1721,10 +1449,6 @@
 		</dict>
 		<key>Headers/CBLCameraDiscoveryService.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Ew8ckXLfjA8H757RmnabYpq50Mw=
-			</data>
 			<key>hash2</key>
 			<data>
 			mSXuJVQiNlN4XTCeekP1iJJF6IMrDxfU91dB40FIF0E=
@@ -1732,10 +1456,6 @@
 		</dict>
 		<key>Headers/CBLCameraInitiatedTransfer.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			oYs7iXrB75MspbbJU14HY/g8g4U=
-			</data>
 			<key>hash2</key>
 			<data>
 			0yI012Mva0I6DAfMivs34/7+phY3tteJkA0cgjyDKO8=
@@ -1743,10 +1463,6 @@
 		</dict>
 		<key>Headers/CBLCameraLiveViewAFArea.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			fKkVwJI6mst7a+w08IvuMB9SIEI=
-			</data>
 			<key>hash2</key>
 			<data>
 			K3t+oUQs7O9Sm7ePz/uCaGGgYlp268R9MTQ3cXHDJ+A=
@@ -1754,10 +1470,6 @@
 		</dict>
 		<key>Headers/CBLCameraLiveViewFrame.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			jit+fGS6mYLMPTnXZQu9XSorWm0=
-			</data>
 			<key>hash2</key>
 			<data>
 			TMvktZXfgRuNHcE9eyjp5JqG1enwKiaxh7tX3QhDOvk=
@@ -1765,10 +1477,6 @@
 		</dict>
 		<key>Headers/CBLCameraManualDiscovery.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			pucZ7Rt9wl59W7x77a91BaX9qJQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			9KMnlJcMiliiiHdp8hj5uz3I9rwgFIYhGpQ/y/DVx+c=
@@ -1776,10 +1484,6 @@
 		</dict>
 		<key>Headers/CBLCameraPropertyAPI.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			UDhL2uwrM75cc9DcvYtYwLbRhh0=
-			</data>
 			<key>hash2</key>
 			<data>
 			mu1Mz8uqT/SZgVRllsGB2S0dunETjGCyUmwhMMGpOyI=
@@ -1787,10 +1491,6 @@
 		</dict>
 		<key>Headers/CBLCameraQRDecoding.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			bMMnPN7v1N8wDXpCxF6V2SzbU78=
-			</data>
 			<key>hash2</key>
 			<data>
 			Vz+Ch8TWTRvihs78aR+valIC5lC/yf99SEdd+hnM+zw=
@@ -1798,10 +1498,6 @@
 		</dict>
 		<key>Headers/CBLConstants.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			vvxeGa0tEZ2qYgceBzXAYPzKDy0=
-			</data>
 			<key>hash2</key>
 			<data>
 			0q1rhwrfqaiR3SLco8fsppFLD2xc/+6eMAZ6enzSLFg=
@@ -1809,10 +1505,6 @@
 		</dict>
 		<key>Headers/CBLCorePluginEntryPoint.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			oOW7mulz4vkqqDntyCfdFKhZia4=
-			</data>
 			<key>hash2</key>
 			<data>
 			/g2RkP8Yzwwmx46CCiEDfea6lwNzsS1V2+iBsGDOIwk=
@@ -1820,21 +1512,13 @@
 		</dict>
 		<key>Headers/CBLCoreVersions.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			hm7lym7d6NXYM17C1vpDjNHZtkY=
-			</data>
 			<key>hash2</key>
 			<data>
-			tCUQVIeVvbQwqJiOzjtgtn1bISDuGXnh4bLRnDlGaaE=
+			q9AjdrMGaqrUg+zKO+ncJXdrAKxOCw7qrMnCfoSeN0I=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			eYs5R1Fr/nUwzamQXzczic39XC4=
-			</data>
 			<key>hash2</key>
 			<data>
 			FWxCgj58e4UMhw1uPfQue3ijnGF/ftHvLYpzfWde9B0=
@@ -1842,10 +1526,6 @@
 		</dict>
 		<key>Headers/CBLExifHelpers.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			x4Hrj+RNOkdHKhzo3rmXHx3L60Q=
-			</data>
 			<key>hash2</key>
 			<data>
 			eyKPxe9eXI64khMGd7waUhl3YsRBsFChXPjacgqsLaE=
@@ -1853,10 +1533,6 @@
 		</dict>
 		<key>Headers/CBLFileStorage.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			N3IEloq8oQ7ypABcEGhY3M+Hn+I=
-			</data>
 			<key>hash2</key>
 			<data>
 			wRQkCz/Yd0BrX+EtQwV6sL9fvhG+a07jnr2gpxTHrFM=
@@ -1864,10 +1540,6 @@
 		</dict>
 		<key>Headers/CBLFileSystemFolderItem.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			JpRo9KN0SYqSS/wsTPtErYo/ikM=
-			</data>
 			<key>hash2</key>
 			<data>
 			rfTqgjaKb45SEYc6WY1Mso68zxmxv3gM6bR1gQPO9sU=
@@ -1875,21 +1547,13 @@
 		</dict>
 		<key>Headers/CBLFileSystemItem.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			hBleWoCaRQ3m69TGyf3Aety9FJE=
-			</data>
 			<key>hash2</key>
 			<data>
-			Ty8+kbM+mZScn1hj1kAx61wYbRhwaAw7afq1NQ6xRZM=
+			khI+wRgcUyHN0u5QGt/dkMfqMhcrR+OiyKkkNNmuFJw=
 			</data>
 		</dict>
 		<key>Headers/CBLFocusInfo.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			td7UdtqdayQeeh6NfaleosxIlrQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			1ddSZ9/eEzN9Jq5sdaNoNxNiDMcOnm4TfryOPCXrD7w=
@@ -1897,10 +1561,6 @@
 		</dict>
 		<key>Headers/CBLFocusPoint.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			SY7SxdsMf36FMvPHkd4uL6c9fWQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			ByT6WvkKkFlCq0zo/0sfzwSkIURhjIMfYLH4t7qZoVI=
@@ -1908,10 +1568,6 @@
 		</dict>
 		<key>Headers/CBLImageManipulationHelpers.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			tIuU4FhVReT8AsGKowKpvJIb+F0=
-			</data>
 			<key>hash2</key>
 			<data>
 			E9SqRz7m7t9bZ7igMZyCRhTbfC2rYhPFYnVu1mWvzO8=
@@ -1919,10 +1575,6 @@
 		</dict>
 		<key>Headers/CBLImageMetadataWritingHelpers.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			WTh4hTOYrxHraA1h8WUC90TzaHI=
-			</data>
 			<key>hash2</key>
 			<data>
 			kBqeCgrYp0B2WnIqlDo0mC6BsHwdBy5FzDFTGmYXEps=
@@ -1930,10 +1582,6 @@
 		</dict>
 		<key>Headers/CBLLicenseVerification.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			X08T8gLvWlO3z6uRJav1HmkC55g=
-			</data>
 			<key>hash2</key>
 			<data>
 			IHnngnVCSYINNVt3SIxfkyIUWnVhr1uohQiY+siGL5g=
@@ -1941,10 +1589,6 @@
 		</dict>
 		<key>Headers/CBLNetworkConfigurationHelper.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			MRd/NSO+9QfWkZWQc6DvK7XBZi4=
-			</data>
 			<key>hash2</key>
 			<data>
 			wUuVNpIDxbDaPDJnshq447mnFnLB6lQi83VzSTH9+SQ=
@@ -1952,10 +1596,6 @@
 		</dict>
 		<key>Headers/CBLPlatformDefines.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			vhlnHf+vGAWZc9dx4LJecSPceLk=
-			</data>
 			<key>hash2</key>
 			<data>
 			XuPhLtq8PPo0gHFc/heuew5155NZQSD6jxw3ZmN5QFg=
@@ -1963,10 +1603,6 @@
 		</dict>
 		<key>Headers/CBLRAWImageDescription.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			4W1Akjl5xBSSZfTYB79ZbTG3PzI=
-			</data>
 			<key>hash2</key>
 			<data>
 			qRPfzRhdqCqeo+Pub0axpXR8O+6sxlhFpWl9A77MGw4=
@@ -1974,10 +1610,6 @@
 		</dict>
 		<key>Headers/CBLReachabilityConstants.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			dmnAmzZd/Ey6hZ74uRkJgmxl32A=
-			</data>
 			<key>hash2</key>
 			<data>
 			Rp73FzoifTkkYypwTnFOJf1ZkAFlXNX6PDaPH8HTdVE=
@@ -1985,21 +1617,13 @@
 		</dict>
 		<key>Headers/CascableCore-Swift.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			2iwwHXdT0ebrLq+WFE/yS5svv9c=
-			</data>
 			<key>hash2</key>
 			<data>
-			v9ZGUuId8T2UvudVoRiukCbGjqfxdEPiITnrh1tv9Bg=
+			B/jiWPrEmEntJ4q5zxzsVQ8cCIGI9+pCycWYloD06D4=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			xYge3uP85KnZBwk9otWx6t0YvQ8=
-			</data>
 			<key>hash2</key>
 			<data>
 			EGvKF4on9QdRq8L8LMkSo1HCPghQWV+CVxaS2xJakSU=
@@ -2007,10 +1631,6 @@
 		</dict>
 		<key>Headers/NSError+CBLExtensions.h</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			xJoFVy1jnvZTHFYTMQPhkvkTJ6o=
-			</data>
 			<key>hash2</key>
 			<data>
 			JPeEbIW2iFGyMaBLB3VqnVFWDWmpj0UH4u9b/vpiplw=
@@ -2018,21 +1638,13 @@
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			/RuKMIubhESTd3Ok+B9WEEgMQU0=
-			</data>
 			<key>hash2</key>
 			<data>
-			y5i6zSB3RF6BtuvDiVehlsmNxpzxDkiTYDvS2AcOsQg=
+			8C5Vg6LelbNY0eUAeCxD7SVxcOmTFP8tAWi2JMdDCjU=
 			</data>
 		</dict>
 		<key>de.lproj/CanonAEModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			eEHX98mzKyI7/CYdIDOy7rECW8c=
-			</data>
 			<key>hash2</key>
 			<data>
 			txgf7TEUvzvFwtLUi98gEav7J7tqRQo4upDoeFDAfvU=
@@ -2042,10 +1654,6 @@
 		</dict>
 		<key>de.lproj/CanonApertureValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			lTAAIOjR3EJJ9+RpDpKSoscGtso=
-			</data>
 			<key>hash2</key>
 			<data>
 			d+yi2zrhknPuktUEqA/rsxG0ZGSOwimFWd9svA7Bvoc=
@@ -2055,10 +1663,6 @@
 		</dict>
 		<key>de.lproj/CanonBatteryPowers.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			a/Djed+4jmbPwxbbkg/iri6Ufhg=
-			</data>
 			<key>hash2</key>
 			<data>
 			fSnx4LdJE5qkvNdvYscAHnhiWp90YeEbN4X8Jd7vEL0=
@@ -2068,10 +1672,6 @@
 		</dict>
 		<key>de.lproj/CanonBatterySelects.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			3ZqfFIRjem6Kc4AxalodqWz6E6o=
-			</data>
 			<key>hash2</key>
 			<data>
 			fGDFvsPu0TY+QBqUMwLPFUNDCHScqSBtIfuhtnc+XXs=
@@ -2081,10 +1681,6 @@
 		</dict>
 		<key>de.lproj/CanonBracketModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			OKC5eVfAhhgR3PYWZtZyE8RqumQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			jl1O345CqeFFSDSB/8yHb31wzboF5KruIGDeT+Jxz78=
@@ -2094,10 +1690,6 @@
 		</dict>
 		<key>de.lproj/CanonDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			sY1fybwOPe9aQBRQEix9Mbdo4Uw=
-			</data>
 			<key>hash2</key>
 			<data>
 			QlAN8e553nfmNo8CPzAhLEp1M1Y75eaBAcgaR/H5SZM=
@@ -2107,10 +1699,6 @@
 		</dict>
 		<key>de.lproj/CanonExposureCompensationValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			VbBhNnR1Xct357zSvvL0LJwg3TU=
-			</data>
 			<key>hash2</key>
 			<data>
 			hj1R/dbl+IDCuCLIBwvaoZzzjK2qcyX90dflpxq+L+I=
@@ -2120,10 +1708,6 @@
 		</dict>
 		<key>de.lproj/CanonFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			M/uHw/rOv+LYd1NZe99fsdvzUJA=
-			</data>
 			<key>hash2</key>
 			<data>
 			6jCKywRToPHzd7ApLYFv8R12paZbsdSxYGw5w5u/p7Y=
@@ -2133,10 +1717,6 @@
 		</dict>
 		<key>de.lproj/CanonISOValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HpEo2+PDym79skeP4s9jULXRK1U=
-			</data>
 			<key>hash2</key>
 			<data>
 			H49/xn2fztYfEvI2g5p+6Tos4y4rE+Wl2w6hg/Tsr0g=
@@ -2146,10 +1726,6 @@
 		</dict>
 		<key>de.lproj/CanonLVAFSystems.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			tluLZyXeFYquZ7xpLRqJZ6OQA1s=
-			</data>
 			<key>hash2</key>
 			<data>
 			ye3JsgkKQYqLTR2njewkju1HtY1cNJPXvHYs9aEjivI=
@@ -2159,10 +1735,6 @@
 		</dict>
 		<key>de.lproj/CanonLensStatuses.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			vJbLtLbQfL2zzNdA+9u1bFFBcXA=
-			</data>
 			<key>hash2</key>
 			<data>
 			4T35twg4h7bPxWYbd8xGgB6Q7FjksKaobrAL5ZeSGXA=
@@ -2172,10 +1744,6 @@
 		</dict>
 		<key>de.lproj/CanonMirrorLockupEnabledStates.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ii8zN5JcxMBlPCpvn/cV/70ovB8=
-			</data>
 			<key>hash2</key>
 			<data>
 			q/tgxLCfRXWJwWasxaqTL1508wGCGaVRdTh5r80FNPs=
@@ -2185,10 +1753,6 @@
 		</dict>
 		<key>de.lproj/CanonMirrorLockupStages.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			bHAK5uo2ChpYpHFqNoGgtSCW1dg=
-			</data>
 			<key>hash2</key>
 			<data>
 			8h2NqiUNtQhbHcsmwwRRwVdXAXTGqzO42+g7CQGQCXg=
@@ -2198,10 +1762,6 @@
 		</dict>
 		<key>de.lproj/CanonShortPropertyCodes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			G6i265WzqIix2dq0PIhNQOoePus=
-			</data>
 			<key>hash2</key>
 			<data>
 			9opCnEzVjm4h+aVl5JHYRRjkGDoxDCJgZW+Hrj3Re/I=
@@ -2211,10 +1771,6 @@
 		</dict>
 		<key>de.lproj/CanonShutterSpeeds.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			GAz5YfCbbpYHiRecQ2hHYHvvcHA=
-			</data>
 			<key>hash2</key>
 			<data>
 			h1OymVlNgpk4I87qep3xSjjMWtMEPWkBTA6y8JJ6T8w=
@@ -2224,10 +1780,6 @@
 		</dict>
 		<key>de.lproj/CanonWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			H8GNaEUHSQPUNMSOnqbiImFLIck=
-			</data>
 			<key>hash2</key>
 			<data>
 			PgFwXlLK+gU1kgLPaFI3QVZ6SXwCgKDps8LfL0ez1Gs=
@@ -2237,10 +1789,6 @@
 		</dict>
 		<key>de.lproj/FujiColorTones.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			7c14bUk54Q4OjLgSS0q4RGZf3N8=
-			</data>
 			<key>hash2</key>
 			<data>
 			lKI518W0NSEAhU6jQezW4pfFbPEtpighLKkLx2CPQn8=
@@ -2250,10 +1798,6 @@
 		</dict>
 		<key>de.lproj/FujiProperties.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			HUHE2sBq8MULvgHWAlTTjFaaLCw=
-			</data>
 			<key>hash2</key>
 			<data>
 			qn8Xjy6e0QLDfon6hc9DVYjAj0mrPvdV3Md02T0rT7M=
@@ -2263,10 +1807,6 @@
 		</dict>
 		<key>de.lproj/FujiWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			FXD/Zum+wBE4mbgUWq7715xctS0=
-			</data>
 			<key>hash2</key>
 			<data>
 			WKsP1BFG6i452Fx2iODBFjjzz4WT9p5U+TELGBcdX8o=
@@ -2276,10 +1816,6 @@
 		</dict>
 		<key>de.lproj/NikonAEModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			4RZBKVD9HydfL+xLZAqYuxf2+ec=
-			</data>
 			<key>hash2</key>
 			<data>
 			m89RZ/wZ0Zag/JsgQ61BDzB4mpbPaDLw6p4bEPLL7zQ=
@@ -2289,10 +1825,6 @@
 		</dict>
 		<key>de.lproj/NikonAFSystems.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			+qjh0b3/unX3t+J+TRSGxeds7CQ=
-			</data>
 			<key>hash2</key>
 			<data>
 			uvHsPt+adyOIcZAOXAbE0/xGPtFuFTxsacQR3P1G5Bk=
@@ -2302,10 +1834,6 @@
 		</dict>
 		<key>de.lproj/NikonBatteryLevels.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			M6lxN76jOQV4JJuiQoU26trdCOo=
-			</data>
 			<key>hash2</key>
 			<data>
 			Sei0ynTuAJi2rFXUNs2JLUV0rhZMJZmk8d1yPUDn3SU=
@@ -2315,10 +1843,6 @@
 		</dict>
 		<key>de.lproj/NikonDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			U48FjfkNpn2DxhfXT7hkUXLcqwg=
-			</data>
 			<key>hash2</key>
 			<data>
 			gD5v3bXVud/DAM9Jd6EUgIxxBYOnWdKXgEz31Gv11Hw=
@@ -2328,10 +1852,6 @@
 		</dict>
 		<key>de.lproj/NikonEVFOutputs.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			JqjNBj74i9J5KouGwffTFcISRLo=
-			</data>
 			<key>hash2</key>
 			<data>
 			beTJ1XYdRC0VxwPx+BPB3WkUcUcBUJA/u6vh5wr9zB4=
@@ -2341,10 +1861,6 @@
 		</dict>
 		<key>de.lproj/NikonFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			LW6JUUk7jyqLWvnBfYxVMq56JMs=
-			</data>
 			<key>hash2</key>
 			<data>
 			baRjF/OUECPw9hwg1dOSWRCkRTwvcefAt4KuYjShSTs=
@@ -2354,10 +1870,6 @@
 		</dict>
 		<key>de.lproj/NikonImageQualities.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			chyNm6SwzAS7oi0lFMoS/+Vwvyw=
-			</data>
 			<key>hash2</key>
 			<data>
 			kDlwmqErC5FlZywgDMc9Lj3WSU+iLmHW9pQDQuygUNI=
@@ -2367,10 +1879,6 @@
 		</dict>
 		<key>de.lproj/NikonPowerSources.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			d9pg1Y0KJj8Yg+CXLxi1c8Bb6R8=
-			</data>
 			<key>hash2</key>
 			<data>
 			3t6SBq4ilDz1iPfJXo92/E+53Px9ik+bL0V3uhSW/Yw=
@@ -2380,10 +1888,6 @@
 		</dict>
 		<key>de.lproj/NikonWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			I73PSY6RRcQgjbvS5zEdd4RQGC8=
-			</data>
 			<key>hash2</key>
 			<data>
 			+YJrnEG0S9CXtX9B9OnSnkn64ySF7oKaEtsTU66FGEo=
@@ -2393,10 +1897,6 @@
 		</dict>
 		<key>de.lproj/OlympusAEModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			UZ+xGmrBpl/+zfESkqAL36FMMbU=
-			</data>
 			<key>hash2</key>
 			<data>
 			/UREVtg3UTlKqCECpDfEb9fhQK80JO+C3iUUb45olv8=
@@ -2406,10 +1906,6 @@
 		</dict>
 		<key>de.lproj/OlympusArtFilters.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			8v2QjcQd6Sew4kt4iUMmEuG3gco=
-			</data>
 			<key>hash2</key>
 			<data>
 			MptScsNbYUkzhIWYHyafb+7vJW3MUHqJnG4Y4dvIqEw=
@@ -2419,10 +1915,6 @@
 		</dict>
 		<key>de.lproj/OlympusBatteryLevels.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			M6lxN76jOQV4JJuiQoU26trdCOo=
-			</data>
 			<key>hash2</key>
 			<data>
 			Sei0ynTuAJi2rFXUNs2JLUV0rhZMJZmk8d1yPUDn3SU=
@@ -2432,10 +1924,6 @@
 		</dict>
 		<key>de.lproj/OlympusColorTones.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			2TVnjBj0VDeKgUKwqmYQ/C/SkeM=
-			</data>
 			<key>hash2</key>
 			<data>
 			2WBA8JFTW1Ibu23iOuwUwXXKh54/I1+C4lRLQxcn7Do=
@@ -2445,10 +1933,6 @@
 		</dict>
 		<key>de.lproj/OlympusDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			OF+ZyyvRIHZCzbv9k0mVeAxhMRE=
-			</data>
 			<key>hash2</key>
 			<data>
 			ksyXb8pu9uoKmVH7Vp376O6WsuvImgnpmQ2CnL/X0/c=
@@ -2458,10 +1942,6 @@
 		</dict>
 		<key>de.lproj/OlympusEVFOutputs.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			JqjNBj74i9J5KouGwffTFcISRLo=
-			</data>
 			<key>hash2</key>
 			<data>
 			beTJ1XYdRC0VxwPx+BPB3WkUcUcBUJA/u6vh5wr9zB4=
@@ -2471,10 +1951,6 @@
 		</dict>
 		<key>de.lproj/OlympusFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			DWoTUswS5Wx3WHuvNFCSGitKALk=
-			</data>
 			<key>hash2</key>
 			<data>
 			ovCTayRkkgZDe7QG0uBD43/vuLbMDQiNdp3n+VF3K6s=
@@ -2484,10 +1960,6 @@
 		</dict>
 		<key>de.lproj/OlympusLensStatuses.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			SUdyUzgkg3zbC0rew7Fhm8Qz/O8=
-			</data>
 			<key>hash2</key>
 			<data>
 			DzsD+zg9WPfYC04Gx8mNYVCRhnS5eGJfx4AWFMnEBvw=
@@ -2497,10 +1969,6 @@
 		</dict>
 		<key>de.lproj/OlympusNoiseReductions.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			q2Yo2bZoFDTUW5YCGVpcAtB0tzU=
-			</data>
 			<key>hash2</key>
 			<data>
 			OY6Xi+zIIqYPn/0GiLv3XBYu6DMwEDUwEbpJAQ/ExuE=
@@ -2510,10 +1978,6 @@
 		</dict>
 		<key>de.lproj/OlympusPowerSources.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			bOPsS8ljAA6McerOlfu82XKynfs=
-			</data>
 			<key>hash2</key>
 			<data>
 			ZUMgscZNNwrhZQ0ifp7RxWGz8wUoY/eo80eSOz+kBGM=
@@ -2523,10 +1987,6 @@
 		</dict>
 		<key>de.lproj/OlympusTeleconverters.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			U+Eyu3TfGiQRX927etpv+0t2TK4=
-			</data>
 			<key>hash2</key>
 			<data>
 			LJQe09Mlw43xOrqldswzc7KJrN3JL33JkA0GBR+fyUE=
@@ -2536,10 +1996,6 @@
 		</dict>
 		<key>de.lproj/OlympusWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			7Ds/KYQGCUEGvEhBJ/wyWYLHPqw=
-			</data>
 			<key>hash2</key>
 			<data>
 			H1GCDw8yQX+tSmV97MG1RcNXGBbpx45Gur+mPP1ipyM=
@@ -2549,10 +2005,6 @@
 		</dict>
 		<key>de.lproj/PanasonicAutoExposureModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			U80d/NLC0H62+ngrx14EETymrJc=
-			</data>
 			<key>hash2</key>
 			<data>
 			iIj9QFbIK4zsVzGJIEnxGC1t+nMZo3zqBlDUZv2sObE=
@@ -2562,10 +2014,6 @@
 		</dict>
 		<key>de.lproj/PanasonicFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			CzOCG5RxwQW+AI4O01r3//cUTj0=
-			</data>
 			<key>hash2</key>
 			<data>
 			4PhQMtcADPUx+iAyver9xh5afTWStWNcgRgpiUzIErY=
@@ -2575,10 +2023,6 @@
 		</dict>
 		<key>de.lproj/SonyAutoExposureModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			/m6DDnSZKLoxTT7Mi1WAB+vqfqM=
-			</data>
 			<key>hash2</key>
 			<data>
 			333CCVP9nzSquDhz34Q10SH3gjr9Sl68+AxpMYHKEA0=
@@ -2588,10 +2032,6 @@
 		</dict>
 		<key>de.lproj/SonyDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			5V3VW1jVBMN1m5gVBHTxy3npr1U=
-			</data>
 			<key>hash2</key>
 			<data>
 			Iuznv6jOqkoQIv/qNOLT9Knq5WpXxtbRRu6xmyzejBo=
@@ -2601,10 +2041,6 @@
 		</dict>
 		<key>de.lproj/SonyFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			i+n7UZe9/pFgUDNQZsiTaY1O7FU=
-			</data>
 			<key>hash2</key>
 			<data>
 			BDolyioU+p5YpihWzE7zMQDIjMiwTjnM3REpnTQ+2/U=
@@ -2614,10 +2050,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPCompressionSettings.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			xsxzC+xaJ+r0fer+ezvC9RmORSw=
-			</data>
 			<key>hash2</key>
 			<data>
 			ffHlkg9PGsuJjBcQsHg6BAtzjFYoiRgeewJQzbYrkuQ=
@@ -2627,10 +2059,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPDriveModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			3c490Iy/dXmTy7nuDKKE5N8A2QY=
-			</data>
 			<key>hash2</key>
 			<data>
 			DuZ/0hSKx9vkNKLbwYHaYX9gk13ow9V30IWRj13CTfc=
@@ -2640,10 +2068,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPExposureModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			RYVvTTq/ZOAsZcwDTTeYvtEfhO4=
-			</data>
 			<key>hash2</key>
 			<data>
 			Y+1GBdoS0hdTTEnWDfHyoNElZkvZo+0tExaZXagWCUE=
@@ -2653,10 +2077,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPExposureValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			3F90QyXPFqv+tsbxb2XUl29PhZE=
-			</data>
 			<key>hash2</key>
 			<data>
 			plRLRbiUrr7ZoWEUuTarxDDSnazu6tPrQKlPXZQQCVg=
@@ -2666,10 +2086,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPFocusAreas.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			93V9I5/x1wKMi/NSgSl4EvIOR8E=
-			</data>
 			<key>hash2</key>
 			<data>
 			CpIipfrEMvYBJpr0P4h6Dmll+58pFclAfwCTWjFOe38=
@@ -2679,10 +2095,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPFocusModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			X4HjW0rcIkTWPytAw23q3oZsQB0=
-			</data>
 			<key>hash2</key>
 			<data>
 			nRwjjgPtPqZ0oyXX/PhiXJ8Bwfdt3R7imxALitQwrtU=
@@ -2692,10 +2104,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPImageDestinations.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			pjHq/zL8x2jbTujkzHT4PAl7fP0=
-			</data>
 			<key>hash2</key>
 			<data>
 			qs2AsDLU8+2aBVgC2FL+/yFHBHpdWrB3zz6+7cgqf/k=
@@ -2705,10 +2113,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPImageFormats.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			G9k5cCnpbbG++HSBJqjs7SFw24w=
-			</data>
 			<key>hash2</key>
 			<data>
 			nEnRHgx6dnhzl1Y2sUEXzGtIjU1GavzbUPfG/wGBzv4=
@@ -2718,10 +2122,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPMeteringModes.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			5xqFoMlOuzfdWgpTRpGQ0zjwofs=
-			</data>
 			<key>hash2</key>
 			<data>
 			Z0hNczleJ5re9D+/XOT/NbPIzUZ14THuGhmGtViwdJ4=
@@ -2731,10 +2131,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPPictureEffects.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			5SbA4CzF32IkxjwKlDq15uuiDIk=
-			</data>
 			<key>hash2</key>
 			<data>
 			2QemL4COsJ3PdlU0XC+X9DVgGldCTygFWNiwtxNBLTc=
@@ -2744,10 +2140,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPPowerSources.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			8wDf3ZvAk4l98O7XmV9HiJdXink=
-			</data>
 			<key>hash2</key>
 			<data>
 			eYP75Ji9JQYB0XiCcTvIBUk7SJbsUKmYbUoNtxKcd80=
@@ -2757,10 +2149,6 @@
 		</dict>
 		<key>de.lproj/SonyPTPWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			yuzMMx5Bf4xn2k1rNiEJmmF5mOc=
-			</data>
 			<key>hash2</key>
 			<data>
 			X3CL5bOsox9AMl5VYTvt2jA/F0m3mrqKv5eHvVZYcgY=
@@ -2770,10 +2158,6 @@
 		</dict>
 		<key>de.lproj/SonyProperties.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			SV8s/w67qj3gdtGvHLdF92ezNo0=
-			</data>
 			<key>hash2</key>
 			<data>
 			HgBUzp6WAqcYCdQsZJscqm86BLVFQJmdDmpPTtqyQYs=
@@ -2783,10 +2167,6 @@
 		</dict>
 		<key>de.lproj/SonyWhiteBalances.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Fu51Bx8Bec3yX+ChuVSd9jBG8dI=
-			</data>
 			<key>hash2</key>
 			<data>
 			9A4nuOZnH5cKgJAB30R3SGXeZRHAbWHwzJeztonJ4U0=
@@ -2796,10 +2176,6 @@
 		</dict>
 		<key>de.lproj/UniversalExposureCompensations.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			E14oXyC7/OzezEzCGWOf06dhEiI=
-			</data>
 			<key>hash2</key>
 			<data>
 			RNLlis7eB6YZdLd0sQ6BLaU9x/8H8rDUZfuN5Rj3U1Y=
@@ -2809,10 +2185,6 @@
 		</dict>
 		<key>de.lproj/UniversalISOValues.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			ftEcuheIQQtfUCc3SpoVB2NOvwk=
-			</data>
 			<key>hash2</key>
 			<data>
 			bxf/gB9QBe4U1oVEAQQYIvzf5KOa4dz9LoK3GoDwJ08=
@@ -2822,10 +2194,6 @@
 		</dict>
 		<key>de.lproj/UniversalLightMeterStatuses.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			Vv/Oowkvwy4aZFhUdm2Wxo4vqlg=
-			</data>
 			<key>hash2</key>
 			<data>
 			PWbz1+p5L5dGGHLnj0q2iqD6kYGmza+hUp76jWoxJe8=
@@ -2835,10 +2203,6 @@
 		</dict>
 		<key>de.lproj/UniversalProperties.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			TNZOkpd5cK8oUhjDnZRIPTmjR5w=
-			</data>
 			<key>hash2</key>
 			<data>
 			5BpKgA+tGuNNwmkcvwVigp5g8CV6AaCEMd2tgduWyw4=
@@ -2848,10 +2212,6 @@
 		</dict>
 		<key>de.lproj/UniversalShutterSpeeds.strings</key>
 		<dict>
-			<key>hash</key>
-			<data>
-			PczCQt+VUVHAo4ukeHRLLl4j7UU=
-			</data>
 			<key>hash2</key>
 			<data>
 			clqns9G5PuC0q7KQwB+WtVxnWi6k5P1cvxhnjSUIRI0=

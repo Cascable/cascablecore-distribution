@@ -1,3 +1,14 @@
+# CascableCore 12.2.1
+
+### Camera Compatibility
+
+- Added support for the Canon EOS R7 and EOS R10. [CORE-392]
+
+### Other
+
+- CascableCore now requires iOS 11.0 or higher.
+
+
 # CascableCore 12.2
 
 ### Improvements
