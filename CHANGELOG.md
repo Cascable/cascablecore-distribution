@@ -1,3 +1,10 @@
+# CascableCore 12.2.2
+
+### Bug Fixes
+
+- Fixed a bug that could cause live view to not start again after it'd been stopped on some Canon cameras. [CORE-394]
+
+
 # CascableCore 12.2.1
 
 ### Camera Compatibility
