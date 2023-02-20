@@ -3,10 +3,8 @@ import PackageDescription
 
 let package = Package(
     name: "CascableCore",
-    platforms: [.macOS(.v10_12), .iOS(.v11)],
-    products: [
-        .library(name: "CascableCore", targets: ["CascableCore", "StopKit"])
-    ],
+    platforms: [.macOS(.v10_13), .iOS(.v11)],
+    products: [.library(name: "CascableCore", targets: ["CascableCore", "StopKit"])],
     dependencies: [],
     targets: [
         .binaryTarget(name: "CascableCore", path: "CascableCore.xcframework"),
