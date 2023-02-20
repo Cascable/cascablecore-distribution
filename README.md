@@ -24,9 +24,7 @@ Once the SDK(s) are added, a few more steps must be done to comply with App Stor
 
 #### Info.plist: App Transport Security
 
-If your app is limited by App Transport Security, you need to allow CascableCore to talk to the cameras on your local network.
-
-On iOS 10 and macOS 10.12 and above, set `NSAllowsLocalNetworking` to `YES` in your `Info.plist` App Transport Security settings.
+If your app is limited by App Transport Security, you need to allow CascableCore to talk to the cameras on your local network. To do this, set `NSAllowsLocalNetworking` to `YES` in your `Info.plist` App Transport Security settings.
 
 ```
 <key>NSAppTransportSecurity</key>
@@ -35,12 +33,6 @@ On iOS 10 and macOS 10.12 and above, set `NSAllowsLocalNetworking` to `YES` in y
     <true/>
 </dict>
 ```
-
-On iOS 9 and macOS 10.11 or lower, you need to disable App Transport Security entirely, by setting `NSAllowsArbitraryLoads` to `YES`. If you do this, you may need to describe why to Apple in order to pass App Review. A paragraph similar to this may suffice:
-
-> App Transport Security has been disabled for this app on iOS 9 and lower. This is because the app needs to communicate with cameras discovered on the local network, and App Transport Security  provides no way to whitelist the local network or IP address ranges on iOS 9 or lower.
-
-If you support iOS 10/macOS 10.12 and lower you can set both `NSAllowsLocalNetworking` to `YES` _and_ `NSAllowsArbitraryLoads` to `YES` to disable App Transport Security on older OS versions, but use the more secure local networking exemption on newer OS versions. For more information on this, see [this thread on the Apple Developer Forums](https://forums.developer.apple.com/thread/6767).
 
 CascableCore makes no attempt to communicate with the outside world via the Internet, so no domain-specific App Transport Security exemptions are needed.
 

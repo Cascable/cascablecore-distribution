@@ -1,3 +1,16 @@
+# CascableCore 12.2.3
+
+### Bug Fixes
+
+- Fixed a crash that could occur on macOS when disconnecting from a USB camera on macOS 13 Ventura. [CORE-399]
+
+- Improved internal protection around the handling of messages on USB cameras on iOS. [CORE-400]
+
+### Other
+
+- CascableCore now requires macOS 10.13 High Sierra or later.
+
+
 # CascableCore 12.2.2
 
 ### Bug Fixes
