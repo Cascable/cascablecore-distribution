@@ -1,3 +1,10 @@
+# CascableCore 12.2.4
+
+### Bug Fixes
+
+- Fixed a crash that would occur on the "iOSOnMac" environment on Apple Silicon when searching for USB devices. Running CascableCore in this mode is currently experimental — please report any problems you find.
+
+
 # CascableCore 12.2.3
 
 ### Bug Fixes
