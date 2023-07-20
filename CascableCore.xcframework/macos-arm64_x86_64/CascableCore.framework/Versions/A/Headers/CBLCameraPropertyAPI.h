@@ -7,23 +7,25 @@
 //
 
 @import Foundation;
+@import CoreGraphics;
 
 @protocol CBLCamera;
 @protocol CBLCameraProperty;
 @protocol CBLPropertyValue;
 @protocol CBLExposurePropertyValue;
+@protocol CBLVideoFormatPropertyValue;
 
 @protocol CBLUniversalExposurePropertyValue;
 
 /// Property identifiers.
 typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
-    /// The camera's ISO speed setting. Common values will be of type CBLISOValue.
+    /// The camera's ISO speed setting.
     CBLPropertyIdentifierISOSpeed,
-    /// The camera's shutter speed setting. Common values will be of type CBLShutterSpeedValue.
+    /// The camera's shutter speed setting.
     CBLPropertyIdentifierShutterSpeed,
-    /// The camera's aperture setting. Common values will be of type CBLApertureValue.
+    /// The camera's aperture setting.
     CBLPropertyIdentifierAperture,
-    /// The camera's exposure compensation setting. Common values will be of type CBLExposureCompensationValue.
+    /// The camera's exposure compensation setting.
     CBLPropertyIdentifierExposureCompensation,
     /// The camera's battery level. Common values will be of type `CBLPropertyCommonValueBatteryLevel`.
     CBLPropertyIdentifierBatteryLevel,
@@ -71,6 +73,8 @@ typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
     CBLPropertyIdentifierReadyForCapture,
     /// The target destination for images when connected to a host like CascableCore. Common values will be of type `CBLPropertyCommonValueImageDestination`.
     CBLPropertyIdentifierImageDestination,
+    /// The camera's video recording format.
+    CBLPropertyIdentifierVideoRecordingFormat,
     CBLPropertyIdentifierMax,
 
     CBLPropertyIdentifierUnknown = NSNotFound
@@ -80,7 +84,7 @@ typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
 typedef NS_ENUM(NSInteger, CBLPropertyCategory) {
     /// The category of the property is unknown.
     CBLPropertyCategoryUnknown,
-    /// Shutter speed, ISO, EV, etc. Common values are guaranteed to conform to CBLExposureProperty.
+    /// Shutter speed, ISO, EV, etc. These properties are guaranteed to conform to `CBLExposureProperty`.
     CBLPropertyCategoryExposureSetting,
     /// Focus modes, etc — settings that affect how the image is captured.
     CBLPropertyCategoryCaptureSetting,
@@ -89,7 +93,9 @@ typedef NS_ENUM(NSInteger, CBLPropertyCategory) {
     /// File format, etc — settings that don't affect the image.
     CBLPropertyCategoryConfigurationSetting,
     /// Shots remaining, battery, etc — information about the camera that's usually read-only.
-    CBLPropertyCategoryInformation
+    CBLPropertyCategoryInformation,
+    /// Video format information. These properties are guaranteed to conform to `CBLVideoFormatProperty`.
+    CBLPropertyCategoryVideoFormat
 } NS_SWIFT_NAME(PropertyCategory);
 
 /// Option set for identifying the type of change that occurred to a property. For performance reasons, CascableCore
@@ -299,6 +305,18 @@ NS_SWIFT_NAME(ExposureProperty)
 
 @end
 
+/// A property that exposes its values as universal video format description values.
+NS_SWIFT_NAME(VideoFormatProperty)
+@protocol CBLVideoFormatProperty <CBLCameraProperty>
+
+/// Returns the current value as a universal video format description value.
+@property (nonatomic, readonly, copy, nullable) id <CBLVideoFormatPropertyValue> currentVideoFormatValue;
+
+/// Returns the valid settable values as an array of video format description values.
+@property (nonatomic, readonly, copy, nullable) NSArray <id <CBLVideoFormatPropertyValue>> *validSettableVideoFormatValues;
+
+@end
+
 /// A property value. This could either be the current value of a property, or something in the list of values that can be set.
 NS_SWIFT_NAME(PropertyValue)
 @protocol CBLPropertyValue <NSObject>
@@ -326,6 +344,18 @@ NS_SWIFT_NAME(ExposurePropertyValue)
 
 /// Returns the value as a universal exposure value.
 @property (nonatomic, readonly, copy, nonnull) id <CBLUniversalExposurePropertyValue> exposureValue;
+
+@end
+
+/// A property value that represents a video format description.
+NS_SWIFT_NAME(VideoFormatPropertyValue)
+@protocol CBLVideoFormatPropertyValue <CBLPropertyValue>
+
+/// Returns the video format's frame rate, if available. If not available, returns `NSNotFound`.
+@property (nonatomic, readonly) NSInteger frameRate;
+
+/// Returns the video format's frame size, in pixels, if available. If not available, returns `CGSizeZero`.
+@property (nonatomic, readonly) CGSize frameSize;
 
 @end
 

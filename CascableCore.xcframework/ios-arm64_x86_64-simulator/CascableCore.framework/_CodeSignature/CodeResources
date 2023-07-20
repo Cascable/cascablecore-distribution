@@ -42,7 +42,7 @@
 		</data>
 		<key>Base.lproj/CanonLVAFSystems.strings</key>
 		<data>
-		9btxOxLgC1ywrhbtKhf26ICaipc=
+		DtUj/2l1m0oUIN8gCCRa1JQwF/I=
 		</data>
 		<key>Base.lproj/CanonLensStatuses.strings</key>
 		<data>
@@ -58,11 +58,15 @@
 		</data>
 		<key>Base.lproj/CanonShortPropertyCodes.strings</key>
 		<data>
-		rojGekklaYCrvKmYkqBLg84RjFw=
+		5MP9IbEu517BxUc64oJ7TwI+moI=
 		</data>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
 		<data>
 		GAz5YfCbbpYHiRecQ2hHYHvvcHA=
+		</data>
+		<key>Base.lproj/CanonVideoFormats.strings</key>
+		<data>
+		+NxuRaBeWKKjDcM/h/uEURnuCHQ=
 		</data>
 		<key>Base.lproj/CanonWhiteBalances.strings</key>
 		<data>
@@ -111,6 +115,10 @@
 		<key>Base.lproj/NikonPowerSources.strings</key>
 		<data>
 		T4p4tDn7AHazsCUpRl5XB2mb2sQ=
+		</data>
+		<key>Base.lproj/NikonVideoFormats.strings</key>
+		<data>
+		nSaDQNv5DEzdYDt904bXVsqDIs8=
 		</data>
 		<key>Base.lproj/NikonWhiteBalances.strings</key>
 		<data>
@@ -254,7 +262,7 @@
 		</data>
 		<key>Base.lproj/UniversalProperties.strings</key>
 		<data>
-		+ciXqMW016n1KEGYKzoFImJxUrI=
+		qHydN0pjh7u2qZJUi/xYXNEaU+o=
 		</data>
 		<key>Base.lproj/UniversalShutterSpeeds.strings</key>
 		<data>
@@ -298,7 +306,7 @@
 		</data>
 		<key>Headers/CBLCameraPropertyAPI.h</key>
 		<data>
-		UDhL2uwrM75cc9DcvYtYwLbRhh0=
+		pasGFktz/tqIvCK1VmBNlcEayPE=
 		</data>
 		<key>Headers/CBLCameraQRDecoding.h</key>
 		<data>
@@ -314,7 +322,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		vh38qxqE/okgv5ZaSZWeasaaOIE=
+		QkVavophcT+Q391niOvjHZ6UhdA=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -374,7 +382,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		E5xOAF5nxbRNsYlk34YRzgyh9gs=
+		YOx5w3VTz+tZm9Jjzafcp1bEKN4=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -386,7 +394,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		OWZqXLX+O61l8nxtOf9EYh9saFE=
+		ymvVcIAmUPN1kcyww0s10tb89Xw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -477,7 +485,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tluLZyXeFYquZ7xpLRqJZ6OQA1s=
+			9dpEtu3Au1/r94wuU8iYmmdrmH0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -513,7 +521,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			G6i265WzqIix2dq0PIhNQOoePus=
+			Y4e7YxaXbwxwBHkCbRI2GMDrW3Y=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -523,6 +531,15 @@
 			<key>hash</key>
 			<data>
 			GAz5YfCbbpYHiRecQ2hHYHvvcHA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/CanonVideoFormats.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			tCAcj3D019WU5aDQ76Q3yswFldQ=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -631,6 +648,15 @@
 			<key>hash</key>
 			<data>
 			d9pg1Y0KJj8Yg+CXLxi1c8Bb6R8=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/NikonVideoFormats.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			ur2GwX8LoYNQag19dSe/LsgCoDY=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -954,7 +980,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			TNZOkpd5cK8oUhjDnZRIPTmjR5w=
+			MeKPx4je9ba8MhVPSF18ZEY0hxk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1038,7 +1064,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Di8THPJEmAj+8ydpBaFiS1ks/kLQ1wFLhRUysOwI1tU=
+			Hvva3P6N6LZPzJWepyfNgQzKRapKkE+Yoc9I8Lj11Hc=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonLensStatuses.strings</key>
@@ -1066,7 +1092,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			z21QUUZ+R0jOQscDV82AT4HFA6aoieccZ5LpCQ6yG+w=
+			To5yh0tep0DwLzYiSq+SAjxWAF045/aTzXvEOQdAIVQ=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
@@ -1074,6 +1100,13 @@
 			<key>hash2</key>
 			<data>
 			h1OymVlNgpk4I87qep3xSjjMWtMEPWkBTA6y8JJ6T8w=
+			</data>
+		</dict>
+		<key>Base.lproj/CanonVideoFormats.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2YwTbRuKMOgsqRacMc+e8dPXlVDYPENDg6hCjdhNOlg=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonWhiteBalances.strings</key>
@@ -1158,6 +1191,13 @@
 			<key>hash2</key>
 			<data>
 			R9rigtFC9ErUUh37ibpZNhB8qL/Uo/3tcAid4fUI63Y=
+			</data>
+		</dict>
+		<key>Base.lproj/NikonVideoFormats.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cH6c2mXVDkVXwsMFltOVi+flOfiCxzwv16+2l4DXo0Y=
 			</data>
 		</dict>
 		<key>Base.lproj/NikonWhiteBalances.strings</key>
@@ -1409,7 +1449,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DZfIcND0f6dAlxLydTJhnsTZGamtxHLETj+2zPaH7kU=
+			3HC1stJz072d2SDbKJfO2DP0m7LvbVBYHabNCp7QE+I=
 			</data>
 		</dict>
 		<key>Base.lproj/UniversalShutterSpeeds.strings</key>
@@ -1486,7 +1526,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mu1Mz8uqT/SZgVRllsGB2S0dunETjGCyUmwhMMGpOyI=
+			Rcu1ajqjUT68Y4MPuTb9lzKRetHp6teh63zoTqWkMp4=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraQRDecoding.h</key>
@@ -1514,7 +1554,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TJ/3jiMAaH+i0XwdN/QVZv6K9DniKTUMyTDZuD0TIio=
+			MBqLtDuKaTUgmjfg/3wktLu1zvVNlVKcw6T5PjxWJDE=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1619,7 +1659,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fo+SJEZWZHFrvd1PhRK2rjVsrQsWSct/GDQQS4IkaVU=
+			XUgmzMN/YEeX99UTRDT3+R5nOGKSfm0vahnS3026xMg=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>
@@ -1728,7 +1768,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ye3JsgkKQYqLTR2njewkju1HtY1cNJPXvHYs9aEjivI=
+			QqzV2THFikpGf2S15Ku9y1VuQFd+nDYdmviQJkWnl1I=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1764,7 +1804,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9opCnEzVjm4h+aVl5JHYRRjkGDoxDCJgZW+Hrj3Re/I=
+			yhN3iQ0hHW2NvZLMuTVALn7B4KR0w+klnifkvUbA/Hk=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1774,6 +1814,15 @@
 			<key>hash2</key>
 			<data>
 			h1OymVlNgpk4I87qep3xSjjMWtMEPWkBTA6y8JJ6T8w=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/CanonVideoFormats.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			er8m8rultXZ67Xb4s47ebRb32WisdPsiC7Vd3LR8ui8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1882,6 +1931,15 @@
 			<key>hash2</key>
 			<data>
 			3t6SBq4ilDz1iPfJXo92/E+53Px9ik+bL0V3uhSW/Yw=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/NikonVideoFormats.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ls9TJjueWEbEdB9Yv+GY7JwYRI1nZg5C1y1iDVmm+bc=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2205,7 +2263,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5BpKgA+tGuNNwmkcvwVigp5g8CV6AaCEMd2tgduWyw4=
+			/MSbBXVCwDzpKA7PTnJi8nr+IuOh4lil+RZjl3hSBiw=
 			</data>
 			<key>optional</key>
 			<true/>

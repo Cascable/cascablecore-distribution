@@ -1,3 +1,24 @@
+# CascableCore 12.3
+
+### New Property: Video Recording Format
+
+The new `CBLPropertyIdentifierVideoRecordingFormat` property allows the ability to change the camera's video recording format on supported cameras. This property is currently implemented for Canon and Nikon cameras.
+
+Objects for this property conform to `id <CBLVideoFormatProperty>` and values to `id <CBLVideoFormatPropertyValue>`, allowing the programmatic inspection of the frame rate and frame size of each format value. For users of our [CascableCoreSwift](https://github.com/cascable/cascablecore-swift) library, you'll get a typed property with `VideoFormatValue` common values.
+
+### Camera Compatibility
+
+- Added support for the Canon EOS R6 Mark II, EOS R100, EOS R8, and EOS R50. [CORE-558]
+
+- Added support for the Nikon Z8 and Z30.
+
+### Bug Fixes
+
+- Fixed a problem that would cause video recording to fail to start on newer Nikon cameras. [CORE-507]
+
+- Fixed a problem that would cause still image shooting to get "stuck" on Canon cameras that'd been connected to other apps (such as EOS Utility) that configure the camera with a "PC" image destination before being connected to CascableCore without being switched off in between - CascableCore will clear that destination upon connection. A future update will enable full support for this shooting mode and the `CBLPropertyIdentifierImageDestination` property. [CORE-563] 
+
+
 # CascableCore 12.2.4
 
 ### Bug Fixes
