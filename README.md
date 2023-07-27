@@ -26,7 +26,7 @@ Once the SDK(s) are added, a few more steps must be done to comply with App Stor
 
 If your app is limited by App Transport Security, you need to allow CascableCore to talk to the cameras on your local network. To do this, set `NSAllowsLocalNetworking` to `YES` in your `Info.plist` App Transport Security settings.
 
-```
+```xml
 <key>NSAppTransportSecurity</key>
 <dict>
     <key>NSAllowsLocalNetworking</key>
@@ -42,7 +42,7 @@ Apple's documentation for App Transport Security can be found [here](https://dev
 
 iOS 14 requires that permission is obtained from the user in order to use the local network. To do so, a usage description must be defined in your `Info.plist` via the `NSLocalNetworkUsageDescription` key.
 
-```
+```xml
 <key>NSLocalNetworkUsageDescription</key>
 <string>MyCoolApp needs access to the local network in order to communicate with cameras over WiFi.</string>
 ```
@@ -53,7 +53,7 @@ You can find Apple's documentation on this [here](https://developer.apple.com/ne
 
 If your app is to work with cameras discovered using Bonjour (Canon EOS cameras in "EOS Utility" mode and some Nikon cameras), you should declare that you're resolving the PTP Bonjour service using the `NSBonjourServices` key. For example:
 
-```
+```xml
 <key>NSBonjourServices</key>
 <array>
     <string>_ptp._tcp</string>
