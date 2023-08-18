@@ -347,6 +347,31 @@ NS_SWIFT_NAME(ExposurePropertyValue)
 
 @end
 
+/// Values representing the level of video compression for a `CBLVideoFormatPropertyValue` value. In general,
+/// higher values have *more* compression (i.e., smaller file sizes).
+typedef NS_ENUM(NSInteger, CBLVideoFormatCompressionLevel) {
+    /// The compression level is unavailable.
+    CBLVideoFormatCompressionLevelUnknown = 0,
+
+    /// The video is being compressed with a raw codec.
+    CBLVideoFormatCompressionLevelRaw = 1,
+
+    /// The video is being compressed using a codec that's effectively lossless, such as ProRes.
+    CBLVideoFormatCompressionLevelEffectivelyLossless = 2,
+
+    /// The video is being compressed using a codec designed for editing. This includes codecs like MJPEG, as well
+    /// as h264/h265 in ALL-I/XAVC S-I mode.
+    CBLVideoFormatCompressionLevelForEditing = 3,
+
+    /// The video is being compressed using a codec designed for playback. This includes h264/h265 in Long GOP/IPB/
+    /// IPB Standard/XAVC S/XAVC HS mode.
+    CBLVideoFormatCompressionLevelNormal = 4,
+
+    /// The video is being compressed using a codec designed for smaller file sizes. This includes h264/264 in
+    /// IPB Light/XAVC L mode.
+    CBLVideoFormatCompressionLevelHigh = 5
+} NS_SWIFT_NAME(VideoFormatCompressionLevel);
+
 /// A property value that represents a video format description.
 NS_SWIFT_NAME(VideoFormatPropertyValue)
 @protocol CBLVideoFormatPropertyValue <CBLPropertyValue>
@@ -356,6 +381,9 @@ NS_SWIFT_NAME(VideoFormatPropertyValue)
 
 /// Returns the video format's frame size, in pixels, if available. If not available, returns `CGSizeZero`.
 @property (nonatomic, readonly) CGSize frameSize;
+
+/// Returns the video format's compression level, if available. If not available, returns `CBLVideoFormatCompressionLevelUnknown`.
+@property (nonatomic, readonly) CBLVideoFormatCompressionLevel compressionLevel;
 
 @end
 

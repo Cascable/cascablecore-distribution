@@ -1,3 +1,16 @@
+# CascableCore 12.4
+
+### API Changes
+
+- Added the `CBLVideoFormatCompressionLevel` enum and `compressionLevel` property to `id <CBLVideoFormatPropertyValue>`.
+
+### Bug Fixes
+
+- Fixed an issue that would cause the `CBLErrorCodeRequiresPhysicalInteraction` error to *not* be thrown when failing to switch to stills mode due to the physical position of the stills/video switch on some Canon camera models.
+
+- `-setCurrentCommandCategories:completionCallback:` now correctly waits for Canon cameras to switch in/out of the requisite mode before calling the completion handler, matching the documented behaviour.
+
+
 # CascableCore 12.3
 
 ### New Property: Video Recording Format
