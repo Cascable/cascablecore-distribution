@@ -1,3 +1,16 @@
+# CascableCore 12.4.1
+
+### Changes
+
+- Included an updated StopKit framework.
+
+- The lowest supported iOS version is now iOS 12.
+
+### Bug Fixes
+
+- Fixed an issue that would cause plugins to not be invoked for discovery if CascableCore decides not to natively search for cameras via network or USB. [CORE-496]
+
+
 # CascableCore 12.4
 
 ### API Changes

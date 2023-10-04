@@ -10,7 +10,7 @@ typedef NS_OPTIONS(NSUInteger, CBLExposureStopFraction) {
 /** This class represents a vector of exposure stops. Since this is a vector,
  an instance of this on its own doesn't mean too much. */
 NS_SWIFT_NAME(ExposureStops)
-@interface CBLExposureStops : NSObject <NSCopying, NSCoding>
+@interface CBLExposureStops : NSObject <NSCopying, NSSecureCoding>
 
 /** Returns a zero exposure stop vector. */
 @property (class, nonatomic, readonly, nonnull) CBLExposureStops *zeroStops;

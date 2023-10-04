@@ -1,7 +1,7 @@
 framework module CascableCore {
   umbrella header "CascableCore.h"
-
   export *
+
   module * { export * }
 }
 
