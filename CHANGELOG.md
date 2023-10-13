@@ -1,3 +1,18 @@
+# CascableCore 12.5
+
+### Camera Discovery Changes
+
+- On iOS and iPadOS, if the user doesn't have an active WiFi connection, `+[CBLNetworkConfigurationHelper suggestedInterfaceForCameraCommunication]` will now iterate available local network interfaces and return the first one it finds with a valid IP address. This behaviour was already in place on macOS. [CORE-601]
+
+- Partially as a consequence of the above, camera discovery now works correctly on iOS and iPadOS devices connected to the network *only* via Ethernet. [CORE-601]
+
+- On all platforms, SSDP discovery requests will now be performed on all active network interfaces, not just the "primary" one. [CORE-601]
+
+### Bug Fixes
+
+- `+[CBLNetworkConfigurationHelper allInterfaces]` no longer includes the loopback interface in its return value.
+
+
 # CascableCore 12.4.1
 
 ### Changes
