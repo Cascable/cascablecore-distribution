@@ -14,6 +14,7 @@
 @protocol CBLPropertyValue;
 @protocol CBLExposurePropertyValue;
 @protocol CBLVideoFormatPropertyValue;
+@protocol CBLLiveViewZoomLevelPropertyValue;
 
 @protocol CBLUniversalExposurePropertyValue;
 
@@ -75,6 +76,8 @@ typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
     CBLPropertyIdentifierImageDestination,
     /// The camera's video recording format.
     CBLPropertyIdentifierVideoRecordingFormat,
+    /// The camera's live view zoom level.
+    CBLPropertyIdentifierLiveViewZoomLevel,
     CBLPropertyIdentifierMax,
 
     CBLPropertyIdentifierUnknown = NSNotFound
@@ -95,7 +98,9 @@ typedef NS_ENUM(NSInteger, CBLPropertyCategory) {
     /// Shots remaining, battery, etc — information about the camera that's usually read-only.
     CBLPropertyCategoryInformation,
     /// Video format information. These properties are guaranteed to conform to `CBLVideoFormatProperty`.
-    CBLPropertyCategoryVideoFormat
+    CBLPropertyCategoryVideoFormat,
+    /// Live view zoom level information. These properties are guaranteed to conform to `CBLLiveViewZoomLevelPropertyValue`.
+    CBLPropertyCategoryLiveViewZoomLevel
 } NS_SWIFT_NAME(PropertyCategory);
 
 /// Option set for identifying the type of change that occurred to a property. For performance reasons, CascableCore
@@ -317,6 +322,18 @@ NS_SWIFT_NAME(VideoFormatProperty)
 
 @end
 
+/// A property that exposes its values as universal live view zoom level values.
+NS_SWIFT_NAME(LiveViewZoomLevelProperty)
+@protocol CBLLiveViewZoomLevelProperty <CBLCameraProperty>
+
+/// Returns the current value as a universal live view zoom level value.
+@property (nonatomic, readonly, copy, nullable) id <CBLLiveViewZoomLevelPropertyValue> currentLiveViewZoomLevelValue;
+
+/// Returns the valid settable values as an array of universal live view zoom level values.
+@property (nonatomic, readonly, copy, nullable) NSArray <id <CBLLiveViewZoomLevelPropertyValue>> *validSettableLiveViewZoomLevelValues;
+
+@end
+
 /// A property value. This could either be the current value of a property, or something in the list of values that can be set.
 NS_SWIFT_NAME(PropertyValue)
 @protocol CBLPropertyValue <NSObject>
@@ -384,6 +401,20 @@ NS_SWIFT_NAME(VideoFormatPropertyValue)
 
 /// Returns the video format's compression level, if available. If not available, returns `CBLVideoFormatCompressionLevelUnknown`.
 @property (nonatomic, readonly) CBLVideoFormatCompressionLevel compressionLevel;
+
+@end
+
+/// A property value that represents a live view zoom level.
+NS_SWIFT_NAME(LiveViewZoomLevelPropertyValue)
+@protocol CBLLiveViewZoomLevelPropertyValue <CBLPropertyValue>
+
+/// Returns `YES` if the value represents a "zoomed in" value, otherwise `NO`.
+@property (nonatomic, readonly) BOOL isZoomedIn;
+
+/// Returns a numeric zoom factor. These values aren't neccessarily consistent between camera manufacturers or even
+/// models, but they will get larger the more zoomed in the value is - it's useful for sorting. There are two special
+/// values: no zoom is `1.0`, and an unknown zoom factor is `0.0`.
+@property (nonatomic, readonly) double zoomFactor;
 
 @end
 

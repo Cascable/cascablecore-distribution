@@ -28,16 +28,6 @@ typedef NS_ENUM(NSUInteger, CBLCameraLiveViewFrameOrientation) {
 } NS_SWIFT_NAME(LiveViewFrameOrientation);
 
 /**
- Defines the zoom level of a live view frame.
- */
-typedef NS_ENUM(NSUInteger, CBLCameraLiveViewZoomLevel) {
-    /** The live view image is not zoomed in. */
-    CBLCameraLiveViewZoomLevelNone = 0,
-    /* The live view image is zoomed in. */
-    CBLCameraLiveViewZoomLevelZoomedIn = 1
-} NS_SWIFT_NAME(LiveViewZoomLevel);
-
-/**
  Defines the format of the pixel data of a live view frame.
  */
 typedef NS_ENUM(NSUInteger, CBLCameraLiveViewFramePixelFormat) {
@@ -122,11 +112,8 @@ NS_SWIFT_NAME(LiveViewFrame)
  aspect with a zero origin. When zoomed in, this defines a subrect inside that aspect that defines where the zoomed-in image is compared to the whole frame. */
 @property (nonatomic, readonly) CGRect imageFrameInAspect;
 
-/** Returns the zoom level the image of this frame represents. */
-@property (nonatomic, readonly) CBLCameraLiveViewZoomLevel imageZoomLevel;
-
-/** Returns the offset of the zoom rect when in 10x zoom mode. */
-@property (nonatomic, readonly) CGPoint zoomRectOffset;
+/** Returns `YES` if the live view frame is "zoomed in" (that is, the `imageFrameInAspect` property is smaller than `aspect`. */
+@property (nonatomic, readonly) BOOL isZoomedIn;
 
 /** Translates the given rect inside the receiver's aspect to a rect inside the target container. Useful for
  translating live view rects into views, for example.

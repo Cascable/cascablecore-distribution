@@ -21,6 +21,75 @@
 @protocol CBLCameraConnectionWarning;
 @protocol CBLCameraProperty;
 
+/** Methods of authenticating with a camera. */
+typedef NS_ENUM(NSInteger, CBLCameraAuthenticationType) {
+    /** The user must authenticate by interacting with the camera itself. */
+    CBLCameraAuthenticationTypeInteractWithCamera,
+    /** The user must authenticate by entering a username and password. */
+    CBLCameraAuthenticationTypeUsernameAndPassword,
+    /** The user must authenticate by entering a four-digit numeric code. */
+    CBLCameraAuthenticationTypeFourDigitNumericCode
+} NS_SWIFT_NAME(CameraAuthenticationType);
+
+/** 
+ A camera authentication context represents a request for authentication from the camera. Responses are
+ submitted via this context object.
+ */
+NS_SWIFT_NAME(CameraAuthenticationContext) @protocol CBLCameraAuthenticationContext <NSObject>
+
+/** The type of authentication the camera is requesting. */
+@property (nonatomic, readonly) CBLCameraAuthenticationType type;
+
+/** 
+ Returns `YES` if this authentication context is being delivered immediately after a previous authentication
+ submission was rejected. This allows (for example) to re-ask for a username/password, particularly if the previous
+ submission was from saved credentials.
+ */
+@property (nonatomic, readonly) BOOL previousSubmissionRejected;
+
+/**
+ A unique, stable identifier for the camera, appropriate for using as a key for storing credentials in
+ (for e.g.) the Keychain.
+
+ CascableCore will do its best to make this identifier unique on a per-camera basis when the `type` property is
+ set to a value other than `CBLCameraAuthenticationTypeInteractWithCamera`. Since no credentials need to be stored
+ for such a context, this identifier isn't needed.
+ */
+@property (nonatomic, readonly, copy, nonnull) NSString *authenticationIdentifier;
+
+/** 
+ Submit a cancellation for camera authentication. This will disconnect from the camera and deliver a
+ `CBLErrorCodeCancelledByUser` error to the connection completion handler. Valid for all authentication types.
+ */
+-(void)submitCancellation NS_SWIFT_NAME(submitCancellation());
+
+/**
+ Submit a username and password for camera authentication. Only valid if `type` is `CBLCameraAuthenticationTypeUsernameAndPassword`.
+
+ @param userName The supplied username.
+ @param password The supplied password.
+ */
+-(void)submitUserName:(NSString * _Nonnull)userName password:(NSString * _Nonnull)password NS_SWIFT_NAME(submitUserName(_:password:));
+
+/**
+ Submit a numeric passcode for camera authentication. Only valid if `type` is `CBLCameraAuthenticationTypeFourDigitNumericCode`.
+
+ @param code The supplied code.
+ */
+-(void)submitNumericCode:(NSString * _Nonnull)code NS_SWIFT_NAME(submitNumericCode(_:));
+
+@end
+
+/**
+ The block callback signature when the camera requests authentication.
+
+ @param context The authentication context object for inspecting the request and delivering a response.
+ */
+typedef void (^CBLCameraAuthenticationRequestBlock)(id <CBLCameraAuthenticationContext> _Nonnull context) NS_SWIFT_NAME(CameraAuthenticationRequestBlock);
+
+/** The block callback signature when a camera's authentication request has been resolved and authentication UI can be hidden. */
+typedef void (^CBLCameraAuthenticationResolvedBlock)(void) NS_SWIFT_NAME(CameraAuthenticationResolvedBlock);
+
 /**
  The block callback signature when camera connection completes or fails.
 
@@ -28,24 +97,6 @@
  @param warnings Any non-fatal connection warnings.
  */
 typedef void (^CBLCameraConnectionCompleteBlock)(NSError * _Nullable error, NSArray <id <CBLCameraConnectionWarning>> * _Nullable warnings) NS_SWIFT_NAME(ConnectionCompleteCallback);
-
-/**
- The block callback signature when the connection process needs user intervention (i.e., the user needs to perform an
- action on the camera itself). For details on how this works, see CascableCore's user guides and examples.
-
- If invoked, this block will usually be called twice — once when the connection attempt is paused due to user
- intervention being required (for example, if the user needs to confirm pairing on the camera), and again when
- the intervention is complete and the connection process is continuing.
-
- @param shouldDisplayUserInterventionDialog If `YES`, display a dialog to the user informing them they need to
-                                            look at the camera and follow its instructions. If `NO`, close your
-                                            previously-shown dialog.
-
- @param cancelConnectionBlock If non-nil (typically when `shouldDisplayUserInterventionDialog` is `YES`), this block
-                              can be called to cancel the connection attempt. If non-nil, you can show a "Cancel"
-                              button in your dialog and call this block if the user taps it.
- */
-typedef void (^CBLCameraConnectionUserInterventionBlock)(BOOL shouldDisplayUserInterventionDialog, _Nullable dispatch_block_t cancelConnectionBlock) NS_SWIFT_NAME(ConnectionUserInterventionCallback);
 
 /**
 The block callback signature when a camera has a new camera-initiated transfer request. See `CBLCameraInitiatedTransferRequest`
@@ -71,7 +122,7 @@ typedef NS_OPTIONS(NSUInteger, CBLCameraSupportedFunctionality) {
     /** The camera supports updating its date/time. */
     CBLCameraSupportedFunctionalityUpdateClock = 1 << 9,
     /** The camera supports zooming in to its live view image. */
-    CBLCameraSupportedFunctionalityZoomableLiveView = 1 << 10,
+    CBLCameraSupportedFunctionalityZoomableLiveView __attribute__((deprecated("Use the CBLPropertyIdentifierLiveViewZoomLevel property instead."))) = 1 << 10,
     /** The camera supports basic remote control when live view is not active. */
     CBLCameraSupportedFunctionalityLimitedRemoteControlWithoutLiveView = 1 << 11,
     /** The camera supports directly controlling the focus motor to move the focus distance. */
@@ -86,6 +137,8 @@ typedef NS_OPTIONS(NSUInteger, CBLCameraSupportedFunctionality) {
     CBLCameraSupportedFunctionalityCroppableLiveView = 1 << 16,
     /** The camera supports video recording. */
     CBLCameraSupportedFunctionalityVideoRecording = 1 << 17,
+    /** The camera supports panning live view around while zoomed in. */
+    CBLCameraSupportedFunctionalityPannableLiveView = 1 << 18,
     CBLCameraSupportedFunctionalityAll = NSUIntegerMax
 } NS_SWIFT_NAME(SupportedFunctionality);
 
@@ -229,37 +282,50 @@ NS_SWIFT_NAME(CameraCore)
  contained in the `warnings` parameter of the callback block. These warnings should be
  presented to the user *if* they fall in a category your application uses.
 
- In some circumstances, the connection process is stalled by the camera asking the
- user to perform some steps on the device's screen. If this happens, the callback block
- `userInterventionCallback` will be called with the parameter `YES` to indicate that the
- caller should present UI to the user telling them to look at the camera, then again with
- `NO` to indicate to the caller that this is no longer needed.
+ In some circumstances, the connection process is stalled by the camera requiring authentication. If this happens,
+ the `authenticationRequestCallback` will be called with information on the request. You should display UI to the
+ user on how to satisy the request, which will vary depending on the type of authentication request (see the
+ documentation for `id <CBLCameraAuthenticationContext>` for more details.
+
+ Once the authentication request has been satisfied, the `authenticationResolvedCallback` will be called, signalling
+ that the request has been satisifed and you can close your UI.
+
+ @note If you get a `authenticationRequestCallback`, you will always get a `authenticationResolvedCallback` before
+       camera connection completes. **Importantly**, you may get more than one sequence of authentication
+       requests/resolves during a connection - for example, if the camera rejects the given username and password, it
+       may grant another try before failing.
 
  @note The callback blocks will be called on the main queue.
 
  @param flags The connection flags for this session. Can be `nil`.
+ @param authenticationRequestCallback The callback to be invoked when a camera needs user authentication.
+ @param authenticationResolvedCallback The callback to be invoked when a camera's authentication request has been resolved.
  @param callback The callback to be called when the connection succeeds or fails.
- @param userInterventionCallback The callback to be invoked
  */
 -(void)connectWithFlags:(nullable NSDictionary <NSString *, id> *)flags
+authenticationRequestCallback:(nonnull CBLCameraAuthenticationRequestBlock)authenticationRequestCallback
+authenticationResolvedCallback:(nonnull CBLCameraAuthenticationResolvedBlock)authenticationResolvedCallback
      completionCallback:(nonnull CBLCameraConnectionCompleteBlock)callback
-userInterventionCallback:(nonnull CBLCameraConnectionUserInterventionBlock)userInterventionCallback
-NS_SWIFT_NAME(connect(flags:completionCallback:userInterventionCallback:));
+NS_SWIFT_NAME(connect(flags:authenticationRequestCallback:authenticationResolvedCallback:completionCallback:));
 
 
 /**
  Attempt to connect to the device with the given client name.
 
- Equivalent to calling `-connectWithFlags:completionCallback:userInterventionCallback:` with a `nil` `flags` parameter.
+ Equivalent to calling `-connectWithFlags:authenticationRequestCallback:authenticationResolvedCallback:completionCallback:` 
+ with a `nil` `flags` parameter.
 
- See the documentation for `-connectWithFlags:completionCallback:userInterventionCallback:` for details.
+ See the documentation for `-connectWithFlags:authenticationRequestCallback:authenticationResolvedCallback:completionCallback:` 
+ for details.
 
+ @param authenticationRequestCallback The callback to be invoked when a camera needs user authentication.
+ @param authenticationResolvedCallback The callback to be invoked when a camera's authentication request has been resolved.
  @param callback The callback to be called when the connection succeeds or fails.
- @param userInterventionCallback The callback to be invoked
  */
--(void)connectWithCompletionCallback:(nonnull CBLCameraConnectionCompleteBlock)callback
-            userInterventionCallback:(nonnull CBLCameraConnectionUserInterventionBlock)userInterventionCallback
-NS_SWIFT_NAME(connect(completionCallback:userInterventionCallback:));
+-(void)connectWithAuthenticationRequestCallback:(nonnull CBLCameraAuthenticationRequestBlock)authenticationRequestCallback
+                 authenticationResolvedCallback:(nonnull CBLCameraAuthenticationResolvedBlock)authenticationResolvedCallback
+                             completionCallback:(nonnull CBLCameraConnectionCompleteBlock)callback
+NS_SWIFT_NAME(connect(authenticationRequestCallback:authenticationResolvedCallback:completionCallback:));
 
 /**
  Attempt to disconnect from the device.
@@ -442,17 +508,6 @@ NS_SWIFT_NAME(CameraLiveView)
 @property (readonly) BOOL liveViewStreamActive;
 
 /**
- Attempt to set the current live view zoom level.
-
- If the camera doesn't support the functionality `CBLCameraSupportedFunctionalityZoomableLiveView`, this operation will fail. To check the zoom level,
- see the zoomLevel property on `id <CBLCameraLiveViewFrame>`.
-
- @param liveViewZoomLevel The new zoom level to use.
- @param block The callback to call when the operation is complete.
- */
--(void)setLiveViewZoomLevel:(CBLCameraLiveViewZoomLevel)liveViewZoomLevel completionCallback:(nullable CBLErrorableOperationCallback)block;
-
-/**
  Attempt to zoom in to live view by cropping in on the camera's side.
 
  The given crop rectangle must match the aspect ratio of the live view frame's `aspect`, must be completely contained
@@ -477,6 +532,21 @@ NS_SWIFT_NAME(CameraLiveView)
  @param block The callback to call when the operation is complete.
  */
 -(void)resetLiveViewCrop:(nullable CBLErrorableOperationCallback)block;
+
+/**
+ Attempt to set the live view zoom's center point to the given point without changing the zoom level.
+
+ The given point must be within the live view frame's `aspect`. The point may be adjusted by CascableCore to match
+ the camera's requirements. To check the final position, see live view frame's `imageFrameInAspect` property once
+ the operation completes.
+
+ Note that it may take a few frames for zoom geometry to update after this operation finishes, due to frame buffers and etc.
+
+ If the camera doesn't support the `CBLCameraSupportedFunctionalityCroppableLiveView` or
+ `CBLCameraSupportedFunctionalityPannableLiveView` functionalities, this operation will fail.
+ */
+-(void)setLiveViewZoomCenterPoint:(CGPoint)centerPoint completionCallback:(nullable CBLErrorableOperationCallback)block
+    NS_SWIFT_NAME(setLiveViewZoomCenterPoint(_:completionCallback:));
 
 @end
 

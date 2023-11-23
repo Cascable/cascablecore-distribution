@@ -95,7 +95,11 @@ typedef NS_ENUM(NSUInteger, CBLErrorCode) {
     CBLErrorCodeIncorrectCommunicationMode,
     /** The operation failed because the result would be too large for the given context. For example, trying to
         read an extremely large file into memory in its entirety. */
-    CBLErrorCodeObjectTooLarge
+    CBLErrorCodeObjectTooLarge,
+    /** Couldn't connect to the camera because it requires an encrypted connection which isn't currently supported by CascableCore. */
+    CBLErrorCodeEncryptedConnectionsNotSupported,
+    /** Couldn't connect to the camera because authentication failed (i.e., an incorrect password was given, etc). */
+    CBLErrorCodeConnectionAuthenticationFailed
 } NS_SWIFT_NAME(CascableCoreErrorCode);
 
 /** NSError helpers for CascableCore. */

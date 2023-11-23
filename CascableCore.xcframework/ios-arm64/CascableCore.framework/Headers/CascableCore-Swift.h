@@ -411,20 +411,24 @@ SWIFT_CLASS_NAMED("LiveViewStreamAdapter")
 
 @class NSInputStream;
 @class NSOutputStream;
+@class CBLSSHTunnelledConnection;
 @protocol CBLPTPIPQueueDelegate;
 @class CBLPTPIPPacket;
-@class NSStream;
 
 /// This class provides an asynchonous method of writing and receiving packets from a PTP/IP device.
 SWIFT_CLASS_NAMED("PTPIPQueue")
-@interface CBLPTPIPQueue : NSObject <NSStreamDelegate>
+@interface CBLPTPIPQueue : NSObject
 /// Initialise the receiver with the given streams.
 /// If the streams aren’t opened, they will be opened automatically.
 /// \param input The input stream.
 ///
 /// \param output The output stream.
 ///
-- (nonnull instancetype)initWithInputStream:(NSInputStream * _Nonnull)input outputStream:(NSOutputStream * _Nonnull)output OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithInputStream:(NSInputStream * _Nonnull)input outputStream:(NSOutputStream * _Nonnull)output;
+/// Initialise the receiver with the given tunnelled connection.
+/// \param sshTunnel The tunnelled connection to communicate via.
+///
+- (nonnull instancetype)initWithSshTunnel:(CBLSSHTunnelledConnection * _Nonnull)sshTunnel;
 /// Set the receiver’s delegate.
 /// \param delegate The delegate object.
 ///
@@ -474,7 +478,6 @@ SWIFT_CLASS_NAMED("PTPIPQueue")
 - (void)close;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-- (void)stream:(NSStream * _Nonnull)aStream handleEvent:(NSStreamEvent)eventCode;
 @end
 
 
@@ -539,6 +542,7 @@ SWIFT_CLASS_NAMED("RunloopQueue")
 - (void)unscheduleConnection:(NSURLConnection * _Nonnull)connection;
 @end
 
+@class NSStream;
 
 @interface CBLRunloopQueue (SWIFT_EXTENSION(CascableCore))
 /// Schedules the given stream into the queue.

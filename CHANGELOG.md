@@ -1,3 +1,46 @@
+# CascableCore 13.0
+
+### Support for Mac Catalyst
+
+CascableCore now supports the Mac Catalyst platform on both Intel and Apple Silicon. The minimum required deployment target is Mac Catalyst 15.0, which shipped with macOS 12.
+
+### Support For Encrypted Connections to Sony Cameras
+
+Sony have added an encrypted network connection option, on by default, to its newest cameras. They're also backdeploying this feature to some existing cameras, such as the α7 IV, via firmware updates. We're pleased to announce that CascableCore now fully supports these encrypted connections. 
+
+Due to the need to collect a username and password to connect to these cameras, the camera connection API has breaking changes. See the documentation and demo projects for examples on the new camera connection API.
+
+### Improved Live View Zoom
+
+We've revamped live view zoom, which has introduced breaking changes to this API.
+
+- The `CBLCameraSupportedFunctionalityZoomableLiveView` functionality flag is now deprecated, and the `-setLiveViewZoomLevel:completionCallback:` method has been removed.
+
+- A new property, `CBLPropertyIdentifierLiveViewZoomLevel`, has been added in replacement. The property can expose multiple zoom levels, and values conform to `id <CBLLiveViewZoomLevelPropertyValue>` allowing you to target specific zoom levels, make sure the camera is or isn't zoomed in, etc.
+
+- Added a new functionality flag, `CBLCameraSupportedFunctionalityPannableLiveView`, which signals whether a camera can pan around a zoomed-in live view. If available, the new method `-setLiveViewZoomCenterPoint:completionCallback:` can be used to pan live view around.
+
+### Camera Compatibility
+
+- Added support for the Sony α7R V, α7C R, α7C II, and α6700. [CORE-564]
+
+- Added support the Nikon Z f. [CORE-636]
+
+- Added touch AF, focus geometry, and live view zoom to newer Sony cameras that support these features. [CORE-565, CORE-566]
+
+- Improved live view zoom support for Nikon cameras. [CORE-50]
+
+- For newer Sony cameras, the `-currentCommandCategories` property now more accurately represents the camera's state, and calling `-setCurrentCommandCategories:…` will now manipulate the exposure mode property in order to get the camera into the desired state. [CORE-594]
+
+### Bug Fixes
+
+- Implemented a number of improvements in an attempt to track down reports of truncated file transfers from Canon EOS 5D Mark IV cameras.  [CORE-606]
+
+- The `rating` and `isProtected` properties on filesystem items are now correctly dynamically updated when changed on newer Canon camera bodies.
+
+- Increased the amount of data CascableCore will transfer to get a high-resolution preview of a NEF RAW image before falling back to a lower-resolution thumbnail. [CORE-387]
+
+
 # CascableCore 12.5
 
 ### Camera Discovery Changes
