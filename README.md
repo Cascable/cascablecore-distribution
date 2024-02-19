@@ -14,6 +14,8 @@ For older releases of the framwork, see the [CascableCore Binaries](https://gith
 
 - Next, our [Getting Started With CascableCore](https://github.com/Cascable/cascablecore-demo/blob/master/Getting%20Started%20With%20CascableCore.md) document contains discussion about the CascableCore APIs and concepts in the order in which you're likely to encounter them. These APIs and concepts are equally important for both Objective-C and Swift developers.
 
+- The [CascableCore Simulated Camera Plugin](https://github.com/Cascable/cascablecore-simulated-camera/) lets you develop your app against CascableCore's APIs without having to have a real camera to hand at all times.
+
 - API reference documentation for CascableCore can be found [here](https://cascable.github.io).
 
 ### Preparing Your App for CascableCore
