@@ -1,3 +1,12 @@
+# CascableCore 13.0.1
+
+### Camera Compatibility
+
+- Fixed incorrect parsing of Nikon "extended" shutter speed values (longer than 90 seconds). [CORE-671]
+
+- Added localised string values for Nikon U60 and U120 drive modes. [CORE-672]
+
+
 # CascableCore 13.0
 
 ### Support for Mac Catalyst

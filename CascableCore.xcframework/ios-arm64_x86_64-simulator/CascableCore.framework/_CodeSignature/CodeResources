@@ -98,7 +98,7 @@
 		</data>
 		<key>Base.lproj/NikonDriveModes.strings</key>
 		<data>
-		Yv8e07yYmwyP5dSyd1YyO+B87QI=
+		M15pBACIIk/7Ygk1O43cUePjg4w=
 		</data>
 		<key>Base.lproj/NikonEVFOutputs.strings</key>
 		<data>
@@ -272,10 +272,6 @@
 		<data>
 		YGreI0lgg6luUDWcNTTLO6PIqOs=
 		</data>
-		<key>CHANGELOG.md</key>
-		<data>
-		XzilQfCkJkoCJyPrinNChMTTjfk=
-		</data>
 		<key>Headers/CBLCamera+Diagnostics.h</key>
 		<data>
 		n6Vyy9vLJQu8Kfs5aeqPN+EqiyM=
@@ -330,7 +326,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		rxrS+JZU0/89gAuxAwDAFeWNlVQ=
+		u5cRifMpHQuqxbwX9s0vOEgQmC0=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -390,7 +386,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		Dk0M9ErqVE2NQ6eperVbjfvjGpI=
+		Ze5MDpZZdY19vS9qP9A7/hqbiYU=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -402,7 +398,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		aPhtS+Vx47Ase3Fhw+nrpSTkac0=
+		UvLyVh50pIPZDPlIq87oaZobhbI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -619,7 +615,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Ev9QvLbaQM+5medzNdZbRqsAIwg=
+			cDmQJhpwK75SwubEQpZUaVJu5Xg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1179,7 +1175,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wMwkbQjFugVTqmYzuBErQDtNJ4MXlcb5H7nTGWgBKY0=
+			R2UcDm/bJDcSRrDD2ixUK5tUCulsalYGEZWxc2kEVQk=
 			</data>
 		</dict>
 		<key>Base.lproj/NikonEVFOutputs.strings</key>
@@ -1483,13 +1479,6 @@
 			BE5LzVZmxqmEBeRAOX+RuL6NyKQjmtrFA0Rwy+owLlU=
 			</data>
 		</dict>
-		<key>CHANGELOG.md</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			D82A90KnY1rS2XcTufs2vx0NFqmsNa6bzQZT6rnEUC4=
-			</data>
-		</dict>
 		<key>Headers/CBLCamera+Diagnostics.h</key>
 		<dict>
 			<key>hash2</key>
@@ -1585,7 +1574,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0CeahJ6zD/CrRkulR7LPRWP2hcwYtx3dXlJkB5BD9b0=
+			fh8HnMhPWJkEKzW0VHbq5rXjCpPNOT9BDW0znDkOuFU=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1690,7 +1679,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kf6hMemyHiAudR9YinqrdSQZw0M039w2qn4c0Q7LyP0=
+			aNIdk6Cb/H64paSnktbxZIvcHCgGuGJwm0oPn0dFmNM=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>
@@ -1925,7 +1914,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			de8lNIHeaL48i1my/7xN4V53geJEooHqQiE3JFtfEFg=
+			/6DC7KbcaSWdzUQFvTDTwowV9pbiTCQsefpZyOhN+Ss=
 			</data>
 			<key>optional</key>
 			<true/>
