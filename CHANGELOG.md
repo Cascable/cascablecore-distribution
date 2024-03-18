@@ -1,3 +1,18 @@
+# CascableCore 13.0.2
+
+### Camera Compatibility
+
+- Added support for the OM System OM-1 Mark II.
+
+- When connected via USB, the Canon EOS 1300D no longer has the `CBLCameraSupportedFunctionalityLimitedRemoteControlWithoutLiveView` functionality flag, and has the full range of shutter control. Behaviour when connected via WiFi is unchanged.
+
+### Bug Fixes
+
+- Fixed a bug that'd cause KVO observations to not fire for the `currentCommandCategories` property with Olympus/OMS cameras.
+
+- Improved the reliability of live view on the Canon EOS 1300D, particularly when switching between photo and video modes. Live view will be terminated if it's active when such a mode change occurs, but the camera will no longer go into an undefined state.
+
+
 # CascableCore 13.0.1
 
 ### Camera Compatibility

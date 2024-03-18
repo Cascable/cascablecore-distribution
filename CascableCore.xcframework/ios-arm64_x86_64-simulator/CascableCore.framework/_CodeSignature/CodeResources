@@ -142,7 +142,7 @@
 		</data>
 		<key>Base.lproj/OlympusDriveModes.strings</key>
 		<data>
-		GCHhSzIj/pmioedsap+/zLGtl6k=
+		5aF2zd4cRHFl4Z+6DHB+r9ItPTQ=
 		</data>
 		<key>Base.lproj/OlympusEVFOutputs.strings</key>
 		<data>
@@ -326,7 +326,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		u5cRifMpHQuqxbwX9s0vOEgQmC0=
+		et7Oxdk0gHmgN7oqfm9WHBpzc0c=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -398,7 +398,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		UvLyVh50pIPZDPlIq87oaZobhbI=
+		uChc8gVfP20WCUOFkrVcY+OWrJU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -714,7 +714,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OF+ZyyvRIHZCzbv9k0mVeAxhMRE=
+			zAUQ2Br7lS9RoEAOk9c5Gb4WFTs=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1252,7 +1252,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ir00MjPPTyZybA2zdYBPgwYz5wM1D6ar4/jvbDiZM8E=
+			uhZ3EuRPNu3j+YWewA2s4EHvJiycFDh5aWA8Naa1BpA=
 			</data>
 		</dict>
 		<key>Base.lproj/OlympusEVFOutputs.strings</key>
@@ -1574,7 +1574,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fh8HnMhPWJkEKzW0VHbq5rXjCpPNOT9BDW0znDkOuFU=
+			O7W3sK244Yo9PW49izbsHgNvlJuXrxheBjgKaOkdcFo=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -2013,7 +2013,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ksyXb8pu9uoKmVH7Vp376O6WsuvImgnpmQ2CnL/X0/c=
+			ud9ul3Thi/Ye0aFNjG/WUN9jvSGdVQCdDmTL1nnWuf4=
 			</data>
 			<key>optional</key>
 			<true/>
