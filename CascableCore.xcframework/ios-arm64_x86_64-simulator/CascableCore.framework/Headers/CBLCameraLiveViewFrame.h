@@ -70,12 +70,18 @@ NS_SWIFT_NAME(LiveViewFrame)
  for detailed information on the pixel format.
 
  It may be necessary to crop this image to avoid black bars. See `rawImageCropRect`.
+
+ @note While the pixel format is usually stable once a live view stream starts, some cameras can change pixel formats
+ mid-stream. It's important to be able to handle this if you're working directly with the various rawPixel… properties.
  */
 @property (nonatomic, strong, nonnull, readonly) NSData *rawPixelData;
 
 /**
  Returns the broad pixel format of the data in the `rawPixelData` property. If the value is a raw pixel buffer, see
  the `rawPixelFormatDescription` for additional details.
+
+ @note While this is usually stable once a live view stream starts, some cameras can change pixel formats
+ mid-stream. It's important to be able to handle this if you're working directly with the various rawPixel… properties.
  */
 @property (nonatomic, readonly) CBLCameraLiveViewFramePixelFormat rawPixelFormat;
 

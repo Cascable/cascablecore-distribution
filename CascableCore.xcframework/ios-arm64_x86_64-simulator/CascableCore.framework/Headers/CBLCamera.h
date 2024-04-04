@@ -440,6 +440,10 @@ typedef void (^CBLCameraLiveViewTerminationHandler)(CBLCameraLiveViewTermination
  save a significant amount of CPU resources.
 
  When omitted from the options dictionary, the assumed value for this option is `@NO`.
+
+ @note If you enable this option, it's important to be aware that while a camera's live view image pixel format is
+ usually stable once a stream starts, some cameras can change pixel formats mid-stream. It's important to be able to
+ handle this if you're working directly with the various rawPixel… properties on live view frames.
  */
 static NSString * _Nonnull const CBLLiveViewOptionSkipImageDecoding = @"CBLLiveViewOptionSkipImageDecoding";
 

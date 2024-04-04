@@ -1,3 +1,12 @@
+# CascableCore 13.1
+
+### Camera Compatibility
+
+- Added support for non-JPEG live view streams from the Canon EOS 1300D. [CORE-694]
+
+**Important:** If you're working with live view pixel buffers directly, it's important to handle the case where the pixel buffer format changes mid-stream. The EOS 1300D switches from JPEG to RGB24 for live view during video recording, for instance. If you're using CascableCore's own image rendering via the `image` property on live view frames, no code changes should be necessary.
+
+
 # CascableCore 13.0.2
 
 ### Camera Compatibility

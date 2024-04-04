@@ -278,7 +278,7 @@
 		</data>
 		<key>Headers/CBLCamera.h</key>
 		<data>
-		p6d0Pe7hpJE7cbkIfHrGDdgYnz4=
+		57hng8CljmeIpS1hyy79OG2lZZo=
 		</data>
 		<key>Headers/CBLCameraAEResult.h</key>
 		<data>
@@ -302,7 +302,7 @@
 		</data>
 		<key>Headers/CBLCameraLiveViewFrame.h</key>
 		<data>
-		BvIRwFf4EzDinoRLWW0VG4j3o1M=
+		3PvhJblZIdiKOiSDN5bVNqLQonk=
 		</data>
 		<key>Headers/CBLCameraManualDiscovery.h</key>
 		<data>
@@ -326,7 +326,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		et7Oxdk0gHmgN7oqfm9WHBpzc0c=
+		G7LRL8Z/6eYw0Fl5+KBM8hC4Rkg=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -398,7 +398,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		uChc8gVfP20WCUOFkrVcY+OWrJU=
+		hH+1Mo4OXk9b7luarm8GPsIsvDk=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1490,7 +1490,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			d1SslTL877hMhr74ytVkMWaCye6Lubrkeksm4agALk0=
+			PY6o4l6l/7PprhVO0siN4UOfikJ5HUKf/d7Co2yxLag=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraAEResult.h</key>
@@ -1532,7 +1532,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			t3bDUfsc7KEjaM9dGn46d1aV3mIA/tQWQ9JASavTMJ8=
+			h1REfHTMG5xL8nP4CE8FTZ35iJBX/mLytLcoGSbRXXU=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraManualDiscovery.h</key>
@@ -1574,7 +1574,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			O7W3sK244Yo9PW49izbsHgNvlJuXrxheBjgKaOkdcFo=
+			1iBTLibY2yQQqlwDPHoX0+5ECRfG27LYcifR/IHPrww=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
