@@ -69,7 +69,8 @@ NS_SWIFT_NAME(LiveViewFrame)
  Returns the raw image data for the frame. See the `rawPixelFormat` and `rawPixelFormatDescription` properties
  for detailed information on the pixel format.
 
- It may be necessary to crop this image to avoid black bars. See `rawImageCropRect`.
+ It may be necessary to crop this image to avoid black bars. See `rawPixelCropRect`. It may be neccessary to resize this
+ image to avoid distortion. See `naturalImageSize`.
 
  @note While the pixel format is usually stable once a live view stream starts, some cameras can change pixel formats
  mid-stream. It's important to be able to handle this if you're working directly with the various rawPixel… properties.
@@ -91,17 +92,47 @@ NS_SWIFT_NAME(LiveViewFrame)
 /** Returns the size of the image contained in the `rawPixelData` property, in pixels. */
 @property (nonatomic, readonly) CGSize rawPixelSize;
 
-/** Returns the rectangle with which to crop the image contained in `rawPixelData` to avoid black bars. */
+/** 
+ Returns the rectangle with which to crop the image contained in `rawPixelData` to avoid black bars. It may also
+ be neccessary to resize the image after cropping at the render site to avoid distortion. See `naturalImageSize` for
+ details.
+ */
 @property (nonatomic, readonly) CGRect rawPixelCropRect;
 
 /**
  Returns an NSImage or UIImage for this live view frame. Any required pixel format conversion and cropping will be
- applied for you. Due to this, the pixel size of this image may be different to the value of `rawPixelSize`.
+ applied for you. Due to this, the pixel size of this image may be different to the value of `rawPixelSize`. It may
+ be neccessary to resize this image at the render site to avoid distortion. See `naturalImageSize` for details.
  */
 @property (nonatomic, strong, nullable, readonly) PLATFORM_IMAGE *image;
 
-/** Returns the aspect in which the live view coordinate system is mapped.
- All geometric values returns by this class are relative to this property. */
+/**
+ Returns the live view frame's "natural" image size - i.e., the size at which it should be rendered to appear correctly.
+ Usually, this is the same as the `rawPixelCropRect` property's size value (and the `image` property's size value), but
+ in some cases cameras can deliver distorted images due to factors such as (for e.g.) line skipping.
+
+ If this value is different to the aforementioned size values, the image needs to be resized by the client (i.e., you)
+ in order to render correctly to the user.
+
+ Due to the performance implications of this operation, it is **highly** recommended that this is done at the UI level
+ so it can be performed by the device's GPU. An example of this would be setting a view's aspect ratio based on this
+ value, then having it stretch its contents to fit.
+ */
+@property (nonatomic, readonly) CGSize naturalImageSize;
+
+/** 
+ Returns `YES` if the frame's `naturalImageSize` value is different to the size of the image delivered by the camera
+ (including any crop rect), otherwise `NO`.
+
+ If this value is `YES`, the frame's image may need to be resized to not appear distorted. See `naturalImageSize`
+ for details.
+ */
+@property (nonatomic, readonly) BOOL requiresImageResizeToAvoidDistortion;
+
+/** 
+ Returns the aspect in which the live view coordinate system is mapped. All values related to focus and zoom geometry
+ returned by this class are relative to this property.
+ */
 @property (nonatomic, readonly) CGSize aspect;
 
 /** Returns the areas defining the frame's focusing rectangles, or an empty array if no focusing rectangles are available. */

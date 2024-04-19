@@ -1,3 +1,10 @@
+# CascableCore 13.2
+
+### API Changes
+
+- Added the `naturalImageSize` and `requiresImageResizeToAvoidDistortion` properties to `id <CBLCameraLiveViewFrame>` to aid with situations where cameras deliver distorted live view images. See the documentation for these properties for a detailed discussion.
+
+
 # CascableCore 13.1
 
 ### Camera Compatibility
