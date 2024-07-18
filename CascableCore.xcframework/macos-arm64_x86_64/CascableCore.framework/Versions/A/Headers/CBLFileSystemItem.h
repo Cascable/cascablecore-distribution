@@ -100,6 +100,17 @@ typedef CBLFileStreamInstruction (^CBLFileStreamChunkDelivery)(id <CBLFileSystem
  */
 typedef void (^CBLFileStreamCompletion)(id <CBLFileSystemItem> _Nonnull item, NSError * _Nullable error, id _Nullable context) NS_SWIFT_NAME(FileStreamCompletion);
 
+/** Describes the type of rating a particular filesystem item takes when changing the rating. */
+typedef NS_ENUM(NSInteger, CBLFileSystemItemMutableRatingType) {
+    /** The item is not able to have its rating mutated. */
+    CBLFileSystemItemMutableRatingTypeNone,
+    /** The item's rating takes an ITPC-standard rating in the range 0...5. */
+    CBLFileSystemItemMutableRatingTypeIPTC,
+    /** The items's rating is effectively boolean (or "starred") in the range 0...1. */
+    CBLFileSystemItemMutableRatingTypeBoolean
+} NS_SWIFT_NAME(FileSystemItemMutableRatingType);
+
+
 /** A filesystem item represents a file or folder on the camera's storage. */
 NS_SWIFT_NAME(FileSystemItem)
 @protocol CBLFileSystemItem <NSObject>
@@ -128,6 +139,30 @@ NS_SWIFT_NAME(FileSystemItem)
 
 /** The item's rating. Follows the IPTC StarRating spec (0 = no rating, otherwise 1-5 stars). */
 @property (nonatomic, readonly) NSInteger rating;
+
+/** 
+ The item's rating mutation type. Folders and unsupported files will return `CBLFileSystemItemMutableRatingTypeNone`,
+ as will items without loaded metadata (i.e., `-metadataLoaded` returns `NO`), and items on a camera that doesn't
+ support mutating an item's rating via remote control at all.
+ */
+@property (nonatomic, readonly) CBLFileSystemItemMutableRatingType ratingMutationType;
+
+/**
+ Attempt to update the item's rating to the given value. See the `-ratingMutationType` property for valid values. Values
+ will be clamped to the allowable range.
+
+ Due to the caveats mentioned below, it's highly recommended that you observe the `-rating` property for changes to
+ an item's rating rather than rely on the completion handler of this method.
+
+ @note: Updating the rating of an image may change the rating of other, releated images (such as the other side of
+        a RAW+JPEG pair).
+
+ @note: The completion handler of this method indicates whether the command was accepted by the camera and didn't
+        immediately fail. Some cameras will accept the command but still not update the rating in some instances -
+        we've observed this happening on Canon cameras when trying to apply a rating to images shot with a different
+        camera model, for example.
+ */
+-(void)updateRatingTo:(NSInteger)newRating completionHandler:(nonnull CBLErrorableOperationCallback)completionHandler NS_SWIFT_NAME(updateRating(to:completionHandler:));
 
 /** Returns the parent item of this file, or `nil` if the receiver represents the root directory. */
 @property (nonatomic, readonly, weak, nullable) id <CBLFileSystemFolderItem> parent;

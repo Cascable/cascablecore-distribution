@@ -1,3 +1,36 @@
+# CascableCore 14.0
+
+### Support for visionOS
+
+CascableCore now supports the visionOS platform. Unfortunately, visionOS doesn't currently support USB connections to cameras.
+
+### Support for Applying Ratings to Files
+
+CascableCore now allows you to apply ratings to images and videos on camera storage cards. Currently, this is only supported by Canon EOS cameras. [CORE-332]
+
+The API for this is mainly in `id <CBLFileSystemItem>`. The `-ratingMutationType` property tells you the type of rating the particular file supports, and `-updateRatingTo:completionHandler:` can be called to apply a new rating to the file.
+
+Additionally, the `CBLCameraSupportedFunctionalityMutableRatings` functionality flag can be used to see if a camera generally supports applying ratings to files.
+
+### Camera Compatibility
+
+- Added support for newer Canon PowerShot cameras via USB. This includes the G7X II and newer, SX70 HS and newer, SX730 HS and newer, and the V10. Do note that PowerShot models tend to have quite a restricted set of property options compared to EOS models. [CORE-744]
+
+### API Changes
+
+- Renamed the `-operatingSystemIsNewEnoughForWiredCameras` property on `CBLCameraDiscovery` to `-platformSupportsWiredCameras`.
+
+### Bug Fixes
+
+- Fixed a bug that'd cause thumbnails of JPEG images to load incorrectly from Canon and Nikon cameras. [CORE-718] 
+
+- Fixed a bug that'd cause discovery of all camera types (including via USB and the simulated camera plugin) to take several minutes if the client device happened to be connected to a WiFi network with certain traffic limitations in place (such as a strict firewall). Network-connected cameras may still not be detected if traffic to them is blocked, but discovery of other cameras will no longer be affected. [CORE-725]
+
+### Misc.
+
+- Numeric `CBLErrorCode` values are now explicitly declared in the `NSError+CBLExtensions.h` header to aid debugging. The values themselves are unchanged.
+
+
 # CascableCore 13.2
 
 ### API Changes

@@ -139,6 +139,8 @@ typedef NS_OPTIONS(NSUInteger, CBLCameraSupportedFunctionality) {
     CBLCameraSupportedFunctionalityVideoRecording = 1 << 17,
     /** The camera supports panning live view around while zoomed in. */
     CBLCameraSupportedFunctionalityPannableLiveView = 1 << 18,
+    /** The camera supports applying ratings to images on its storage devices. */
+    CBLCameraSupportedFunctionalityMutableRatings = 1 << 19,
     CBLCameraSupportedFunctionalityAll = NSUIntegerMax
 } NS_SWIFT_NAME(SupportedFunctionality);
 

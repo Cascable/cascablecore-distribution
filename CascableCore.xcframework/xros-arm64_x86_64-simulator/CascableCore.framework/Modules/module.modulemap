@@ -1,0 +1,11 @@
+framework module CascableCore {
+  umbrella header "CascableCore.h"
+  export *
+
+  module * { export * }
+}
+
+module CascableCore.Swift {
+  header "CascableCore-Swift.h"
+  requires objc
+}

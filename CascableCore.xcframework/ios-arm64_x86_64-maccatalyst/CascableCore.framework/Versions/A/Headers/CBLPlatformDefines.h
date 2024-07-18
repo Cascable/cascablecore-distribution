@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#if TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE || TARGET_OS_VISION
 #import <UIKit/UIKit.h>
 #define PLATFORM_IMAGE UIImage
 #else

@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/CanonAEModes.strings</key>
 		<data>
-		f+cBAiZ9tUjNFYXoT5XXp2WUbJU=
+		fvpm+osryKEC9ymtygDhXZUngh8=
 		</data>
 		<key>Base.lproj/CanonApertureValues.strings</key>
 		<data>
@@ -278,7 +278,7 @@
 		</data>
 		<key>Headers/CBLCamera.h</key>
 		<data>
-		57hng8CljmeIpS1hyy79OG2lZZo=
+		5jMVxqjjBSf/CKS+IGCEy8OqnYU=
 		</data>
 		<key>Headers/CBLCameraAEResult.h</key>
 		<data>
@@ -286,7 +286,7 @@
 		</data>
 		<key>Headers/CBLCameraDiscovery.h</key>
 		<data>
-		jbpwHeIRJV1OFbumLvENJJe3mxA=
+		Q4/Lzljifhxe2hxTypP3eUViw9k=
 		</data>
 		<key>Headers/CBLCameraDiscoveryService.h</key>
 		<data>
@@ -326,7 +326,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		iSnWqmC52cpReyFpfbAQ5erS6X8=
+		Fr40dEhXAPhHT5cup2LpRoU+hTY=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -346,7 +346,7 @@
 		</data>
 		<key>Headers/CBLFileSystemItem.h</key>
 		<data>
-		UhtoZW7cDcEH6D1rGvuBdBWLstY=
+		/a2fVO4msjQ6XzSEeIc1vMBGtzI=
 		</data>
 		<key>Headers/CBLFocusInfo.h</key>
 		<data>
@@ -374,7 +374,7 @@
 		</data>
 		<key>Headers/CBLPlatformDefines.h</key>
 		<data>
-		vhlnHf+vGAWZc9dx4LJecSPceLk=
+		xl0qTLVxS4omLMICdm0xGjguLG0=
 		</data>
 		<key>Headers/CBLRAWImageDescription.h</key>
 		<data>
@@ -386,7 +386,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		Ze5MDpZZdY19vS9qP9A7/hqbiYU=
+		5EpHYFLPv3+TZSChoGpfQlqXZhU=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -394,11 +394,11 @@
 		</data>
 		<key>Headers/NSError+CBLExtensions.h</key>
 		<data>
-		JZng8BwOmuzJN2Js60dl44l3mhs=
+		0FEjX+iyL0363YcB9ajopcjw0zs=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		6VBElO2x/UIozEnvUOqYXFE8s+w=
+		vxV4QmVlXHYeEKqo2xsU9pBc0MA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -408,7 +408,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			eEHX98mzKyI7/CYdIDOy7rECW8c=
+			SHV7YDwjIxSmWYD/GxFXLgCOiPI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1014,7 +1014,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DeUN030IckBok4/5SXdEfk518DjGJko7ed3ihN4TjT0=
+			Q7KY12GSbzdicvOg6Ip3Wjyb2KzOsC23NPI4+4ZlcFg=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonApertureValues.strings</key>
@@ -1490,7 +1490,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PY6o4l6l/7PprhVO0siN4UOfikJ5HUKf/d7Co2yxLag=
+			QEMKcwqj6pF2b5fAZNzfX7mHJvxaoNJWFrbQz0+rfd4=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraAEResult.h</key>
@@ -1504,7 +1504,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mjXxQT75kkdZ/96JxrIInha5U2+EApDuDbPg7CD0Ogo=
+			TpjM28+2knwttasx3gKfBmPyUmdap+NBHR1XTPWhdZ4=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraDiscoveryService.h</key>
@@ -1574,7 +1574,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ya5A/i0aSsUHQ+NKyKZ/wcIEYnln6dPc+duoMDmhN44=
+			YxCjhn9KKMxrh/hnpO+ZN5Nc4Ght41jJ1G8Oq+LsLUE=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1609,7 +1609,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			khI+wRgcUyHN0u5QGt/dkMfqMhcrR+OiyKkkNNmuFJw=
+			iAw5vOYR0F8WmgunHvYRYofU+9QXugNP1nw1WuJ7zmo=
 			</data>
 		</dict>
 		<key>Headers/CBLFocusInfo.h</key>
@@ -1658,7 +1658,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XuPhLtq8PPo0gHFc/heuew5155NZQSD6jxw3ZmN5QFg=
+			QsJYUwC/oacmsUoZZxt3dzNUbexSdcl5NXfx9VnmAio=
 			</data>
 		</dict>
 		<key>Headers/CBLRAWImageDescription.h</key>
@@ -1679,7 +1679,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			aNIdk6Cb/H64paSnktbxZIvcHCgGuGJwm0oPn0dFmNM=
+			8aCFXASen+yCmQ+qfW6KPa3EGGK+RCAnWrd7acgKmBU=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>
@@ -1693,7 +1693,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BhddHyA+vIiAEafFoDka+QdHyAwhxlA7Jg343bPcnK4=
+			yj4BhppisHRSzx4AixYdQGz0ephuoz9ZDnUQttOzhX4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1707,7 +1707,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			txgf7TEUvzvFwtLUi98gEav7J7tqRQo4upDoeFDAfvU=
+			A2/1cceRB9br02HAwtq5xE+0QqUHnv8aXwxHbxjbBbA=
 			</data>
 			<key>optional</key>
 			<true/>

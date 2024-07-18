@@ -94,8 +94,8 @@ NS_SWIFT_NAME(CameraDiscovery)
  */
 @property (nonatomic, readwrite) CBLCameraDiscoveryMode discoveryMode;
 
-/** Returns `YES` if the current environment is running an operating system new enough to support wired cameras. */
-@property (nonatomic, readonly) BOOL operatingSystemIsNewEnoughForWiredCameras;
+/** Returns `YES` if the current platform is running an operating system that supports wired cameras. */
+@property (nonatomic, readonly) BOOL platformSupportsWiredCameras;
 
 /**
  Returns `YES` if the current environment has the authorization to discover wired cameras. If this method returns `NO`,

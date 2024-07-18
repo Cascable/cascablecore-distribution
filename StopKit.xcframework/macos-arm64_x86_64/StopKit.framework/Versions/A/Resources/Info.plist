@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>23D56</string>
+	<string>23F79</string>
 	<key>CBLStopKitVerboseVersionString</key>
-	<string>1.1.7-g9916583</string>
+	<string>1.2-gb14c678</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -19,13 +19,13 @@
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1.7</string>
+	<string>1.2</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>42</string>
+	<string>44</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -33,17 +33,17 @@
 	<key>DTPlatformName</key>
 	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>14.2</string>
+	<string>14.5</string>
 	<key>DTSDKBuild</key>
-	<string>23C53</string>
+	<string>23F73</string>
 	<key>DTSDKName</key>
-	<string>macosx14.2</string>
+	<string>macosx14.5</string>
 	<key>DTXcode</key>
-	<string>1510</string>
+	<string>1540</string>
 	<key>DTXcodeBuild</key>
-	<string>15C65</string>
+	<string>15F31d</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>10.14.6</string>
+	<string>10.13</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2017-2024 Cascable AB. All rights reserved.</string>
 </dict>
