@@ -1,3 +1,8 @@
+# CascableCore 14.0.2
+
+- Fixed a bug that would cause the available command categories to be incorrectly reported for some Nikon cameras, including the Zf.
+
+
 # CascableCore 14.0.1
 
 - Fixed a configuration error that caused CascableCore 14.0.0 to be built with an incorrect deployment target.
