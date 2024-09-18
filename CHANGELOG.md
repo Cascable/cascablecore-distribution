@@ -1,3 +1,10 @@
+# CascableCore 14.1
+
+### Camera Compatibility
+
+- Added support for the Canon EOS R5 Mark II.
+
+
 # CascableCore 14.0.2
 
 - Fixed a bug that would cause the available command categories to be incorrectly reported for some Nikon cameras, including the Zf.
