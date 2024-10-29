@@ -1,3 +1,20 @@
+# CascableCore 14.1
+
+### Camera Compatibility
+
+- Added initial support for the Canon EOS R5 Mark II.
+
+ **Note:** The EOS R5 Mark II has a number of... eccentricities that make it behave a little bit differently to prior Canon cameras. We've done our best to shield clients of CascableCore from these, but a couple of exceptions remain:
+
+     - The `fetchThumbnail…` and `fetchEXIFMetadata…` methods will always fail with the error `CBLErrorCodeNotAvailable`.
+
+     - The `fetchPreview…` methods may take longer to execute than is expected.
+
+     - When streaming files from the camera with the `streamItem…` methods, cancelling the transfer midway through may have a longer period than expected between cancelling the transfer and the transfer's completion handler being called.
+
+ We're continuing to investigate these issues.
+
+
 # CascableCore 14.0.2
 
 - Fixed a bug that would cause the available command categories to be incorrectly reported for some Nikon cameras, including the Zf.
