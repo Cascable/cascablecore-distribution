@@ -1,3 +1,10 @@
+# CascableCore 14.1.1
+
+### Bug Fixes
+
+- Worked around a crash, introduced in iOS 18, that would happen when attempting to preview HIF images on certain Canon cameras. Previews for such images will now fail to load with the error `CBLErrorCodeNoThumbnail` rather than crashing.
+
+
 # CascableCore 14.1
 
 ### Camera Compatibility
