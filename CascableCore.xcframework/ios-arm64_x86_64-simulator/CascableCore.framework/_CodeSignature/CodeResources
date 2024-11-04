@@ -40,6 +40,10 @@
 		<data>
 		vWFECHNVXam+0SHqhoTY1llbftE=
 		</data>
+		<key>Base.lproj/CanonImageDestinations.strings</key>
+		<data>
+		ulQzxloR6eJSldiawL9CgV4sYGg=
+		</data>
 		<key>Base.lproj/CanonLVAFSystems.strings</key>
 		<data>
 		DtUj/2l1m0oUIN8gCCRa1JQwF/I=
@@ -58,7 +62,7 @@
 		</data>
 		<key>Base.lproj/CanonShortPropertyCodes.strings</key>
 		<data>
-		5MP9IbEu517BxUc64oJ7TwI+moI=
+		oNsF0fIOuJJCgiQN3kB5YkdmHc8=
 		</data>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
 		<data>
@@ -252,6 +256,10 @@
 		<data>
 		/3QW9qS19DuvBVPXmhc0QaB1+wQ=
 		</data>
+		<key>Base.lproj/UniversalCaptureDestinations.strings</key>
+		<data>
+		mE6OTOPFQ+N72kQCaBquEviQ1Bs=
+		</data>
 		<key>Base.lproj/UniversalExposureCompensations.strings</key>
 		<data>
 		E14oXyC7/OzezEzCGWOf06dhEiI=
@@ -294,7 +302,7 @@
 		</data>
 		<key>Headers/CBLCameraInitiatedTransfer.h</key>
 		<data>
-		oYs7iXrB75MspbbJU14HY/g8g4U=
+		WbEyr5uwRBMM5vStxBVJNz5Ghio=
 		</data>
 		<key>Headers/CBLCameraLiveViewAFArea.h</key>
 		<data>
@@ -326,7 +334,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		+yaQe6bu8HhwNsoK5dwlQDfp6Ec=
+		KLx49BbmnjX/KBNAdz+4sUPMVls=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -334,7 +342,7 @@
 		</data>
 		<key>Headers/CBLExifHelpers.h</key>
 		<data>
-		x4Hrj+RNOkdHKhzo3rmXHx3L60Q=
+		1asAsEeX9qO/l4aGWqtpeTDXkYk=
 		</data>
 		<key>Headers/CBLFileStorage.h</key>
 		<data>
@@ -386,7 +394,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		xhwezyIj4YXHRx+F4Wa4Z35zBbg=
+		yzwPI442YLAcJm6jCWK/7tpVbyg=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -398,7 +406,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Iwg5ayX6Sg5kqHSPursUJaqqjEE=
+		4YOdIFOgLhDoykOpNPszylTn6VQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -481,6 +489,15 @@
 			<key>hash</key>
 			<data>
 			HpEo2+PDym79skeP4s9jULXRK1U=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/CanonImageDestinations.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			lDaexeu+rbmFVcI0Zj0z1k5HDNA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -962,6 +979,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>de.lproj/UniversalCaptureDestinations.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			t2vymyu7jEn2DsTNWUZKQwKXM/g=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/UniversalExposureCompensations.strings</key>
 		<dict>
 			<key>hash</key>
@@ -1073,6 +1099,13 @@
 			tTCkEtSU9ZtP1PBAvUn0DOZHyXBmXh9fwFmfEM1kHx4=
 			</data>
 		</dict>
+		<key>Base.lproj/CanonImageDestinations.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5UzIywC8bYeE4AjJLNl6lAhBmrnB5L5K5G1fLdo9V7o=
+			</data>
+		</dict>
 		<key>Base.lproj/CanonLVAFSystems.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -1105,7 +1138,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			To5yh0tep0DwLzYiSq+SAjxWAF045/aTzXvEOQdAIVQ=
+			ptVcn6EMVJZorSLX9gzFJg8ooMdEbKNyCB1ENgKxcZI=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
@@ -1444,6 +1477,13 @@
 			O4cvY10/D+xzSMXxkARiB2bN03uthM2u/JJKhq6rWEA=
 			</data>
 		</dict>
+		<key>Base.lproj/UniversalCaptureDestinations.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TmN8sHyyjLSsNtYY7wAubkUw7GSZNWnQFHGq4dO/lfU=
+			</data>
+		</dict>
 		<key>Base.lproj/UniversalExposureCompensations.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -1518,7 +1558,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			0yI012Mva0I6DAfMivs34/7+phY3tteJkA0cgjyDKO8=
+			tP/vm3ke2KBEjSv8b/c9jwgKwxUOoMox3I1sphhce3g=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraLiveViewAFArea.h</key>
@@ -1574,7 +1614,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			loz3TIfEls7P7Va+n7Do+OUc2+wbxr3XBoRxv1z6bVE=
+			B0XyxVO7VWXISlbtvIFU4BizrzDmljfpDl5D+mfppf8=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1588,7 +1628,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			eyKPxe9eXI64khMGd7waUhl3YsRBsFChXPjacgqsLaE=
+			iOsqMkJc8mduWUkyzpo9zBiavtiVs8WI0vuj1aAtvgw=
 			</data>
 		</dict>
 		<key>Headers/CBLFileStorage.h</key>
@@ -1679,7 +1719,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Hu73CqZdI8auWYJnw35KcvTxVr+dWwY3dEjjcfOCuHA=
+			xWB3trvrnRDH5qJsmUpWxb4QGhT5Ek5pR2rFAYG5loI=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>
@@ -1780,6 +1820,15 @@
 			<key>hash2</key>
 			<data>
 			H49/xn2fztYfEvI2g5p+6Tos4y4rE+Wl2w6hg/Tsr0g=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/CanonImageDestinations.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			p/pp89oRmnoa/ZocJw451cTX879v5BlPs88x9WC0kLE=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2257,6 +2306,15 @@
 			<key>hash2</key>
 			<data>
 			9A4nuOZnH5cKgJAB30R3SGXeZRHAbWHwzJeztonJ4U0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/UniversalCaptureDestinations.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zLgaRoRXJ09uPoOByGk8v2UNoPNCf74Yiic2AXfAT5Y=
 			</data>
 			<key>optional</key>
 			<true/>

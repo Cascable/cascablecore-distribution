@@ -309,9 +309,34 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-
-
 @class NSData;
+@class NSString;
+@class NSDate;
+@class NSURL;
+@class UIImage;
+
+SWIFT_CLASS_NAMED("AdaptablePTPCameraInitiatedTransferResult")
+@interface CBLAdaptablePTPCameraInitiatedTransferResult : NSObject <CBLCameraInitiatedTransferResult>
+- (nonnull instancetype)initWithImageData:(NSData * _Nonnull)imageData of:(uint16_t)format from:(CBLCameraFamily)cameraFamily fileName:(NSString * _Nullable)fileName userFacingFileNameHint:(NSString * _Nullable)userFacingFileNameHint fileDate:(NSDate * _Nullable)fileDate dateRequestCreated:(NSDate * _Nonnull)dateRequestCreated transferIsCritical:(BOOL)transferIsCritical;
+@property (nonatomic, readonly) BOOL isOnlyDestinationForImage;
+@property (nonatomic, readonly) CBLCameraInitiatedTransferRepresentation availableRepresentations;
+@property (nonatomic, readonly, copy) NSString * _Nullable fileNameHint;
+@property (nonatomic, readonly, copy) NSDate * _Nonnull dateProduced;
+- (BOOL)containsRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)suggestedFileNameExtensionForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)utiForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)fileSizeForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (void)writeRepresentation:(CBLCameraInitiatedTransferRepresentation)representation toURL:(NSURL * _Nonnull)destinationUrl completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler;
+- (void)writeRepresentation:(CBLCameraInitiatedTransferRepresentation)representation toURL:(NSURL * _Nonnull)destinationUrl completionQueue:(dispatch_queue_t _Nonnull)completionQueue completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler;
+- (void)generateDataForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler;
+- (void)generateDataForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation completionQueue:(dispatch_queue_t _Nonnull)completionQueue completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler;
+- (void)generatePreviewImage:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
 
 SWIFT_CLASS("_TtC12CascableCore18CBLEOSSwiftInterop")
 @interface CBLEOSSwiftInterop : NSObject
@@ -319,7 +344,6 @@ SWIFT_CLASS("_TtC12CascableCore18CBLEOSSwiftInterop")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSString;
 
 SWIFT_CLASS_NAMED("CR3Parser")
 @interface CBLCR3Parser : NSObject
@@ -351,6 +375,25 @@ SWIFT_CLASS_NAMED("CascableCoreSwiftBootstrap")
 + (void)setupSwiftLogging;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+SWIFT_CLASS_NAMED("DataReader")
+@interface CBLDataReader : NSObject
+@property (nonatomic, readonly, copy) NSData * _Nonnull data;
+@property (nonatomic, readonly) NSInteger offset;
+@property (nonatomic, readonly) NSInteger remaining;
+- (nonnull instancetype)initWithData:(NSData * _Nonnull)data OBJC_DESIGNATED_INITIALIZER;
+- (void)setOffsetTo:(NSInteger)newOffset;
+@property (nonatomic, readonly) BOOL isAtEnd;
+- (uint8_t)readOneByteUnsignedInt SWIFT_WARN_UNUSED_RESULT;
+- (int8_t)readOneByteSignedInt SWIFT_WARN_UNUSED_RESULT;
+- (uint32_t)readFourByteLittleEndianUnsignedInt SWIFT_WARN_UNUSED_RESULT;
+- (NSData * _Nullable)readDataOfLength:(NSInteger)length SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)readPTPString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 
 
@@ -569,6 +612,32 @@ SWIFT_CLASS_NAMED("RunloopQueue")
 @end
 
 
+
+@class CBLPTPDevice;
+@protocol CBLPTPCameraInitiatedTransferSourceCamera;
+@class NSProgress;
+
+/// A camera-initated transfer request implementation for situations where an image must be streaming directly
+/// from a camera, typically from RAM in a host-only shooting situation.
+SWIFT_CLASS_NAMED("StreamingPTPCameraInitiatedTransfer")
+@interface CBLStreamingPTPCameraInitiatedTransfer : NSObject <CBLCameraInitiatedTransferRequest>
+- (nonnull instancetype)initWithHandle:(uint32_t)handle fileSize:(uint32_t)fileSize fileType:(uint16_t)fileType fileName:(NSString * _Nullable)fileName fileDate:(NSDate * _Nullable)fileDate partialObjectOpCode:(uint16_t)partialObjectOpCode partialObjectChunkSize:(uint32_t)partialObjectChunkSize operationCompleteOpcode:(uint16_t)operationCompleteOpcode onlyDestinationForImage:(BOOL)onlyDestinationForImage device:(CBLPTPDevice * _Nonnull)device camera:(id <CBLPTPCameraInitiatedTransferSourceCamera> _Nonnull)camera operationQueue:(CBLCameraOperationQueue * _Nonnull)operationQueue OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) BOOL isOnlyDestinationForImage;
+@property (nonatomic, readonly) BOOL executionRequiredToClearBuffer;
+@property (nonatomic, readonly, copy) NSString * _Nullable fileNameHint;
+@property (nonatomic, readonly, copy) NSDate * _Nonnull dateProduced;
+@property (nonatomic, readonly) CBLCameraInitiatedTransferRepresentation availableRepresentations;
+- (BOOL)canProvideRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)predictedFileSizeForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)predictedUTIForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) CBLCameraInitiatedTransferState transferState;
+@property (nonatomic, readonly, strong) NSProgress * _Nonnull transferProgress;
+- (void)executeTransferForRepresentations:(CBLCameraInitiatedTransferRepresentation)representations completionHandler:(CBLCameraInitiatedTransferCompletionHandler _Nonnull)completionHandler;
+- (void)executeTransferForRepresentations:(CBLCameraInitiatedTransferRepresentation)representations completionQueue:(dispatch_queue_t _Nonnull)completionQueue completionHandler:(CBLCameraInitiatedTransferCompletionHandler _Nonnull)completionHandler;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 enum ReachabilityStatus : NSInteger;
 
@@ -909,9 +978,34 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 
 #if defined(__OBJC__)
 
-
-
 @class NSData;
+@class NSString;
+@class NSDate;
+@class NSURL;
+@class UIImage;
+
+SWIFT_CLASS_NAMED("AdaptablePTPCameraInitiatedTransferResult")
+@interface CBLAdaptablePTPCameraInitiatedTransferResult : NSObject <CBLCameraInitiatedTransferResult>
+- (nonnull instancetype)initWithImageData:(NSData * _Nonnull)imageData of:(uint16_t)format from:(CBLCameraFamily)cameraFamily fileName:(NSString * _Nullable)fileName userFacingFileNameHint:(NSString * _Nullable)userFacingFileNameHint fileDate:(NSDate * _Nullable)fileDate dateRequestCreated:(NSDate * _Nonnull)dateRequestCreated transferIsCritical:(BOOL)transferIsCritical;
+@property (nonatomic, readonly) BOOL isOnlyDestinationForImage;
+@property (nonatomic, readonly) CBLCameraInitiatedTransferRepresentation availableRepresentations;
+@property (nonatomic, readonly, copy) NSString * _Nullable fileNameHint;
+@property (nonatomic, readonly, copy) NSDate * _Nonnull dateProduced;
+- (BOOL)containsRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)suggestedFileNameExtensionForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)utiForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)fileSizeForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (void)writeRepresentation:(CBLCameraInitiatedTransferRepresentation)representation toURL:(NSURL * _Nonnull)destinationUrl completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler;
+- (void)writeRepresentation:(CBLCameraInitiatedTransferRepresentation)representation toURL:(NSURL * _Nonnull)destinationUrl completionQueue:(dispatch_queue_t _Nonnull)completionQueue completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler;
+- (void)generateDataForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler;
+- (void)generateDataForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation completionQueue:(dispatch_queue_t _Nonnull)completionQueue completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler;
+- (void)generatePreviewImage:(void (^ _Nonnull)(UIImage * _Nullable, NSError * _Nullable))completionHandler;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
 
 SWIFT_CLASS("_TtC12CascableCore18CBLEOSSwiftInterop")
 @interface CBLEOSSwiftInterop : NSObject
@@ -919,7 +1013,6 @@ SWIFT_CLASS("_TtC12CascableCore18CBLEOSSwiftInterop")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
-@class NSString;
 
 SWIFT_CLASS_NAMED("CR3Parser")
 @interface CBLCR3Parser : NSObject
@@ -951,6 +1044,25 @@ SWIFT_CLASS_NAMED("CascableCoreSwiftBootstrap")
 + (void)setupSwiftLogging;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+SWIFT_CLASS_NAMED("DataReader")
+@interface CBLDataReader : NSObject
+@property (nonatomic, readonly, copy) NSData * _Nonnull data;
+@property (nonatomic, readonly) NSInteger offset;
+@property (nonatomic, readonly) NSInteger remaining;
+- (nonnull instancetype)initWithData:(NSData * _Nonnull)data OBJC_DESIGNATED_INITIALIZER;
+- (void)setOffsetTo:(NSInteger)newOffset;
+@property (nonatomic, readonly) BOOL isAtEnd;
+- (uint8_t)readOneByteUnsignedInt SWIFT_WARN_UNUSED_RESULT;
+- (int8_t)readOneByteSignedInt SWIFT_WARN_UNUSED_RESULT;
+- (uint32_t)readFourByteLittleEndianUnsignedInt SWIFT_WARN_UNUSED_RESULT;
+- (NSData * _Nullable)readDataOfLength:(NSInteger)length SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)readPTPString SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 
 
@@ -1169,6 +1281,32 @@ SWIFT_CLASS_NAMED("RunloopQueue")
 @end
 
 
+
+@class CBLPTPDevice;
+@protocol CBLPTPCameraInitiatedTransferSourceCamera;
+@class NSProgress;
+
+/// A camera-initated transfer request implementation for situations where an image must be streaming directly
+/// from a camera, typically from RAM in a host-only shooting situation.
+SWIFT_CLASS_NAMED("StreamingPTPCameraInitiatedTransfer")
+@interface CBLStreamingPTPCameraInitiatedTransfer : NSObject <CBLCameraInitiatedTransferRequest>
+- (nonnull instancetype)initWithHandle:(uint32_t)handle fileSize:(uint32_t)fileSize fileType:(uint16_t)fileType fileName:(NSString * _Nullable)fileName fileDate:(NSDate * _Nullable)fileDate partialObjectOpCode:(uint16_t)partialObjectOpCode partialObjectChunkSize:(uint32_t)partialObjectChunkSize operationCompleteOpcode:(uint16_t)operationCompleteOpcode onlyDestinationForImage:(BOOL)onlyDestinationForImage device:(CBLPTPDevice * _Nonnull)device camera:(id <CBLPTPCameraInitiatedTransferSourceCamera> _Nonnull)camera operationQueue:(CBLCameraOperationQueue * _Nonnull)operationQueue OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly) BOOL isOnlyDestinationForImage;
+@property (nonatomic, readonly) BOOL executionRequiredToClearBuffer;
+@property (nonatomic, readonly, copy) NSString * _Nullable fileNameHint;
+@property (nonatomic, readonly, copy) NSDate * _Nonnull dateProduced;
+@property (nonatomic, readonly) CBLCameraInitiatedTransferRepresentation availableRepresentations;
+- (BOOL)canProvideRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)predictedFileSizeForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)predictedUTIForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) CBLCameraInitiatedTransferState transferState;
+@property (nonatomic, readonly, strong) NSProgress * _Nonnull transferProgress;
+- (void)executeTransferForRepresentations:(CBLCameraInitiatedTransferRepresentation)representations completionHandler:(CBLCameraInitiatedTransferCompletionHandler _Nonnull)completionHandler;
+- (void)executeTransferForRepresentations:(CBLCameraInitiatedTransferRepresentation)representations completionQueue:(dispatch_queue_t _Nonnull)completionQueue completionHandler:(CBLCameraInitiatedTransferCompletionHandler _Nonnull)completionHandler;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
 
 enum ReachabilityStatus : NSInteger;
 

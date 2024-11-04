@@ -51,4 +51,8 @@ NS_SWIFT_NAME(ExifHelpers)
  */
 +(NSDate * _Nullable)dateFromExifDateString:(NSString * _Nonnull)dateString;
 
+/// Express the "now" instant's time components in GMT+0. This will effectively apply the current
+/// timezone's offset to the current date.
++(NSDate * _Nonnull)nowTransposedToGMTZero;
+
 @end

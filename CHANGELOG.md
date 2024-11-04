@@ -1,3 +1,46 @@
+# CascableCore 15
+
+### Support for "True Tethering" for Canon and Nikon Cameras
+
+CascableCore 15 adds support for "true tethering" for Canon and Nikon cameras — that is, being able to transfer images from the camera without involving the camera's storage at all. When the camera is set to this mode, this behaviour matches that of newer Sony cameras. [CORE-374]
+
+This is done with the addition of the `CBLPropertyIdentifierImageDestination` property to Canon and Nikon cameras that support this mode. Typically, you'll see values like:
+
+- "Camera" (`CBLPropertyCommonValueImageDestinationCamera`)
+- "Host + Camera" (`CBLPropertyCommonValueImageDestinationCameraAndHost`)
+- "Host" (`CBLPropertyCommonValueImageDestinationConnectedHost`)
+
+When set to "Host + Camera" or "Host", you'll get camera-initiated transfer requests from the camera to transfer these images. **Important:** These requests will have their `executionRequiredToClearBuffer` property set to `true`, and you _must_ handle them - even if you discard the result - to keep the requests flowing. If you don't, the camera will get stuck waiting for the images to be transferred and will eventually refuse to shoot images.
+
+When deciding how to handle a camera-initiated transfer request, you can inspect the request object:
+
+- Requests with both `isOnlyDestinationForImage` and `executionRequiredToClearBuffer` set to `false` are images saved to the camera's storage card(s) and the camera isn't particularly fussed if you transfer them over or not. You can ignore these entirely if you wish.
+
+- Requests with `isOnlyDestinationForImage` set to `false` and `executionRequiredToClearBuffer` set to `true` are images saved to the camera's storage card(s) *but* the camera is waiting for you to transfer them as well. You must handle these requests, but the image data isn't critical (since it's also stored on the camera).
+
+- Requests with both `isOnlyDestinationForImage` and `executionRequiredToClearBuffer` set to `true` are images that're **only** being transferred to the connected host (i.e., you) and won't be saved to the camera's storage card(s). You must handle these requests, and if you don't store the result you will be losing image data. You'll get two separate transfer requests in this case - one for the image on the storage card(s), and another for the one being transferred directly to the host.
+
+**Note:** Cameras often have no opinion on the file name of images transferred directly to the host, even if that image also gets saved to the storage card(s). Such requests will have a `nil` value for the `fileNameHint` property.
+
+### Other Camera-Initiated Transfer Behaviour Changes
+
+- When possible, camera-initiated transfers from Canon and Nikon cameras will offer an original representation of the image whether "true tethering" or not. Previously, they'd only offer preview representations.
+
+- Canon and Nikon cameras will no longer filter out camera-initiated transfer requests that come in very close to one other (such as a RAW+JPEG pair). It's up to clients to handle such filtering if it's desired.
+
+### API Changes
+
+- Added `-predictedFileSizeForRepresentation:` to `id <CBLCameraInitiatedTransferRequest>`.
+
+- Added `-predictedUTIForRepresentation:` to `id <CBLCameraInitiatedTransferRequest>`.
+
+- Added `-fileSizeForRepresentation:` to `id <CBLCameraInitiatedTransferResult>`.
+
+- Added `-dateProduced` to both `id <CBLCameraInitiatedTransferRequest>` and `id <CBLCameraInitiatedTransferResult>`.
+
+- Added variants of the `-writeRepresentation:…` and `-generateDataForRepresentation:…` APIs on `id <CBLCameraInitiatedTransferResult>` that take a `completionQueue:` parameter.
+
+
 # CascableCore 14.1.1
 
 ### Bug Fixes
