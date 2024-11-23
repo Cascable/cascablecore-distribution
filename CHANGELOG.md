@@ -28,7 +28,7 @@ When deciding how to handle a camera-initiated transfer request, you can inspect
 
 - Canon and Nikon cameras will no longer filter out camera-initiated transfer requests that come in very close to one other (such as a RAW+JPEG pair). It's up to clients to handle such filtering if it's desired.
 
-### API Changes
+### Camera-Initiated Transfer API Changes
 
 - Added `-predictedFileSizeForRepresentation:` to `id <CBLCameraInitiatedTransferRequest>`.
 
@@ -39,6 +39,20 @@ When deciding how to handle a camera-initiated transfer request, you can inspect
 - Added `-dateProduced` to both `id <CBLCameraInitiatedTransferRequest>` and `id <CBLCameraInitiatedTransferResult>`.
 
 - Added variants of the `-writeRepresentation:…` and `-generateDataForRepresentation:…` APIs on `id <CBLCameraInitiatedTransferResult>` that take a `completionQueue:` parameter.
+
+### New API
+
+- Added `-fetchVideoMetadata…` methods to `id <CBLFileSystemItem>`, which can be used to load video-specific metadata. [CORE-919]
+
+- Added additional property identifiers and support for cameras (notably Nikon cameras) that have separate exposure properties for video recording vs. stills recording. For other cameras, CascableCore will mirror the "standard" properties to the video variants, meaning you can always use the video variants when a camera is in video mode. These new properties are `CBLPropertyIdentifierVideoISOSpeed`, `CBLPropertyIdentifierVideoShutterSpeed`, `CBLPropertyIdentifierVideoAperture`, and `CBLPropertyIdentifierVideoExposureCompensation`. [CORE-921]
+
+### Bug Fixes
+
+- Fixed a bug where attempting to put a Canon camera that supports simultaneous filesystem and shooting command categories into the filesystem category would (erroneously) fail with a `CBLErrorCodeRequiresPhysicalInteraction` error.
+
+- Fixed a bug where USB cameras could fail to be discovered if the device has no active network interfaces and the camera was connected after camera discovery starts. [CORE-926]
+
+- Worked around a bug introduced in iOS 18.1 and macOS 15.1 that'd cause thumbnails for JPEG images from Canon cameras to be rendered incorrectly. [CORE-918]
 
 
 # CascableCore 14.1.1

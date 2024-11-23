@@ -280,6 +280,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
+@import CoreFoundation;
 @import CoreGraphics;
 @import Dispatch;
 @import Foundation;
@@ -439,6 +440,7 @@ SWIFT_AVAILABILITY(macos,introduced=10.11) SWIFT_AVAILABILITY(ios,introduced=13.
 SWIFT_CLASS_NAMED("LegacyPropertyAPIWrapper")
 @interface CBLLegacyPropertyAPIWrapper : NSObject
 - (nonnull instancetype)initWrapping:(NSObject <CBLCamera, CBLCameraLegacyPropertyAPI> * _Nonnull)legacyPropertyAPIProvider OBJC_DESIGNATED_INITIALIZER;
+- (void)propertyProviderDidChangeExposurePropertyMirroringState;
 @property (nonatomic, readonly, copy) NSArray<NSNumber *> * _Nonnull knownPropertyIdentifiers;
 - (id <CBLCameraProperty> _Nonnull)propertyWithIdentifier:(CBLPropertyIdentifier)identifier SWIFT_WARN_UNUSED_RESULT;
 - (NSArray<id <CBLCameraProperty>> * _Nonnull)populatedPropertiesInCategory:(CBLPropertyCategory)category SWIFT_WARN_UNUSED_RESULT;
@@ -585,19 +587,6 @@ SWIFT_CLASS_NAMED("RunloopQueue")
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSURLConnection;
-
-@interface CBLRunloopQueue (SWIFT_EXTENSION(CascableCore))
-/// Schedules the given NSURLConnection into the queue.
-/// \param connection The connection to schedule.
-///
-- (void)scheduleConnection:(NSURLConnection * _Nonnull)connection;
-/// Removes the given NSURLConnection from the queue.
-/// \param connection The connection to remove.
-///
-- (void)unscheduleConnection:(NSURLConnection * _Nonnull)connection;
-@end
-
 @class NSStream;
 
 @interface CBLRunloopQueue (SWIFT_EXTENSION(CascableCore))
@@ -609,6 +598,19 @@ SWIFT_CLASS_NAMED("RunloopQueue")
 /// \param stream The stream to remove.
 ///
 - (void)unscheduleStream:(NSStream * _Nonnull)stream;
+@end
+
+@class NSURLConnection;
+
+@interface CBLRunloopQueue (SWIFT_EXTENSION(CascableCore))
+/// Schedules the given NSURLConnection into the queue.
+/// \param connection The connection to schedule.
+///
+- (void)scheduleConnection:(NSURLConnection * _Nonnull)connection;
+/// Removes the given NSURLConnection from the queue.
+/// \param connection The connection to remove.
+///
+- (void)unscheduleConnection:(NSURLConnection * _Nonnull)connection;
 @end
 
 
@@ -623,6 +625,7 @@ SWIFT_CLASS_NAMED("StreamingPTPCameraInitiatedTransfer")
 @interface CBLStreamingPTPCameraInitiatedTransfer : NSObject <CBLCameraInitiatedTransferRequest>
 - (nonnull instancetype)initWithHandle:(uint32_t)handle fileSize:(uint32_t)fileSize fileType:(uint16_t)fileType fileName:(NSString * _Nullable)fileName fileDate:(NSDate * _Nullable)fileDate partialObjectOpCode:(uint16_t)partialObjectOpCode partialObjectChunkSize:(uint32_t)partialObjectChunkSize operationCompleteOpcode:(uint16_t)operationCompleteOpcode onlyDestinationForImage:(BOOL)onlyDestinationForImage device:(CBLPTPDevice * _Nonnull)device camera:(id <CBLPTPCameraInitiatedTransferSourceCamera> _Nonnull)camera operationQueue:(CBLCameraOperationQueue * _Nonnull)operationQueue OBJC_DESIGNATED_INITIALIZER;
 @property (nonatomic, readonly) BOOL isValid;
+- (void)noteWasMatchedWithFileSystemItemNamed:(NSString * _Nullable)name dated:(NSDate * _Nullable)date;
 @property (nonatomic, readonly) BOOL isOnlyDestinationForImage;
 @property (nonatomic, readonly) BOOL executionRequiredToClearBuffer;
 @property (nonatomic, readonly, copy) NSString * _Nullable fileNameHint;
@@ -635,6 +638,45 @@ SWIFT_CLASS_NAMED("StreamingPTPCameraInitiatedTransfer")
 @property (nonatomic, readonly, strong) NSProgress * _Nonnull transferProgress;
 - (void)executeTransferForRepresentations:(CBLCameraInitiatedTransferRepresentation)representations completionHandler:(CBLCameraInitiatedTransferCompletionHandler _Nonnull)completionHandler;
 - (void)executeTransferForRepresentations:(CBLCameraInitiatedTransferRepresentation)representations completionQueue:(dispatch_queue_t _Nonnull)completionQueue completionHandler:(CBLCameraInitiatedTransferCompletionHandler _Nonnull)completionHandler;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@protocol CBLVideoMetadata;
+
+/// A class containing helper methods for working with video files.
+SWIFT_CLASS_NAMED("VideoHelpers")
+@interface CBLVideoHelpers : NSObject
+/// Load video metadata for the given inital chunk of video file data.
+/// \param initialChunkOfVideoData The first few hundred KB of a video file.
+///
+/// \param fileName The name of the file, if known. This (particularly the extension) helps inform the metadata parser.
+///
+/// \param completionQueue The queue on which to deliver the loaded metadata.
+///
+/// \param completionHandler The completion handler, called with the loaded metadata or an error.
+///
++ (void)loadMetadataFrom:(NSData * _Nonnull)initialChunkOfVideoData named:(NSString * _Nullable)fileName completionQueue:(dispatch_queue_t _Nonnull)completionQueue completionHandler:(void (^ _Nonnull)(id <CBLVideoMetadata> _Nullable, NSError * _Nullable))completionHandler;
+/// Load video metadata for the given video file.
+/// \param videoUrl The local file URL of the video to load metadata for.
+///
+/// \param completionQueue The queue on which to deliver the loaded metadata.
+///
+/// \param completionHandler The completion handler, called with the loaded metadata or an error.
+///
++ (void)loadMetadataFrom:(NSURL * _Nonnull)videoUrl completionQueue:(dispatch_queue_t _Nonnull)completionQueue completionHandler:(void (^ _Nonnull)(id <CBLVideoMetadata> _Nullable, NSError * _Nullable))completionHandler;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS_NAMED("VideoMetadataImpl")
+@interface CBLVideoMetadata : NSObject <CBLVideoMetadata>
+- (nonnull instancetype)initWithFrameSize:(CGSize)frameSize frameRate:(double)frameRate duration:(NSTimeInterval)duration codec:(uint32_t)codec OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly) CGSize frameSize;
+@property (nonatomic, readonly) double frameRate;
+@property (nonatomic, readonly) NSTimeInterval duration;
+@property (nonatomic, readonly) uint32_t codec;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
