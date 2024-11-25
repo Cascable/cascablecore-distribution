@@ -1,3 +1,18 @@
+# CascableCore 14.1.2
+
+### Bug Fixes
+
+- Fixed a bug where attempting to put a Canon camera that supports simultaneous filesystem and shooting command categories into the filesystem category would (erroneously) fail with a `CBLErrorCodeRequiresPhysicalInteraction` error.
+
+- Fixed a bug where USB cameras could fail to be discovered if the device has no active network interfaces and the camera was connected after camera discovery starts. [CORE-926]
+
+- Worked around a bug introduced in iOS 18.1 and macOS 15.1 that'd cause thumbnails for JPEG images from Canon cameras to be rendered incorrectly. [CORE-918]
+
+- Thumbnails are now loaded for video files from Canon cameras.
+
+- Fixed duplicate events being delivered via the filesystem observer APIs from some cameras. 
+
+
 # CascableCore 14.1.1
 
 ### Bug Fixes
