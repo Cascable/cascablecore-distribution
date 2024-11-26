@@ -78,6 +78,14 @@ typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
     CBLPropertyIdentifierVideoRecordingFormat,
     /// The camera's live view zoom level.
     CBLPropertyIdentifierLiveViewZoomLevel,
+    /// The camera's ISO speed setting for video recording.
+    CBLPropertyIdentifierVideoISOSpeed,
+    /// The camera's shutter speed setting for video recording.
+    CBLPropertyIdentifierVideoShutterSpeed,
+    /// The camera's aperture setting for video recording.
+    CBLPropertyIdentifierVideoAperture,
+    /// The camera's exposure compensation setting for video recording.
+    CBLPropertyIdentifierVideoExposureCompensation,
     CBLPropertyIdentifierMax,
 
     CBLPropertyIdentifierUnknown = NSNotFound

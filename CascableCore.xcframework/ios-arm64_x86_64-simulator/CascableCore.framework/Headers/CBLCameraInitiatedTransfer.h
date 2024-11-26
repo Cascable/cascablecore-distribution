@@ -65,6 +65,17 @@ NS_SWIFT_NAME(CameraInitiatedTransferRequest) @protocol CBLCameraInitiatedTransf
 /// This value may not be available until the transfer completes (or at all) — see `CBLCameraInitiatedTransferResult`.
 @property (nonatomic, readonly, copy, nullable) NSString *fileNameHint;
 
+/// Returns the date and time at which the request was produced. CascableCore will attempt to match this value
+/// to the underlying image's EXIF timestamp, if available. Otherwise, this will be the date and time at which
+/// the request was received from the camera.
+///
+/// @note Since EXIF doesn't tend to have the concept of timezones, dates from this property will also adhere to
+///       that "standard" in that they'll be expressed in the GMT+0 timezone. I.e., an image produced at 14:00 local
+///       time in California will actually be expressed at 14:00 GMT. When dealing with these values (or showing them
+///       to the user), make sure you account for this - when using date formatters, this as simple as explicitly
+///       setting the formatter's timezone to GMT+0.
+@property (nonatomic, readonly, copy, nonnull) NSDate *dateProduced;
+
 /// Returns an option set of the representations available for this transfer.
 ///
 /// Common combinations are preview-only, or preview and original.
@@ -72,6 +83,25 @@ NS_SWIFT_NAME(CameraInitiatedTransferRequest) @protocol CBLCameraInitiatedTransf
 
 /// Returns `YES` if the receiver can provide the given representation, otherwise `NO`.
 -(BOOL)canProvideRepresentation:(CBLCameraInitiatedTransferRepresentation)representation;
+
+/// Returns a predicted file size for the given representation, or `0` if the representation isn't available
+/// or its size is currently unknown.
+///
+/// @note It's very rare that a preview representation's size will be known at this stage.
+///
+/// @warning You must only pass a single representation to this method, otherwise `0` will be returned.
+-(NSInteger)predictedFileSizeForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation
+    NS_SWIFT_NAME(predictedFileSize(for:));
+
+/// Returns the file type UTI for the given representation, or `nil` if the representation isn't available or if the
+/// format of the requested representation is unknown before loading.
+///
+/// @warning You must only pass a single representation to this method, otherwise `nil` will be returned.
+///
+/// @note This method may fall back to returning `kUTTypeData` if the original representation is in a RAW image format
+/// not recognised by the operating system.
+-(NSString * _Nullable)predictedUTIForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation
+    NS_SWIFT_NAME(predictedUTI(for:));
 
 /// Returns the state of the transfer. A camera-initiated transfer can only be performed once.
 @property (nonatomic, readonly) CBLCameraInitiatedTransferState transferState;
@@ -142,6 +172,17 @@ NS_SWIFT_NAME(CameraInitiatedTransferResult) @protocol CBLCameraInitiatedTransfe
 /// A file name hint for the original representation of the image, if available.
 @property (nonatomic, readonly, copy, nullable) NSString *fileNameHint;
 
+/// Returns the date and time at which the request was produced. CascableCore will attempt to match this value to
+/// the underlying image's EXIF timestamp, if available. Otherwise, this will be the date and time at which the
+/// request was received from the camera.
+///
+/// @note Since EXIF doesn't tend to have the concept of timezones, dates from this property will also adhere to
+///       that "standard" in that they'll be expressed in the GMT+0 timezone. I.e., an image produced at 14:00 local
+///       time in California will actually be expressed at 14:00 GMT. When dealing with these values (or showing them
+///       to the user), make sure you account for this - when using date formatters, this as simple as explicitly
+///       setting the formatter's timezone to GMT+0.
+@property (nonatomic, readonly, copy, nonnull) NSDate *dateProduced;
+
 /// Returns a suggested file name extension for the given representation or `nil` if the representation isn't available.
 ///
 /// To match camera conventions, extensions will be uppercase ("JPG", "CR3", "ARW", "HEIC", etc).
@@ -162,6 +203,14 @@ NS_SWIFT_NAME(CameraInitiatedTransferResult) @protocol CBLCameraInitiatedTransfe
 -(NSString * _Nullable)utiForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation
     NS_SWIFT_NAME(uti(for:));
 
+/// Returns the file size of a given representation, or `0` if the size is unknown or the representation isn't available.
+///
+/// @note The file size of the preview representation of a result generated with an original representation may be
+///       unknown, since the preview is generated on-demand in this situation.
+///
+/// @warning You must only pass a single representation to this method, otherwise `0` will be returned.
+-(NSInteger)fileSizeForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation;
+
 /// Write the given representation to disk.
 ///
 /// @warning You must only pass a single representation to this method, otherwise an error will be returned.
@@ -175,6 +224,21 @@ NS_SWIFT_NAME(CameraInitiatedTransferResult) @protocol CBLCameraInitiatedTransfe
          completionHandler:(nonnull CBLErrorableOperationCallback)completionHandler
     NS_SWIFT_NAME(write(_:to:completionHandler:));
 
+/// Write the given representation to disk.
+///
+/// @warning You must only pass a single representation to this method, otherwise an error will be returned.
+///
+/// @param representation The representation to write.
+/// @param destinationUrl The URL at which to write the representation. CascableCore will attempt to create the parent
+///                       directory tree if it isn't already present.
+/// @param completionQueue The queue on which to call the completion handler.
+/// @param completionHandler The completion handler to be called when the operation succeeds or fails.
+-(void)writeRepresentation:(CBLCameraInitiatedTransferRepresentation)representation
+                     toURL:(NSURL * _Nonnull)destinationUrl
+           completionQueue:(dispatch_queue_t _Nonnull)completionQueue
+         completionHandler:(nonnull CBLErrorableOperationCallback)completionHandler
+    NS_SWIFT_NAME(write(_:to:completionQueue:completionHandler:));
+
 /// Retrieve the given representation as an in-memory data object.
 ///
 /// @warning You must only pass a single representation to this method, otherwise an error will be returned.
@@ -187,6 +251,21 @@ NS_SWIFT_NAME(CameraInitiatedTransferResult) @protocol CBLCameraInitiatedTransfe
 -(void)generateDataForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation
                    completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler
     NS_SWIFT_NAME(generateData(for:completionHandler:));
+
+/// Retrieve the given representation as an in-memory data object.
+///
+/// @warning You must only pass a single representation to this method, otherwise an error will be returned.
+///
+/// @warning This operation may fail if the representation is large enough to risk crashes due to high memory usage.
+///          If this happens, the resulting error will have the code `CBLErrorCodeObjectTooLarge`.
+///
+/// @param representation The representation to retrieve.
+/// @param completionQueue The queue on which to call the completion handler.
+/// @param completionHandler The completion handler to be called when the operation succeeds or fails.
+-(void)generateDataForRepresentation:(CBLCameraInitiatedTransferRepresentation)representation
+                     completionQueue:(dispatch_queue_t _Nonnull)completionQueue
+                   completionHandler:(void (^ _Nonnull)(NSData * _Nullable, NSError * _Nullable))completionHandler
+    NS_SWIFT_NAME(generateData(for:completionQueue:completionHandler:));
 
 /// Generate an image from the preview representation.
 ///

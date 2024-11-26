@@ -13,6 +13,7 @@
 
 @protocol CBLFileSystemFolderItem;
 @protocol CBLFileStorage;
+@protocol CBLVideoMetadata;
 
 /** File streaming instructions. */
 typedef NS_ENUM(NSUInteger, CBLFileStreamInstruction) {
@@ -47,7 +48,7 @@ typedef void (^CBLPreviewImageDelivery)(id <CBLFileSystemItem> _Nonnull item,  N
  The callback block preflight signature for fetching image EXIF metadata. This will be called just before the metadata
  is about to be fetched.
 
- This can be useful when implementing (example) a scrolling list of iamges — if the user is scrolling quickly,
+ This can be useful when implementing (example) a scrolling list of images — if the user is scrolling quickly,
  you can cancel metadata requests for images that are no longer onscreen.
 
  @param item The filesystem item the metadata will be fetched for.
@@ -63,6 +64,27 @@ typedef BOOL (^CBLEXIFPreflight)(id <CBLFileSystemItem> _Nonnull  item) NS_SWIFT
  @param imageMetadata If the operation succeeded, ImageIO-compatible metadata.
  */
 typedef void (^CBLEXIFDelivery)(id <CBLFileSystemItem> _Nonnull item,  NSError * _Nullable error,  NSDictionary <NSString *, id> * _Nullable imageMetadata) NS_SWIFT_NAME(EXIFDelivery);
+
+/**
+ The callback block preflight signature for fetching video metadata. This will be called just before the metadata
+ is about to be fetched.
+
+ This can be useful when implementing (example) a scrolling list of thumbnails — if the user is scrolling quickly,
+ you can cancel metadata requests for images that are no longer onscreen.
+
+ @param item The filesystem item the metadata will be fetched for.
+ @return Return `YES` to continue to fetch the metadata, otherwise `NO` to cancel.
+ */
+typedef BOOL (^CBLVideoMetadataPreflight)(id <CBLFileSystemItem> _Nonnull  item) NS_SWIFT_NAME(VideoMetadataPreflight);
+
+/**
+ The callback block signature for a completed or failed video metadata requests.
+
+ @param item The filesystem item the metadata is for.
+ @param error If the operation failed, an error object that describes the failure.
+ @param videoMetadata If the operation succeeded, the metadata.
+ */
+typedef void (^CBLVideoMetadataDelivery)(id <CBLFileSystemItem> _Nonnull item, NSError * _Nullable error, id <CBLVideoMetadata> _Nullable videoMetadata) NS_SWIFT_NAME(VideoMetadataDelivery);
 
 /**
  The callback block preflight signature for streaming files from the camera. This will be called just before the stream
@@ -110,6 +132,28 @@ typedef NS_ENUM(NSInteger, CBLFileSystemItemMutableRatingType) {
     CBLFileSystemItemMutableRatingTypeBoolean
 } NS_SWIFT_NAME(FileSystemItemMutableRatingType);
 
+/** An object containing video-specific metadata. */
+NS_SWIFT_NAME(VideoMetadata)
+@protocol CBLVideoMetadata <NSObject>
+
+/** The frame size of the video, in pixels. Will be `CGSizeZero` if unknown. */
+@property (nonatomic, readonly) CGSize frameSize;
+
+/** The frame rate of the video. Will be `0.0` if unknown. */
+@property (nonatomic, readonly) double frameRate;
+
+/** The duration of the video, in seconds. Will be `0.0` if unknown. */
+@property (nonatomic, readonly) NSTimeInterval duration;
+
+/**
+ The codec of the video, if known. This value is a "FourCC" code, compatible with the `FourCharCode` and
+ `CMVideoCodecType` types in CoreMedia. See `CMFormatDescription.h` for possible values.
+
+ Will be `0x0` if unknown.
+ */
+@property (nonatomic, readonly) uint32_t codec;
+
+@end
 
 /** A filesystem item represents a file or folder on the camera's storage. */
 NS_SWIFT_NAME(FileSystemItem)
@@ -234,6 +278,28 @@ NS_SWIFT_NAME(FileSystemItem)
 -(void)fetchEXIFMetadataWithPreflightBlock:(nonnull CBLEXIFPreflight)preflight
                      metadataDeliveryBlock:(nonnull CBLEXIFDelivery)delivery
                              deliveryQueue:(nonnull dispatch_queue_t)deliveryQueue;
+
+/**
+ Fetch video metadata for the given file system item. Only works with known video types.
+
+ @param preflight A block that will be called when the metadata is about to be fetched. Return `YES` to allow the
+ operation to continue, or `NO` to cancel.
+ @param delivery The block that will be called when the metadata has successfully been fetched, or an error occurred.
+ */
+-(void)fetchVideoMetadataWithPreflightBlock:(nonnull CBLVideoMetadataPreflight)preflight
+                      metadataDeliveryBlock:(nonnull CBLVideoMetadataDelivery)delivery;
+
+/**
+ Fetch video metadata for the given file system item. Only works with known video types.
+
+ @param preflight A block that will be called when the metadata is about to be fetched. Return `YES` to allow the
+ operation to continue, or `NO` to cancel.
+ @param delivery The block that will be called when the metadata has successfully been fetched, or an error occurred.
+ @param deliveryQueue The queue on which the delivery block will be called.
+ */
+-(void)fetchVideoMetadataWithPreflightBlock:(nonnull CBLVideoMetadataPreflight)preflight
+                      metadataDeliveryBlock:(nonnull CBLVideoMetadataDelivery)delivery
+                              deliveryQueue:(nonnull dispatch_queue_t)deliveryQueue;
 
 /** Fetch a preview of the given file system item.
 
