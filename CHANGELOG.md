@@ -1,3 +1,10 @@
+# CascableCore 15.0.1
+
+### Bug Fixes
+
+- Fixed a bug that'd cause camera-initated transfers to incorrectly have their `isOnlyDestinationForImage` property set to `NO` on older USB-connected Sony cameras. [CORE-959]
+
+
 # CascableCore 15
 
 ### Support for "True Tethering" for Canon and Nikon Cameras
