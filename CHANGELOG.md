@@ -1,3 +1,10 @@
+# CascableCore 15.0.2
+
+### Bug Fixes
+
+- Worked around the fact that the Nikon D7200 crashes when commanded to record video over WiFi, despite claiming to be able to do so. Attempting to record video over WiFi will now fail with the error `CBLErrorCodeDisallowedOnCurrentTransport`. [CORE-973]
+
+
 # CascableCore 15.0.1
 
 ### Bug Fixes
