@@ -13,16 +13,28 @@ NS_SWIFT_NAME(NetworkConfigurationHelper)
 @interface CBLNetworkConfigurationHelper : NSObject
 
 /** Returns all of the active network interfaces for the machine. */
-+(NSArray <NSString *> * _Nullable)allInterfaces;
++(NSArray <NSString *> * _Nonnull)allInterfaces;
 
 /** Returns the interface most likely to be used for camera communication. */
 +(NSString * _Nullable)suggestedInterfaceForCameraCommunication;
 
-/** Returns the interface for accessing the given IP. 
- 
+/** Returns the interface for accessing the given IP.
+
+ Equivalent to calling `+[CBLNetworkConfigurationHelper interfaceForAccessingIPAddress:ip requiringLocalMatch:NO]`.
+
  @param ip The IP address to access.
  */
 +(NSString * _Nullable)interfaceForAccessingIPAddress:(NSString * _Nonnull)ip;
+
+/** Returns the interface for accessing the given IP, optionally requiring a local network match is found.
+
+ @param ip The IP address to access.
+ @param mustBeSameSubnet Pass `YES` to require that the returned interface directly matches against the given IP
+                         address, otherwise `NO`. If `YES` is passed and no local match is found, `nil` wil be
+                         returned. Otherwise, the default internet-accessing interface will be returned (which may
+                         still be `nil`.
+ */
++(NSString * _Nullable)interfaceForAccessingIPAddress:(NSString * _Nonnull)ip requiringLocalMatch:(BOOL)mustBeSameSubnet;
 
 /** Returns the gateway/router address for the given interface. For self-hosting cameras, this is where you'll connect.
  
@@ -41,11 +53,5 @@ NS_SWIFT_NAME(NetworkConfigurationHelper)
   @param addressData The address data from which to find the IPv4 address.
  */
 +(NSString * _Nullable)ipv4AddressFromNetServiceData:(NSData * _Nonnull)addressData;
-
-/** Returns the SSID of the interface, if that interface is a Wi-Fi interface with a connected SSID.
- 
-  @param interface The interface (e.g. `en0`) for which to find the SSID.
- */
-+(NSString * _Nullable)ssidOfInterface:(NSString * _Nonnull)interface API_DEPRECATED("WiFi SSID cannot be reliably accessed from iOS.", ios(4.1, 9.0));
 
 @end

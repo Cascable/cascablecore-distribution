@@ -3,7 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "CascableCore",
-    platforms: [.macOS(.v10_14), .iOS(.v12), .macCatalyst(.v15)],
+    platforms: [.macOS(.v11), .iOS(.v14), .macCatalyst(.v15)],
     products: [.library(name: "CascableCore", targets: ["CascableCore", "StopKit"])],
     dependencies: [],
     targets: [

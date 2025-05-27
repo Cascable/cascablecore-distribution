@@ -39,21 +39,6 @@
 			<key>BinaryPath</key>
 			<string>CascableCore.framework/Versions/A/CascableCore</string>
 			<key>LibraryIdentifier</key>
-			<string>macos-arm64_x86_64</string>
-			<key>LibraryPath</key>
-			<string>CascableCore.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-				<string>x86_64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>macos</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
-			<string>CascableCore.framework/Versions/A/CascableCore</string>
-			<key>LibraryIdentifier</key>
 			<string>ios-arm64_x86_64-maccatalyst</string>
 			<key>LibraryPath</key>
 			<string>CascableCore.framework</string>
@@ -97,6 +82,21 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>xros</string>
+		</dict>
+		<dict>
+			<key>BinaryPath</key>
+			<string>CascableCore.framework/Versions/A/CascableCore</string>
+			<key>LibraryIdentifier</key>
+			<string>macos-arm64_x86_64</string>
+			<key>LibraryPath</key>
+			<string>CascableCore.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+				<string>x86_64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>macos</string>
 		</dict>
 	</array>
 	<key>CFBundlePackageType</key>

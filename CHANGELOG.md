@@ -1,3 +1,26 @@
+# CascableCore 16
+
+### Support for the CascableCore GoPro Plugin
+
+This release supports the CascableCore GoPro plugin, which adds support for GoPro cameras to CascableCore via both USB and WiFi. For more information, see the plugin's [repository on GitHub](https://github.com/cascable/cascablecore-gopro-plugin). [CORE-968]
+
+### API Changes
+
+- Added `CBLHotspotHelpers`, a helper class for connecting to a known WiFi network such as one found by scanning a camera's onscreen QR code.
+
+- Added `CBLCameraAuthenticationTypeConnectToWiFiNetwork` to camera authentication, and the requisite properties to `id <CBLCameraAuthenticationContext>` - `wiFiNetworkSSID` and `wiFiNetworkPassword`. [CORE-968]
+
+- Added `CBLErrorCodeNetworkChangeFailed` and `CBLErrorCodeRequiresLocationAuthorization`.
+
+- Removed the long-deprecated `+[CBLNetworkConfigurationHelper ssidOfInterface:]` method.
+
+- Added the `CBLCorePluginMinimumSDKVersion` plugin information key for CascableCore plugins to declare a minimum supported SDK version.
+
+### Other Changes
+
+- The SDK's minimum deployment target is now iOS/iPadOS 14, macOS 11, Mac Catalyst 15 (macOS 12), and visionOS 1.1.
+
+
 # CascableCore 15.0.2
 
 ### Bug Fixes

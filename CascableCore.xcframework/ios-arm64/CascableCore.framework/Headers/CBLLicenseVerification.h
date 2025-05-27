@@ -15,11 +15,11 @@ NS_SWIFT_NAME(CascableCoreLicenseVerification)
 /** A result from a license registration. */
 typedef NS_ENUM(NSUInteger, CBLLicenseVerificationResult) {
     /** The license was applied successfully. */
-    CBLLicenseVerificationResultSuccess,
+    CBLLicenseVerificationResultSuccess = 0,
     /** The license expired. */
-    CBLLicenseVerificationResultExpired,
+    CBLLicenseVerificationResultExpired = 1,
     /** The license is invalid. */
-    CBLLicenseVerificationResultInvalidLicense
+    CBLLicenseVerificationResultInvalidLicense = 2
 } NS_SWIFT_NAME(LicenseVerificationResult);
 
 /**

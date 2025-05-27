@@ -99,7 +99,11 @@ typedef NS_ENUM(NSUInteger, CBLErrorCode) {
     /** Couldn't connect to the camera because it requires an encrypted connection which isn't currently supported by CascableCore. */
     CBLErrorCodeEncryptedConnectionsNotSupported = 1027,
     /** Couldn't connect to the camera because authentication failed (i.e., an incorrect password was given, etc). */
-    CBLErrorCodeConnectionAuthenticationFailed = 1028
+    CBLErrorCodeConnectionAuthenticationFailed = 1028,
+    /** Couldn't connect to the camera because attempting to connect to the camera's WiFi network failed. */
+    CBLErrorCodeNetworkChangeFailed = 1029,
+    /** The operation failed because it requires that the application has been granted an authorisation to use location services. */
+    CBLErrorCodeRequiresLocationAuthorization = 1030,
 } NS_SWIFT_NAME(CascableCoreErrorCode);
 
 /** NSError helpers for CascableCore. */
@@ -128,13 +132,13 @@ typedef NS_ENUM(NSUInteger, CBLErrorCode) {
 @end
 
 /** The domain string used with CascableCore `NSError` objects. */
-static NSString * _Nonnull const CBLErrorDomain NS_SWIFT_NAME(CascableCoreErrorDomain) = @"se.cascable";
+extern NSString * _Nonnull const CBLErrorDomain NS_SWIFT_NAME(CascableCoreErrorDomain);
 
 /** The error user info key for the underlying raw camera response code. */
-static NSString * _Nonnull const CBLUnderlyingResponseCodeKey NS_SWIFT_NAME(UnderlyingResponseCodeKey) = @"PTPResponseCode";
+extern NSString * _Nonnull const CBLUnderlyingResponseCodeKey NS_SWIFT_NAME(UnderlyingResponseCodeKey);
 
 /** The error user info key for a description of the underlying raw camera response code. */
-static NSString * _Nonnull const CBLUnderlyingResponseCodeDescriptionKey NS_SWIFT_NAME(UnderlyingResponseCodeDescriptionKey) = @"PTPResponseDescription";
+extern NSString * _Nonnull const CBLUnderlyingResponseCodeDescriptionKey NS_SWIFT_NAME(UnderlyingResponseCodeDescriptionKey);
 
 /** The error user info key for a description of the error code (i.e., the `CBLErrorCode` code). */
-static NSString * _Nonnull const CBLErrorCodeDescriptionKey NS_SWIFT_NAME(ErrorCodeDescriptionKey) = @"ErrorCodeDescription";
+extern NSString * _Nonnull const CBLErrorCodeDescriptionKey NS_SWIFT_NAME(ErrorCodeDescriptionKey);

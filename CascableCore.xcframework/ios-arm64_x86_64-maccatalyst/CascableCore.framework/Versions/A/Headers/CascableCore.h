@@ -47,6 +47,7 @@
 #import <CascableCore/CBLExifHelpers.h>
 #import <CascableCore/CBLImageManipulationHelpers.h>
 #import <CascableCore/CBLCorePluginEntryPoint.h>
+#import <CascableCore/CBLHotspotHelpers.h>
 
 // This is here to work around an apparent bug in Clang that causes it to insert an import to our private
 // Swift module into the public Swift header. This #define makes it import CoreFoundation instead.

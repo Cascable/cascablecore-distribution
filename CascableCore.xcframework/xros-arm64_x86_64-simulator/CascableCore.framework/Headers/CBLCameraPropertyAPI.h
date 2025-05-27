@@ -138,7 +138,7 @@ typedef NS_OPTIONS(NSInteger, CBLPropertyValueSetType) {
 typedef NSInteger CBLPropertyCommonValue NS_SWIFT_NAME(PropertyCommonValue);
 
 /// If there isn't a common value translation for a property value, APIs will instead return this value.
-NS_SWIFT_NAME(PropertyCommonValueNone) static CBLPropertyCommonValue const CBLPropertyCommonValueNone = -1;
+extern CBLPropertyCommonValue const CBLPropertyCommonValueNone NS_SWIFT_NAME(PropertyCommonValueNone);
 
 /// The block callback signature for property observations.
 ///

@@ -19,25 +19,25 @@ typedef void (^CBLErrorableOperationCallback)(NSError * _Nullable error) NS_SWIF
 typedef NSInteger CBLCameraFamily NS_SWIFT_NAME(CameraFamily);
 
 /// The camera is a Canon camera.
-static CBLCameraFamily const CBLCameraFamilyCanon NS_SWIFT_NAME(CameraFamilyCanon) = 0;
+extern CBLCameraFamily const CBLCameraFamilyCanon NS_SWIFT_NAME(CameraFamilyCanon);
 
 /// The camera is an Olympus camera.
-static CBLCameraFamily const CBLCameraFamilyOlympus NS_SWIFT_NAME(CameraFamilyOlympus) = 1;
+extern CBLCameraFamily const CBLCameraFamilyOlympus NS_SWIFT_NAME(CameraFamilyOlympus);
 
 /// The camera is a Nikon camera.
-static CBLCameraFamily const CBLCameraFamilyNikon NS_SWIFT_NAME(CameraFamilyNikon) = 2;
+extern CBLCameraFamily const CBLCameraFamilyNikon NS_SWIFT_NAME(CameraFamilyNikon);
 
 /// The camera is a Sony camera.
-static CBLCameraFamily const CBLCameraFamilySony NS_SWIFT_NAME(CameraFamilySony) = 3;
+extern CBLCameraFamily const CBLCameraFamilySony NS_SWIFT_NAME(CameraFamilySony);
 
 /// The camera is a Panasonic camera.
-static CBLCameraFamily const CBLCameraFamilyPanasonic NS_SWIFT_NAME(CameraFamilyPanasonic) = 4;
+extern CBLCameraFamily const CBLCameraFamilyPanasonic NS_SWIFT_NAME(CameraFamilyPanasonic);
 
 /// The camera is a Fujifilm camera.
-static CBLCameraFamily const CBLCameraFamilyFuji NS_SWIFT_NAME(CameraFamilyFuji) = 5;
+extern CBLCameraFamily const CBLCameraFamilyFuji NS_SWIFT_NAME(CameraFamilyFuji);
 
 /// The camera is a "generic" camera (typically an import-only camera connected via USB).
-static CBLCameraFamily const CBLCameraFamilyGeneric NS_SWIFT_NAME(CameraFamilyGeneric) = 6;
+extern CBLCameraFamily const CBLCameraFamilyGeneric NS_SWIFT_NAME(CameraFamilyGeneric);
 
 /// Compare the given double values within the given amount of precision.
 static inline BOOL CBLFloatAlmostEqual(double x, double y, double delta) { return fabs(x - y) <= delta; }

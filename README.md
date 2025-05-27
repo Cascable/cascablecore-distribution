@@ -16,6 +16,8 @@ For older releases of the framwork, see the [CascableCore Binaries](https://gith
 
 - The [CascableCore Simulated Camera Plugin](https://github.com/Cascable/cascablecore-simulated-camera/) lets you develop your app against CascableCore's APIs without having to have a real camera to hand at all times.
 
+- The [CascableCore GoPro Plugin](https://github.com/Cascable/cascablecore-gopro-plugin) adds support for GoPro cameras via USB and WiFi/Bluetooth to CascableCore.
+
 - API reference documentation for CascableCore can be found [here](https://cascable.github.io).
 
 ### Preparing Your App for CascableCore

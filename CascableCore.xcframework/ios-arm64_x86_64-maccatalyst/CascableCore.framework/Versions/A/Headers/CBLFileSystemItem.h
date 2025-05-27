@@ -217,7 +217,7 @@ NS_SWIFT_NAME(FileSystemItem)
 /** Returns `YES` if the file is a known image type, else `NO`. */
 @property (nonatomic, readonly) BOOL isKnownImageType;
 
-/** Returns `YES` if the file is a know video type, else `NO`. */
+/** Returns `YES` if the file is a known video type, else `NO`. */
 @property (nonatomic, readonly) BOOL isKnownVideoType;
 
 /** Permanently removes the file from the device. */

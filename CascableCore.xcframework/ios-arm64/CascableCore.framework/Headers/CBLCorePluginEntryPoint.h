@@ -12,13 +12,16 @@
 #import <CascableCore/CBLCameraManualDiscovery.h>
 
 /** The plugin info dictionary Info.plist key.  */
-static NSString * _Nonnull const CBLCorePluginInfoDictionaryKey = @"CBLCorePluginInfo";
+extern NSString * _Nonnull const CBLCorePluginInfoDictionaryKey;
 
 /** The Info.plist plugin info dictionary key for the plugin's entrypoint @objc class name. */
-static NSString * _Nonnull const CBLCorePluginEntryPointClassNameKey = @"CBLCorePluginEntryPointClassName";
+extern NSString * _Nonnull const CBLCorePluginEntryPointClassNameKey;
 
 /** The Info.plist plugin info dictionary key for the plugin's display name. */
-static NSString * _Nonnull const CBLCorePluginDisplayNameKey = @"CBLCorePluginDisplayName";
+extern NSString * _Nonnull const CBLCorePluginDisplayNameKey;
+
+/** The Info.plist plugin info dictionary key for the plugin's minimum CascableCore version (i.e., 16.0.0). */
+extern NSString * _Nonnull const CBLCorePluginMinimumSDKVersionKey;
 
 @class CBLCameraDescriptor;
 @protocol CBLCorePluginEntryPoint;
@@ -32,6 +35,7 @@ static NSString * _Nonnull const CBLCorePluginDisplayNameKey = @"CBLCorePluginDi
  the following dictionary must be added to the plugin framework's Info.plist file with the `CBLCorePluginInfo` key:
  
  - CBLCorePluginDisplayName: A string describing the plugin's name.
+ - CBLCorePluginMinimumSDKVersion: A string describing the minimum CascableCore SDK version (such as `16.0.0`).
  - CBLCorePluginEntryPointClassName: The name of the Objective-C class (or @objc Swift class) to be used as the
                                      entry point for the plugin. This class must implement the CBLCorePluginEntryPoint
                                      protocol.
@@ -43,6 +47,7 @@ static NSString * _Nonnull const CBLCorePluginDisplayNameKey = @"CBLCorePluginDi
  CFBundleIdentifier: "se.cascable.my-cool-plugin",
  CBLCorePluginInfo: {
      CBLCorePluginDisplayName: "My Cool Plugin",
+     CBLCorePluginMinimumSDKVersion: "16.0.0",
      CBLCorePluginEntryPointClassName: "MyCoolPluginEntryPointClass"
  }
  
@@ -172,6 +177,9 @@ NS_SWIFT_NAME(CameraManualDiscoveryProvider)
 /// Methods to register your plugin with CascableCore.
 NS_SWIFT_NAME(PluginRegistration)
 @protocol CBLCorePluginRegistration <NSObject>
+
+/// Retrieve the license currently registered with CascableCore.
+@property (nonatomic, readonly, copy, nullable) NSData *licenseInformation;
 
 /// Register your camera discovery provider with CascableCore. This method must be called at most once per plugin.
 ///

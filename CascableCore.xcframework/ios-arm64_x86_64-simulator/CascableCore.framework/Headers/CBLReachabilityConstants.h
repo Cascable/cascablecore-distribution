@@ -9,5 +9,5 @@
 /**
  Posted when the device's WiFi reachability status changes, or when the SSID of the connected WiFi network changes. 
  */
-static NSString * const CBLWiFiConnectivityDidChangeNotificationName = @"WiFiReachabilityDidChange";
+extern NSString * const CBLWiFiConnectivityDidChangeNotificationName;
 

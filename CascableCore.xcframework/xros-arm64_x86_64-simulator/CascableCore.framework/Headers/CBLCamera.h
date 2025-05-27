@@ -28,7 +28,9 @@ typedef NS_ENUM(NSInteger, CBLCameraAuthenticationType) {
     /** The user must authenticate by entering a username and password. */
     CBLCameraAuthenticationTypeUsernameAndPassword,
     /** The user must authenticate by entering a four-digit numeric code. */
-    CBLCameraAuthenticationTypeFourDigitNumericCode
+    CBLCameraAuthenticationTypeFourDigitNumericCode,
+    /** The user must authenticate by connecting to a given WiFi network. */
+    CBLCameraAuthenticationTypeConnectToWiFiNetwork
 } NS_SWIFT_NAME(CameraAuthenticationType);
 
 /** 
@@ -52,10 +54,16 @@ NS_SWIFT_NAME(CameraAuthenticationContext) @protocol CBLCameraAuthenticationCont
  (for e.g.) the Keychain.
 
  CascableCore will do its best to make this identifier unique on a per-camera basis when the `type` property is
- set to a value other than `CBLCameraAuthenticationTypeInteractWithCamera`. Since no credentials need to be stored
- for such a context, this identifier isn't needed.
+ set to a value other than `CBLCameraAuthenticationTypeInteractWithCamera` or `CBLCameraAuthenticationTypeConnectToWiFiNetwork`.
+ Since no credentials need to be stored for such contexts, this identifier isn't needed.
  */
 @property (nonatomic, readonly, copy, nonnull) NSString *authenticationIdentifier;
+
+/** The SSID of the WiFi network to connect to. Only valid if `type` is `CBLCameraAuthenticationTypeConnectToWiFiNetwork`. */
+@property (nonatomic, readonly, copy, nullable) NSString *wiFiNetworkSSID;
+
+/** The password of the WiFi network to connect to. Only valid if `type` is `CBLCameraAuthenticationTypeConnectToWiFiNetwork`. */
+@property (nonatomic, readonly, copy, nullable) NSString *wiFiNetworkPassword;
 
 /** 
  Submit a cancellation for camera authentication. This will disconnect from the camera and deliver a
@@ -77,6 +85,12 @@ NS_SWIFT_NAME(CameraAuthenticationContext) @protocol CBLCameraAuthenticationCont
  @param code The supplied code.
  */
 -(void)submitNumericCode:(NSString * _Nonnull)code NS_SWIFT_NAME(submitNumericCode(_:));
+
+/**
+ Submit that the given WiFi network has successfully been joined. Only valid if `type` is
+ `CBLCameraAuthenticationTypeConnectToWiFiNetwork`.
+ */
+-(void)submitHasConnectedToWiFiNetwork;
 
 @end
 
@@ -208,10 +222,10 @@ NS_SWIFT_NAME(ConnectionWarning)
 @end
 
 /** Sync the camera's clock to the current system clock, if supported by the camera. */
-static NSString * _Nonnull const CBLConnectionFlagSyncCameraClockToSystemClock = @"CBLConnectionFlagSyncCameraClockToSystemClock";
+extern NSString * _Nonnull const CBLConnectionFlagSyncCameraClockToSystemClock;
 
 /** Powers off the camera during disconnect, if supported by the camera. Requires `CBLCameraSupportedFunctionalityPowerOffOnDisconnect`. */
-static NSString * _Nonnull const CBLDisconnectionFlagPowerOffCamera = @"CBLDisconnectionFlagPowerOffCamera";
+extern NSString * _Nonnull const CBLDisconnectionFlagPowerOffCamera;
 
 @protocol CBLCameraCore, CBLCameraLiveView, CBLCameraProperties, CBLCameraFileSystem, CBLCameraFocusAndShutter, CBLCameraVideoRecording;
 
@@ -447,7 +461,7 @@ typedef void (^CBLCameraLiveViewTerminationHandler)(CBLCameraLiveViewTermination
  usually stable once a stream starts, some cameras can change pixel formats mid-stream. It's important to be able to
  handle this if you're working directly with the various rawPixel… properties on live view frames.
  */
-static NSString * _Nonnull const CBLLiveViewOptionSkipImageDecoding = @"CBLLiveViewOptionSkipImageDecoding";
+extern NSString * _Nonnull const CBLLiveViewOptionSkipImageDecoding;
 
 /** If set to `@YES` and if supported by the particular camera model you're connected to, live view will be configured
  to favour lower-quality image data in an attempt to achieve a higher live view frame rate. If set to `@NO` (or omitted),
@@ -457,7 +471,7 @@ static NSString * _Nonnull const CBLLiveViewOptionSkipImageDecoding = @"CBLLiveV
 
  When omitted from the options dictionary, the assumed value for this option is `@NO`.
  */
-static NSString * _Nonnull const CBLLiveViewOptionFavorHighFrameRate = @"CBLLiveViewOptionFavorHighFrameRate";
+extern NSString * _Nonnull const CBLLiveViewOptionFavorHighFrameRate;
 
 /** Camera live view methods. */
 NS_SWIFT_NAME(CameraLiveView)
