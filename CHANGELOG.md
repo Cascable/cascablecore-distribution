@@ -1,3 +1,12 @@
+# CascableCore 16.0.1
+
+### Changes
+
+- When connecting to a camera's hotspot on iOS/iPadOS/visionOS, `CBLHotspotHelpers` will try again immediately if the system reports that the initial attempt to join the hotspot failed. This is a reasonably common occurrence, and this change improves the resiliency of connecting to a hotspot. [CORE-1070]
+
+- Reduced the amount of noisy console logging that'd occur during camera discovery.
+
+
 # CascableCore 16
 
 ### Support for the CascableCore GoPro Plugin

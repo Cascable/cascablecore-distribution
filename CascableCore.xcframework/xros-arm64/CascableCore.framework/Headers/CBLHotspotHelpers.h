@@ -9,7 +9,7 @@
 #import <CascableCore/CBLCameraQRDecoding.h>
 
 /** An object describing a connected-to WiFi network. */
-NS_SWIFT_NAME(HotspotConfiguration) __attribute__((swift_attr("@Sendable"))) @protocol CBLHotspotConfiguration <NSObject>
+NS_SWIFT_NAME(HotspotConfiguration) NS_SWIFT_SENDABLE @protocol CBLHotspotConfiguration <NSObject>
 
 /** The network's SSID. */
 @property (nonatomic, readonly, copy, nonnull) NSString *ssid;
@@ -17,7 +17,7 @@ NS_SWIFT_NAME(HotspotConfiguration) __attribute__((swift_attr("@Sendable"))) @pr
 /** The network's interface (i.e., `en0`). */
 @property (nonatomic, readonly, copy, nonnull) NSString *interface;
 
-/** Signal the the WiFi network should be disconnected. */
+/** Signal that the WiFi network should be disconnected. */
 -(void)disconnect;
 
 @end

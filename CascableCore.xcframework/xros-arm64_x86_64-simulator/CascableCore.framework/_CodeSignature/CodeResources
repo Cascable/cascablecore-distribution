@@ -334,7 +334,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		bM4wkoiu0zLs6Ug81iRL6B7Tuc4=
+		kQUarKW2voMuZrvFtT0EOgwqP94=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -366,7 +366,7 @@
 		</data>
 		<key>Headers/CBLHotspotHelpers.h</key>
 		<data>
-		Y6p6HEDDvqZUdObU4qTyXAefH4Q=
+		X21AiVGE+QQlHWzXOWcNc/JC+fE=
 		</data>
 		<key>Headers/CBLImageManipulationHelpers.h</key>
 		<data>
@@ -410,7 +410,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4mimmWy8mcC+GaXqd59/Iv5yoFs=
+		Hu0ImGgXDjDkp1XpHmpbUTgBVFs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1618,7 +1618,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6rsYC3vKhfVtrzilQqnY0JxzIW/QG1RKrlv5Fiw8XUI=
+			utOLrap1CIEEKBCrIzgiFXtWsbMT2Gi2cga0ENDGNZw=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1674,7 +1674,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QepziZWv8P0wUSdo82sDOwb8FlFhHy3at5ySxK2f/jw=
+			tlVPeBD6UkjRxGIQFll445d0iWf26+e+WNG2WK+9S6M=
 			</data>
 		</dict>
 		<key>Headers/CBLImageManipulationHelpers.h</key>
