@@ -12,6 +12,7 @@
 @protocol CBLCamera;
 @protocol CBLCameraProperty;
 @protocol CBLPropertyValue;
+@protocol CBLPropertyValueRange;
 @protocol CBLExposurePropertyValue;
 @protocol CBLVideoFormatPropertyValue;
 @protocol CBLLiveViewZoomLevelPropertyValue;
@@ -86,6 +87,12 @@ typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
     CBLPropertyIdentifierVideoAperture,
     /// The camera's exposure compensation setting for video recording.
     CBLPropertyIdentifierVideoExposureCompensation,
+    /// The camera's flash mode. Common values will be of type `CBLPropertyCommonValueFlashMode`.
+    CBLPropertyIdentifierFlashMode,
+    /// The camera's flash exposure compensation.
+    CBLPropertyIdentifierFlashExposureCompensation,
+    /// The camera's custom white balance value, in Kelvin. The common value will be a freeform integer containing the value.
+    CBLPropertyIdentifierCustomWhiteBalanceValue,
     CBLPropertyIdentifierMax,
 
     CBLPropertyIdentifierUnknown = NSNotFound
@@ -131,7 +138,10 @@ typedef NS_OPTIONS(NSInteger, CBLPropertyValueSetType) {
     /// set with the `-setValue:…` methods.
     CBLPropertyValueSetTypeEnumeration = 1 << 0,
     /// The property's value can be increased or decreased with the `incrementValue:…` and `decrementValue:…` methods.
-    CBLPropertyValueSetTypeStepping = 1 << 1
+    CBLPropertyValueSetTypeStepping = 1 << 1,
+    /// The property provides a range of values that can be set via the `validValueRange` property, and values can
+    /// set with the `-setNumericValueInRange:…` methods.
+    CBLPropertyValueSetTypeNumericRange = 1 << 2
 } NS_SWIFT_NAME(PropertyValueSetType);
 
 /// A property common value. Values will be from one of the appropriate common value enums as defined below.
@@ -179,6 +189,10 @@ NS_SWIFT_NAME(CameraProperty)
 /// The current value of the property. Observable with key-value observing.
 @property (nonatomic, readonly, nullable) id <CBLPropertyValue> currentValue;
 
+/// Returns the value currently in the process of being set, if any. Observable with key-value observing. Only valid
+/// if the property's `valueSetType` is `CBLPropertyValueSetTypeEnumeration` or `CBLPropertyValueSetTypeNumericRange`.
+@property (nonatomic, readonly, nullable) id <CBLPropertyValue> pendingValue;
+
 /// Add an observer to the property.
 ///
 /// The observer callback will be called on the main thread when either the `currentValue` or `validSettableValues`
@@ -199,10 +213,6 @@ NS_SWIFT_NAME(CameraProperty)
 // -------------
 // @name Property Setting: CBLPropertyValueSetTypeEnumeration
 // -------------
-
-/// Returns the value currently in the process of being set, if any. Observable with key-value observing. Only valid
-/// if the property's `valueSetType` is `CBLPropertyValueSetTypeEnumeration`.
-@property (nonatomic, readonly, nullable) id <CBLPropertyValue> pendingValue;
 
 /// The values that are considered valid for this property. Observable with key-value observing. Only valid if the
 /// property's `valueSetType` is `CBLPropertyValueSetTypeEnumeration`.
@@ -281,6 +291,38 @@ NS_SWIFT_NAME(CameraProperty)
 -(void)decrementValueWithCompletionQueue:(dispatch_queue_t _Nonnull)completionQueue
                        completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler
     NS_SWIFT_NAME(decrementValue(completionQueue:completionHandler:));
+
+// -------------
+// @name Property Setting: CBLPropertyValueSetTypeNumericRange
+// -------------
+
+/// Returns the current value expressed as a numeric value within the property's range. Only useable if the property's
+/// `valueSetType` contains `CBLPropertyValueSetTypeNumericRange`.
+@property (nonatomic, readonly, copy, nullable) NSNumber *currentRangeValue;
+
+/// Returns an object describing the range of values valid for the property. Only useable if the property's
+/// `valueSetType` contains `CBLPropertyValueSetTypeNumericRange`.
+@property (nonatomic, readonly, nullable) id <CBLPropertyValueRange> validValueRange;
+
+/// Attempt to set a new value for the property. The value must be a valid value from the `validValueRange` property.
+/// As such, this method is only useable if the property's `valueSetType` contains `CBLPropertyValueSetTypeNumericRange`.
+///
+/// @param newValue The value to set.
+/// @param queue The queue on which to call the completion handler.
+/// @param completionHandler The completion handler to call when the operation succeeds or fails.
+-(void)setNumericValueInRange:(NSNumber * _Nonnull)newValue
+              completionQueue:(dispatch_queue_t _Nonnull)queue
+            completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler
+    NS_SWIFT_NAME(setNumericValueInRange(_:completionQueue:completionHandler:));
+
+/// Attempt to set a new value for the property. The value must be a valid value from the `validValueRange` property.
+/// As such, this method is only useable if the property's `valueSetType` contains `CBLPropertyValueSetTypeNumericRange`.
+///
+/// @param newValue The value to set.
+/// @param completionHandler The completion handler to call on the main queue when the operation succeeds or fails.
+-(void)setNumericValueInRange:(NSNumber * _Nonnull)newValue
+            completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler
+    NS_SWIFT_NAME(setNumericValueInRange(_:completionHandler:));
 
 @end
 
@@ -426,6 +468,39 @@ NS_SWIFT_NAME(LiveViewZoomLevelPropertyValue)
 
 @end
 
+/// A description of a property's valid range, if the property is of type `CBLPropertyValueSetTypeNumericRange`.
+NS_SWIFT_NAME(PropertyValueRange)
+@protocol CBLPropertyValueRange <NSObject>
+
+/// The range's minimum value.
+@property (nonatomic, readonly, copy, nonnull) NSNumber *minimumValue;
+
+/// The range's maximum value.
+@property (nonatomic, readonly, copy, nonnull) NSNumber *maximumValue;
+
+/// The range's step value. For example, if a range has a minimum value of `10`, a maximum value of `50`, and a step
+/// of `10`, the range's valid values would be `[10, 20, 30, 40, 50]`.
+@property (nonatomic, readonly, copy, nonnull) NSNumber *valueStep;
+
+/// Returns `YES` is the given value is valid for the receiver's range range, otherwise `NO`.
+-(BOOL)valueIsValid:(NSNumber * _Nonnull)value;
+
+/// The number of values in the range.
+@property (nonatomic, readonly) NSInteger numberOfValues;
+
+/// Returns the range's value at the given index in the range `[0..<numberOfValues]`. If an invalid index is given,
+/// this method will throw an Objective-C `NSRangeException`.
+-(NSNumber * _Nonnull)valueAtIndex:(NSInteger)index;
+
+/// Returns an index in the range `[0..<numberOfValues]` for the given value. If an invalid value is given,
+/// this method will throw an Objective-C `NSRangeException`.
+-(NSInteger)indexOfValue:(NSNumber * _Nonnull)value NS_SWIFT_NAME(index(of:));
+
+/// Returns a display value for the given value in the range, or `nil` if an invalid value is given.
+-(NSString * _Nullable)localizedDisplayValueForValue:(NSNumber * _Nonnull)value NS_SWIFT_NAME(localizedDisplayValue(for:));
+
+@end
+
 // MARK: - Common Values
 
 /// Boolean common values.
@@ -475,7 +550,9 @@ typedef NS_ENUM(CBLPropertyCommonValue, CBLPropertyCommonValueWhiteBalance) {
     /// The value is equivalent to a second custom white balance for cameras that support multiple custom values.
     CBLPropertyCommonValueWhiteBalanceCustom2,
     /// The value is equivalent to a third custom white balance for cameras that support multiple custom values.
-    CBLPropertyCommonValueWhiteBalanceCustom3
+    CBLPropertyCommonValueWhiteBalanceCustom3,
+    /// The value is equivalent to a explicitly-entered Kelvin value white balance.
+    CBLPropertyCommonValueWhiteBalanceExplicitKelvin
 } NS_SWIFT_NAME(PropertyCommonValueWhiteBalance);
 
 /// Focus mode common values.
@@ -594,3 +671,22 @@ typedef NS_ENUM(CBLPropertyCommonValue, CBLPropertyCommonValueImageDestination) 
     /// Images will be saved to both camera storage and the connected host (i.e., the CascableCore client).
     CBLPropertyCommonValueImageDestinationCameraAndHost = 503
 } NS_SWIFT_NAME(PropertyCommonValueImageDestination);
+
+/// Flash mode setting common values.
+typedef NS_ENUM(CBLPropertyCommonValue, CBLPropertyCommonValueFlashMode) {
+    /// Flash is disabled.
+    CBLPropertyCommonValueFlashModeOff = 550,
+    /// Flash is set to "automatic".
+    CBLPropertyCommonValueFlashModeAuto,
+    /// Flash is set to fill-flash.
+    CBLPropertyCommonValueFlashModeFill,
+    /// Flash is set in a red-eye reduction mode.
+    CBLPropertyCommonValueFlashModeRedEyeReduction,
+    /// Flash is set to a slow sync mode.
+    CBLPropertyCommonValueFlashModeSlowSync,
+    /// Flash is set to a rear sync mode.
+    CBLPropertyCommonValueFlashModeRearSync,
+    /// Glash is set to a HHS mode.
+    CBLPropertyCommonValueFlashModeHSS NS_SWIFT_NAME(hss)
+} NS_SWIFT_NAME(PropertyCommonValueFlashMode);
+

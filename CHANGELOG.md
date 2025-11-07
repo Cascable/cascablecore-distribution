@@ -1,3 +1,46 @@
+# CascableCore 17
+
+### Support for Sony FX Cameras
+
+This release adds preliminary support for the the Sony FX2, FX3/3A, and FX30. [CORE-1085]
+
+### Support for Transferring Media From Sony Cameras
+
+This release adds support for transferring media (i.e., photo and video files) via both USB and WiFi from the storage cards of modern Sony models that support it. This is a reasonably new addition for Sony cameras, and is largely limited to newer models. The known list of cameras that support file transfer is, at the time of writing: α1, α1 II, α9 III, α7R V, α7 IV, α7S III, α7C II, αC R, α6700, ILX-LR1, FX3, FX3A, FX30, FX2, and ZV-E1. [CORE-1077]
+
+This addition fits entirely within CascableCore's existing file transfer and observation APIs, so there are no API changes. If you implemented file transfer for other camera manufacturers via CascableCore, this should be a very simple addition to your app.
+
+**Important:** File transfer was added to most of these cameras via a firmware update. If CascableCore encounters a camera that *should* support file transfer but is on an older firmware version, it'll emit a connection warning of type `.firmwareUpdateRecommended` in the `.filesystemAccess` category. By checking for such a connection warning, you can inform your users that they can install a firmware update to their camera to enable file transfer.
+
+**Note:** Some older models of Sony camera already supported file transfer via WiFi (not USB) with the right version of the Smart Remote Control app installed on the camera. Support for this was already present in CascableCore, and is unaffected by this addition. 
+
+### New Property API: Ranged Properties
+
+CascableCore 17 introduces the concept of "ranged" properties, on top of the existing "stepped" and "enumeration" types.
+
+Ranged properties are used when the camera needs to express a valid range of numeric values for a property, and a big list of individual values would be unwieldy — a good example of a ranged property is the "Custom White Balance" property introduced in this release. A camera might define a valid range of values for that property to be 2500K-9000K in increments of 10K.
+
+To work with ranged properties, check a property's `valueSetType` for `CBLPropertyValueSetTypeNumericRange`. When set, you can get information about the range, as well as a number of helper methods and properties for working with the range, via the `validValueRange` of the property. Range properties can be set to a new value with the new `-setNumericValueInRange:…` methods.
+
+Full documentation for this new API can be found in `CBLCameraPropertyAPI.h` or in our [API documentation](https://cascable.github.io).
+
+### Other Additions & Changes
+
+- Added `CBLPropertyCommonValueWhiteBalanceExplicitKelvin` for targeting "Custom" white balance modes that take an explicit kelvin value. [CORE-1086] 
+
+- Added `CBLPropertyIdentifierCustomWhiteBalanceValue` for getting and setting the Kelvin value for "Custom" white balance modes. [CORE-1086] 
+
+- Added support for basic flash settings with `CBLPropertyIdentifierFlashExposureCompensation`, `CBLPropertyIdentifierFlashMode`, and `CBLPropertyCommonValueFlashMode`. [CORE-632]
+
+**Note:** Explicit Kelvin and flash settings are currently only implemented for Sony cameras. They'll be added to other cameras that support them before CascableCore 17 exits beta.
+
+- `-[CBLCameraDiscovery platformSupportsWiredCameras]` will now return `NO` when running on visionOS 26.1 or higher as an iOS app in compatibility mode. It continues to return `NO` when running as a native visionOS app. [CORE-1059]
+
+### Bug Fixes
+
+- Fixed `CBLCameraQRDecoding` incorrectly parsing QR codes from newer Sony cameras. [CORE-1083]
+
+
 # CascableCore 16.0.1
 
 ### Changes
