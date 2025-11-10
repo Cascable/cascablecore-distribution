@@ -1,3 +1,12 @@
+# CascableCore 17b2
+
+### Bug Fixes
+
+- Fixed a bug that'd cause the entire contents of a Sony camera's SD card to be delivered as camera-initiated transfer requests on the first load. [CORE-1087]
+
+- Filesystem operations for Sony cameras are now protected by an internal queue to avoid failures caused by operations being issued concurrently from a client of CascableCore. [CORE-1088]
+
+
 # CascableCore 17
 
 ### Support for Sony FX Cameras
