@@ -87,6 +87,8 @@ typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
     CBLPropertyIdentifierVideoAperture,
     /// The camera's exposure compensation setting for video recording.
     CBLPropertyIdentifierVideoExposureCompensation,
+    /// Whether or not the camera indicates that a flash is available. Common values will be of type `CBLPropertyCommonValueBoolean`.
+    CBLPropertyIdentifierFlashAvailable,
     /// The camera's flash mode. Common values will be of type `CBLPropertyCommonValueFlashMode`.
     CBLPropertyIdentifierFlashMode,
     /// The camera's flash exposure compensation.
@@ -297,8 +299,8 @@ NS_SWIFT_NAME(CameraProperty)
 // -------------
 
 /// Returns the current value expressed as a numeric value within the property's range. Only useable if the property's
-/// `valueSetType` contains `CBLPropertyValueSetTypeNumericRange`.
-@property (nonatomic, readonly, copy, nullable) NSNumber *currentRangeValue;
+/// `valueSetType` contains `CBLPropertyValueSetTypeNumericRange` - otherwise the value will be `NSNotFound`.
+@property (nonatomic, readonly) NSInteger currentRangeValue;
 
 /// Returns an object describing the range of values valid for the property. Only useable if the property's
 /// `valueSetType` contains `CBLPropertyValueSetTypeNumericRange`.
@@ -310,7 +312,7 @@ NS_SWIFT_NAME(CameraProperty)
 /// @param newValue The value to set.
 /// @param queue The queue on which to call the completion handler.
 /// @param completionHandler The completion handler to call when the operation succeeds or fails.
--(void)setNumericValueInRange:(NSNumber * _Nonnull)newValue
+-(void)setNumericValueInRange:(NSInteger)newValue
               completionQueue:(dispatch_queue_t _Nonnull)queue
             completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler
     NS_SWIFT_NAME(setNumericValueInRange(_:completionQueue:completionHandler:));
@@ -320,7 +322,7 @@ NS_SWIFT_NAME(CameraProperty)
 ///
 /// @param newValue The value to set.
 /// @param completionHandler The completion handler to call on the main queue when the operation succeeds or fails.
--(void)setNumericValueInRange:(NSNumber * _Nonnull)newValue
+-(void)setNumericValueInRange:(NSInteger)newValue
             completionHandler:(CBLErrorableOperationCallback _Nonnull)completionHandler
     NS_SWIFT_NAME(setNumericValueInRange(_:completionHandler:));
 
@@ -473,31 +475,31 @@ NS_SWIFT_NAME(PropertyValueRange)
 @protocol CBLPropertyValueRange <NSObject>
 
 /// The range's minimum value.
-@property (nonatomic, readonly, copy, nonnull) NSNumber *minimumValue;
+@property (nonatomic, readonly) NSInteger minimumValue;
 
 /// The range's maximum value.
-@property (nonatomic, readonly, copy, nonnull) NSNumber *maximumValue;
+@property (nonatomic, readonly) NSInteger maximumValue;
 
 /// The range's step value. For example, if a range has a minimum value of `10`, a maximum value of `50`, and a step
 /// of `10`, the range's valid values would be `[10, 20, 30, 40, 50]`.
-@property (nonatomic, readonly, copy, nonnull) NSNumber *valueStep;
+@property (nonatomic, readonly) NSInteger valueStep;
 
 /// Returns `YES` is the given value is valid for the receiver's range range, otherwise `NO`.
--(BOOL)valueIsValid:(NSNumber * _Nonnull)value;
+-(BOOL)valueIsValid:(NSInteger)value;
 
 /// The number of values in the range.
 @property (nonatomic, readonly) NSInteger numberOfValues;
 
 /// Returns the range's value at the given index in the range `[0..<numberOfValues]`. If an invalid index is given,
 /// this method will throw an Objective-C `NSRangeException`.
--(NSNumber * _Nonnull)valueAtIndex:(NSInteger)index;
+-(NSInteger)valueAtIndex:(NSInteger)index;
 
 /// Returns an index in the range `[0..<numberOfValues]` for the given value. If an invalid value is given,
 /// this method will throw an Objective-C `NSRangeException`.
--(NSInteger)indexOfValue:(NSNumber * _Nonnull)value NS_SWIFT_NAME(index(of:));
+-(NSInteger)indexOfValue:(NSInteger)value NS_SWIFT_NAME(index(of:));
 
 /// Returns a display value for the given value in the range, or `nil` if an invalid value is given.
--(NSString * _Nullable)localizedDisplayValueForValue:(NSNumber * _Nonnull)value NS_SWIFT_NAME(localizedDisplayValue(for:));
+-(NSString * _Nullable)localizedDisplayValueForValue:(NSInteger)value NS_SWIFT_NAME(localizedDisplayValue(for:));
 
 @end
 

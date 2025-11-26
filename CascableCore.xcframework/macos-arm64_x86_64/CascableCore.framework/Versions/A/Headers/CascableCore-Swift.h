@@ -372,6 +372,23 @@ SWIFT_CLASS_NAMED("CascableCoreSwiftBootstrap")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+SWIFT_CLASS_NAMED("CommonPropertyValueRange")
+@interface CBLCommonPropertyValueRange : NSObject <CBLPropertyValueRange>
+- (nonnull instancetype)initWithProperty:(CBLPropertyIdentifier)property minimumValue:(NSInteger)minimumValue maximumValue:(NSInteger)maximumValue valueStep:(NSInteger)valueStep localizer:(NSString * _Nullable (^ _Nonnull)(NSInteger, CBLPropertyIdentifier))localizer OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger minimumValue;
+@property (nonatomic, readonly) NSInteger maximumValue;
+@property (nonatomic, readonly) NSInteger valueStep;
+@property (nonatomic, readonly) NSInteger numberOfValues;
+- (NSInteger)valueAtIndex:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)indexOfValue:(NSInteger)value SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)localizedDisplayValueForValue:(NSInteger)value SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)valueIsValid:(NSInteger)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 SWIFT_CLASS_NAMED("DataReader")
 @interface CBLDataReader : NSObject
 @property (nonatomic, readonly, copy) NSData * _Nonnull data;
@@ -510,6 +527,15 @@ SWIFT_CLASS_NAMED("PTPIPQueue")
 /// Cancel all requests and close all connections to the connected device.
 /// After the receiver has been closed, it cannot be reopened.
 - (void)close;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+SWIFT_CLASS_NAMED("PTPPropertyInfo")
+@interface CBLPTPPropertyInfo : NSObject
+- (nullable instancetype)initWithPayload:(NSData * _Nonnull)payload propertyIdentifier:(CBLPropertyIdentifier (^ _Nonnull)(uint32_t))propertyIdentifier localizer:(NSString * _Nullable (^ _Nonnull)(NSInteger, CBLPropertyIdentifier))localizer OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, strong) id <CBLPropertyValueRange> _Nullable range;
+@property (nonatomic, readonly, copy) NSArray * _Nullable enumeration;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1057,6 +1083,23 @@ SWIFT_CLASS_NAMED("CascableCoreSwiftBootstrap")
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
+SWIFT_CLASS_NAMED("CommonPropertyValueRange")
+@interface CBLCommonPropertyValueRange : NSObject <CBLPropertyValueRange>
+- (nonnull instancetype)initWithProperty:(CBLPropertyIdentifier)property minimumValue:(NSInteger)minimumValue maximumValue:(NSInteger)maximumValue valueStep:(NSInteger)valueStep localizer:(NSString * _Nullable (^ _Nonnull)(NSInteger, CBLPropertyIdentifier))localizer OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
+@property (nonatomic, readonly) NSInteger minimumValue;
+@property (nonatomic, readonly) NSInteger maximumValue;
+@property (nonatomic, readonly) NSInteger valueStep;
+@property (nonatomic, readonly) NSInteger numberOfValues;
+- (NSInteger)valueAtIndex:(NSInteger)index SWIFT_WARN_UNUSED_RESULT;
+- (NSInteger)indexOfValue:(NSInteger)value SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nullable)localizedDisplayValueForValue:(NSInteger)value SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)valueIsValid:(NSInteger)value SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 SWIFT_CLASS_NAMED("DataReader")
 @interface CBLDataReader : NSObject
 @property (nonatomic, readonly, copy) NSData * _Nonnull data;
@@ -1195,6 +1238,15 @@ SWIFT_CLASS_NAMED("PTPIPQueue")
 /// Cancel all requests and close all connections to the connected device.
 /// After the receiver has been closed, it cannot be reopened.
 - (void)close;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+SWIFT_CLASS_NAMED("PTPPropertyInfo")
+@interface CBLPTPPropertyInfo : NSObject
+- (nullable instancetype)initWithPayload:(NSData * _Nonnull)payload propertyIdentifier:(CBLPropertyIdentifier (^ _Nonnull)(uint32_t))propertyIdentifier localizer:(NSString * _Nullable (^ _Nonnull)(NSInteger, CBLPropertyIdentifier))localizer OBJC_DESIGNATED_INITIALIZER;
+@property (nonatomic, readonly, strong) id <CBLPropertyValueRange> _Nullable range;
+@property (nonatomic, readonly, copy) NSArray * _Nullable enumeration;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

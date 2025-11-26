@@ -1,3 +1,18 @@
+# CascableCore 17b3
+
+### API Changes
+
+- The API for ranged properties (`CBLPropertyValueSetTypeNumericRange`) now work with `NSInteger`/`Int` values rather than `NSNumber` values, with invalid values being expressed as `NSNotFound`.
+
+- Added `CBLPropertyIdentifierFlashAvailable`, which is only exposed by Nikon cameras at the moment. We have filed feature requests for this with the relevant manufacturers.
+
+### New Functionality
+
+- Implemented `CBLPropertyIdentifierCustomWhiteBalanceValue` for Canon and Nikon cameras.
+
+- Implemented `CBLPropertyIdentifierFlashMode` and `CBLPropertyIdentifierFlashExposureCompensation` for Canon and Nikon cameras. Note that flash exposure compensation is read-only on Canon cameras.
+
+
 # CascableCore 17b2
 
 ### Bug Fixes
@@ -39,9 +54,7 @@ Full documentation for this new API can be found in `CBLCameraPropertyAPI.h` or 
 
 - Added `CBLPropertyIdentifierCustomWhiteBalanceValue` for getting and setting the Kelvin value for "Custom" white balance modes. [CORE-1086] 
 
-- Added support for basic flash settings with `CBLPropertyIdentifierFlashExposureCompensation`, `CBLPropertyIdentifierFlashMode`, and `CBLPropertyCommonValueFlashMode`. [CORE-632]
-
-**Note:** Explicit Kelvin and flash settings are currently only implemented for Sony cameras. They'll be added to other cameras that support them before CascableCore 17 exits beta.
+- Added support for basic flash settings with `CBLPropertyIdentifierFlashAvailable`, `CBLPropertyIdentifierFlashExposureCompensation`, `CBLPropertyIdentifierFlashMode`, and `CBLPropertyCommonValueFlashMode`. [CORE-632]
 
 - `-[CBLCameraDiscovery platformSupportsWiredCameras]` will now return `NO` when running on visionOS 26.1 or higher as an iOS app in compatibility mode. It continues to return `NO` when running as a native visionOS app. [CORE-1059]
 

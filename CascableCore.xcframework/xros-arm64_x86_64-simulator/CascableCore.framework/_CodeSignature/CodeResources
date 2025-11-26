@@ -32,6 +32,10 @@
 		<data>
 		VbBhNnR1Xct357zSvvL0LJwg3TU=
 		</data>
+		<key>Base.lproj/CanonFlashModes.strings</key>
+		<data>
+		recyYH2VF+Ha1aqljlSvVIhTJtA=
+		</data>
 		<key>Base.lproj/CanonFocusModes.strings</key>
 		<data>
 		M/uHw/rOv+LYd1NZe99fsdvzUJA=
@@ -62,7 +66,7 @@
 		</data>
 		<key>Base.lproj/CanonShortPropertyCodes.strings</key>
 		<data>
-		oNsF0fIOuJJCgiQN3kB5YkdmHc8=
+		JUfUcVkee/PXx+52rc9f0vSkt2I=
 		</data>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
 		<data>
@@ -107,6 +111,10 @@
 		<key>Base.lproj/NikonEVFOutputs.strings</key>
 		<data>
 		6KRLYlD5Xm/l8XXpCedOyQdXFOY=
+		</data>
+		<key>Base.lproj/NikonFlashModes.strings</key>
+		<data>
+		Vc2raZNCj1hoO1Lq+g46JykHZFY=
 		</data>
 		<key>Base.lproj/NikonFocusModes.strings</key>
 		<data>
@@ -278,7 +286,7 @@
 		</data>
 		<key>Base.lproj/UniversalProperties.strings</key>
 		<data>
-		6anRuOYcWt/EpLLfjtJ10uZ+1Uo=
+		CoHaK+lzPYnuw/QWeSR3AA0WdN4=
 		</data>
 		<key>Base.lproj/UniversalShutterSpeeds.strings</key>
 		<data>
@@ -322,7 +330,7 @@
 		</data>
 		<key>Headers/CBLCameraPropertyAPI.h</key>
 		<data>
-		ASXKq78N9uc7JZKAZaFLQYHzi2k=
+		TLzUzCpVlAOb3teabB9ruiS++Ms=
 		</data>
 		<key>Headers/CBLCameraQRDecoding.h</key>
 		<data>
@@ -338,7 +346,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		cbuQuyjTlpRtlzWHnzFcdvD3s7w=
+		KSVLYS7G2fk7sQ4b9IRrcRDOZDs=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -402,7 +410,7 @@
 		</data>
 		<key>Headers/CascableCore-Swift.h</key>
 		<data>
-		v3vK9Rmu5FsjVqDCp6p3m8WvxDg=
+		P9fpKh6kdTUXCitJgxn3YhesO8Q=
 		</data>
 		<key>Headers/CascableCore.h</key>
 		<data>
@@ -414,7 +422,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ayadGguOz3NId3LdaSjFQQmo79s=
+		pap+0SkmS+zMfUpRGEzNbghb/JA=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -479,6 +487,15 @@
 			<key>hash</key>
 			<data>
 			VbBhNnR1Xct357zSvvL0LJwg3TU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/CanonFlashModes.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			YnemAfJF/R9qB17LD2WVRA9deH4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -550,7 +567,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Y4e7YxaXbwxwBHkCbRI2GMDrW3Y=
+			Bkb8ElpmyNYX1v0m29XCmuw3DUM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -650,6 +667,15 @@
 			<key>hash</key>
 			<data>
 			JqjNBj74i9J5KouGwffTFcISRLo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/NikonFlashModes.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BdpcT4V2h7yyIm/j815BqpLhH1Q=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1036,7 +1062,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			8A6LH92Rej9FejqHvbKhW4DDwAg=
+			ENR21vB8ftELDjSFh6Ydme6P3to=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1102,6 +1128,13 @@
 			hj1R/dbl+IDCuCLIBwvaoZzzjK2qcyX90dflpxq+L+I=
 			</data>
 		</dict>
+		<key>Base.lproj/CanonFlashModes.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			e4frOi+5HawcXolKVuVbBZ9nubQjZQLdhN3G3iARUCU=
+			</data>
+		</dict>
 		<key>Base.lproj/CanonFocusModes.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -1155,7 +1188,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ptVcn6EMVJZorSLX9gzFJg8ooMdEbKNyCB1ENgKxcZI=
+			pgnn3qEQvuN/Htob+heWYbzIWPbNS1NMVRLAXVdiIS8=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
@@ -1233,6 +1266,13 @@
 			<key>hash2</key>
 			<data>
 			SD7MqQ4mnquarcLunSnqgjG93fDGLppRQJzoOHaAapw=
+			</data>
+		</dict>
+		<key>Base.lproj/NikonFlashModes.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nb68/Br+JPmJ5ldXkzbDSWy9D0OUJE2uALyemrM3Nl0=
 			</data>
 		</dict>
 		<key>Base.lproj/NikonFocusModes.strings</key>
@@ -1533,7 +1573,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			6OQsSr6/IO4crOqmxYGVFOpe1RMgieDVIgUoENCBfeU=
+			a6MkX00K5jxBepDkFiRk3afWN3gi/1YQzjGl9G4we4g=
 			</data>
 		</dict>
 		<key>Base.lproj/UniversalShutterSpeeds.strings</key>
@@ -1610,7 +1650,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			d7euZO0wIvFDTiofSpnyUGSqXJlwEv4Lj1P3rhCZP/c=
+			JI9OiSuQG7ptOkBUADCGtCwUf6rULtWVqtR5nREzXHQ=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraQRDecoding.h</key>
@@ -1638,7 +1678,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			h4ztBAgw5HHzr+xnuciqzc7k4JhCwPI25yU2SZBvxQc=
+			m7LWZLjJIkhZhWD1qBB9dUH0oYUzxV3fvhTb3g9HVHs=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1750,7 +1790,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SI4TNdROKRBNg1lH53RCTQCWfo3gM5amvoimori5QEY=
+			IuAnThRRohECd1ywJQpDu2pBkcIWPtVx+K8rQfenz/0=
 			</data>
 		</dict>
 		<key>Headers/CascableCore.h</key>
@@ -1837,6 +1877,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>de.lproj/CanonFlashModes.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zwxRTUGbNhH3j/sQ+pMBoxUIJ6aHgPbcQalIzMmg9fg=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/CanonFocusModes.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -1904,7 +1953,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yhN3iQ0hHW2NvZLMuTVALn7B4KR0w+klnifkvUbA/Hk=
+			r7iwdNU0CDOFI7AEUefKRj6dE6VTjpDJxBwukWDYqiI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2004,6 +2053,15 @@
 			<key>hash2</key>
 			<data>
 			beTJ1XYdRC0VxwPx+BPB3WkUcUcBUJA/u6vh5wr9zB4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/NikonFlashModes.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WKh9Xk3jnAQNWtnlzqmAyKgABdcbZrd87ZoLlshW7pE=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2390,7 +2448,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			z7D+kXVwD/bNlCsN/7hswOX/H2FBZx9pMgs6m4yMofY=
+			fsQ33yVzjyg/VT/r0w0HfP42kyD6tTErm75XncIHEtE=
 			</data>
 			<key>optional</key>
 			<true/>
