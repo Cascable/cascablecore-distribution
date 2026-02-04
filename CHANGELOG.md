@@ -1,3 +1,10 @@
+# CascableCore 17.0.1
+
+### Bug Fixes
+
+- Fixed a bug that would cause properties on Sony cameras to misbehave if that property was first accessed before the camera had finished connecting. [CORE-1124]
+
+
 # CascableCore 17
 
 ### Support for Sony FX Cameras
