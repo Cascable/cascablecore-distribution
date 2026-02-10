@@ -1,3 +1,10 @@
+# CascableCore 17.0.2
+
+### Bug Fixes
+
+- Worked around a bug introduced in newer OS verions that'd cause a crash when searching for USB connected cameras in the iOS Simulator. USB connections were never supported in the Simulator, so there's no loss in functionality with this fix.
+
+
 # CascableCore 17.0.1
 
 ### Bug Fixes
