@@ -1,3 +1,12 @@
+# CascableCore 17.1
+
+### Support for Online Activation
+
+This release adds support for a new license activation method that will be used going forward for most new users. This activation method contacts a licensing backend to fetch an offline token, which allows us to be more flexible when adding/removing bundle IDs to a license, as well as the ability support different subscription billing types and intervals.
+
+This addition does not affect existing customers - your license file will continue to work as it always has.
+
+
 # CascableCore 17.0.2
 
 ### Bug Fixes
