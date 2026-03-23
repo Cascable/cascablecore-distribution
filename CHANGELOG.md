@@ -1,3 +1,14 @@
+# CascableCore 17.1.1
+
+### Improvements
+
+- Improved the detection of the sandbox environment when using online activation. [CORE-1176]
+
+### Bug Fixes
+
+- Instructing a USB-connected Sony camera to switch to video mode when it's already in a hybrid stills/video mode will no longer throw an error. [CORE-1173]
+
+
 # CascableCore 17.1
 
 ### Support for Online Activation
