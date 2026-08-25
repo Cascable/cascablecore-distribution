@@ -75,7 +75,7 @@ typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
     CBLPropertyIdentifierReadyForCapture,
     /// The target destination for images when connected to a host like CascableCore. Common values will be of type `CBLPropertyCommonValueImageDestination`.
     CBLPropertyIdentifierImageDestination,
-    /// The camera's video recording format.
+    /// The camera's video recording format for cameras that combine format settings into one property.
     CBLPropertyIdentifierVideoRecordingFormat,
     /// The camera's live view zoom level.
     CBLPropertyIdentifierLiveViewZoomLevel,
@@ -95,6 +95,18 @@ typedef NS_ENUM(NSUInteger, CBLPropertyIdentifier) {
     CBLPropertyIdentifierFlashExposureCompensation,
     /// The camera's custom white balance value, in Kelvin. The common value will be a freeform integer containing the value.
     CBLPropertyIdentifierCustomWhiteBalanceValue,
+    // The camera's video recording compression level, if provided by a standalone property. Some cameras provide video
+    // resolution via this property as well.
+    CBLPropertyIdentifierVideoRecordingCompressionLevel,
+    /// The camera's video recording frame rate, if provided by a standalone property.
+    CBLPropertyIdentifierVideoRecordingFrameRate,
+    /// The camera's video recording resolution, if provided by a standalone property.
+    CBLPropertyIdentifierVideoRecordingResolution,
+    /// The camera's thermal state. Common values will be of type `CBLPropertyCommonValueThermalState`.
+    CBLPropertyIdentifierThermalState,
+    /// The camera's exposure simulation setting - i.e., whether it'll emulate the current exposure settings in the live
+    /// view image, or prioritise a visible image. Common values will be of type `CBLPropertyCommonValueExposureSimulation`.
+    CBLPropertyIdentifierExposureSimulation,
     CBLPropertyIdentifierMax,
 
     CBLPropertyIdentifierUnknown = NSNotFound
@@ -441,7 +453,10 @@ typedef NS_ENUM(NSInteger, CBLVideoFormatCompressionLevel) {
     CBLVideoFormatCompressionLevelHigh = 5
 } NS_SWIFT_NAME(VideoFormatCompressionLevel);
 
-/// A property value that represents a video format description.
+/// A property value that represents a video format description. For `CBLPropertyIdentifierVideoRecordingFormat`, you
+/// can expect multiple values to be filled in if the CascableCore is able to infer them from the property value. For
+/// `CBLPropertyIdentifierVideoRecordingCompressionLevel`, `CBLPropertyIdentifierVideoRecordingFrameRate`, and
+/// `CBLPropertyIdentifierVideoRecordingResolution`, only the corresponding value will be filled in.
 NS_SWIFT_NAME(VideoFormatPropertyValue)
 @protocol CBLVideoFormatPropertyValue <CBLPropertyValue>
 
@@ -692,3 +707,25 @@ typedef NS_ENUM(CBLPropertyCommonValue, CBLPropertyCommonValueFlashMode) {
     CBLPropertyCommonValueFlashModeHSS NS_SWIFT_NAME(hss)
 } NS_SWIFT_NAME(PropertyCommonValueFlashMode);
 
+/// Thermal state common values.
+typedef NS_ENUM(CBLPropertyCommonValue, CBLPropertyCommonValueThermalState) {
+    /// The camera is not issuing a thermal warning.
+    CBLPropertyCommonValueThermalStateNormal = 600,
+    /// The camera is issuing a thermal warning.
+    CBLPropertyCommonValueThermalStateWarning,
+    /// The camera is issuing a critical thermal warning. Functionality is likely to be restricted,
+    /// and the camera may shut off soon.
+    CBLPropertyCommonValueThermalStateCritical
+} NS_SWIFT_NAME(PropertyCommonValueThermalState);
+
+/// Exposure simulation common values.
+typedef NS_ENUM(CBLPropertyCommonValue, CBLPropertyCommonValueExposureSimulation) {
+    /// Exposure simulation is disabled. The camera will prioritise a visible image in live view.
+    CBLPropertyCommonValueExposureSimulationDisabled = 650,
+    /// Exposure simulation is enabled. The camera will simulate the current exposure settings in live view.
+    CBLPropertyCommonValueExposureSimulationEnabled,
+    /// Exposure simulation will be enabled when depth-of-field preview is triggered.
+    CBLPropertyCommonValueExposureSimulationEnabledDuringDoFPreview,
+    /// Exposure simulation is enabled alongside depth-of-field preview.
+    CBLPropertyCommonValueExposureSimulationEnabledWithDoFPreview
+} NS_SWIFT_NAME(PropertyCommonValueExposureSimulation);

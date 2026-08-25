@@ -32,6 +32,10 @@
 		<data>
 		VbBhNnR1Xct357zSvvL0LJwg3TU=
 		</data>
+		<key>Base.lproj/CanonExposureSimulations.strings</key>
+		<data>
+		ybvH35C1tPpZUBekprVT7EbLHKs=
+		</data>
 		<key>Base.lproj/CanonFlashModes.strings</key>
 		<data>
 		recyYH2VF+Ha1aqljlSvVIhTJtA=
@@ -66,11 +70,15 @@
 		</data>
 		<key>Base.lproj/CanonShortPropertyCodes.strings</key>
 		<data>
-		JUfUcVkee/PXx+52rc9f0vSkt2I=
+		0BfOZ79Huh14Kklzr/ryfUNttpQ=
 		</data>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
 		<data>
 		GAz5YfCbbpYHiRecQ2hHYHvvcHA=
+		</data>
+		<key>Base.lproj/CanonTemperatureInfos.strings</key>
+		<data>
+		gzSQcEHLiKKd7u1ULEVCSZK0jS0=
 		</data>
 		<key>Base.lproj/CanonVideoFormats.strings</key>
 		<data>
@@ -208,6 +216,10 @@
 		<data>
 		Xt9CTOH/zLwWYwITrLgvSNnIgNE=
 		</data>
+		<key>Base.lproj/SonyPTPDisplayEffects.strings</key>
+		<data>
+		ipYkEkwI0WSuJ/FhrVuMHDtDq3g=
+		</data>
 		<key>Base.lproj/SonyPTPDriveModes.strings</key>
 		<data>
 		mWEeGc0JhE1HvkMr/PlLc8QRrrs=
@@ -232,6 +244,10 @@
 		<data>
 		2EPFKUHdaoJfmxqzCPpiP67WZ7Q=
 		</data>
+		<key>Base.lproj/SonyPTPFrameRates.strings</key>
+		<data>
+		4iW7XABOKfh4eWrrbB/c/KarwLQ=
+		</data>
 		<key>Base.lproj/SonyPTPImageDestinations.strings</key>
 		<data>
 		3Z1/cb7zvtI6FcuR07ufJSFsaIw=
@@ -248,6 +264,10 @@
 		<data>
 		aGWH1Pvse3GPd/SUkMaJXxgkYjc=
 		</data>
+		<key>Base.lproj/SonyPTPOverheatingStates.strings</key>
+		<data>
+		b0Ed+m3mjnNLa/pib3eeJJbGfuY=
+		</data>
 		<key>Base.lproj/SonyPTPPictureEffects.strings</key>
 		<data>
 		2sEKo2wshNpan+nGVhhLsjW0Wnc=
@@ -255,6 +275,10 @@
 		<key>Base.lproj/SonyPTPPowerSources.strings</key>
 		<data>
 		n9yZ04jga1szQsVqhNWK+JwJ+xc=
+		</data>
+		<key>Base.lproj/SonyPTPVideoFormats.strings</key>
+		<data>
+		mtN2LtCDMrBidF0e6w/EWRR9mvU=
 		</data>
 		<key>Base.lproj/SonyPTPWhiteBalances.strings</key>
 		<data>
@@ -286,11 +310,15 @@
 		</data>
 		<key>Base.lproj/UniversalProperties.strings</key>
 		<data>
-		CoHaK+lzPYnuw/QWeSR3AA0WdN4=
+		Xao7F9V0P34eyXMCKVpMuX/JZQU=
 		</data>
 		<key>Base.lproj/UniversalShutterSpeeds.strings</key>
 		<data>
 		YGreI0lgg6luUDWcNTTLO6PIqOs=
+		</data>
+		<key>Base.lproj/UniversalThermalStates.strings</key>
+		<data>
+		QudWT00f6Ctgop9hm6wOpu6hQ5s=
 		</data>
 		<key>Headers/CBLCamera+Diagnostics.h</key>
 		<data>
@@ -310,7 +338,7 @@
 		</data>
 		<key>Headers/CBLCameraDiscoveryService.h</key>
 		<data>
-		Ew8ckXLfjA8H757RmnabYpq50Mw=
+		3e5TILFEjxfFF6og9Koxw5JZtOI=
 		</data>
 		<key>Headers/CBLCameraInitiatedTransfer.h</key>
 		<data>
@@ -322,7 +350,7 @@
 		</data>
 		<key>Headers/CBLCameraLiveViewFrame.h</key>
 		<data>
-		do2T/E+LoNBSEPcRQmL0eSgI00I=
+		JJ+uNLCrTnFy9ZQqGirAJjZG9wc=
 		</data>
 		<key>Headers/CBLCameraManualDiscovery.h</key>
 		<data>
@@ -330,7 +358,7 @@
 		</data>
 		<key>Headers/CBLCameraPropertyAPI.h</key>
 		<data>
-		TLzUzCpVlAOb3teabB9ruiS++Ms=
+		t6gfWRVbdm+4NjDxkrJnLW9SBbo=
 		</data>
 		<key>Headers/CBLCameraQRDecoding.h</key>
 		<data>
@@ -346,7 +374,7 @@
 		</data>
 		<key>Headers/CBLCoreVersions.h</key>
 		<data>
-		SxhCHtLDLHq8LMNQdxy5S2l0dJw=
+		60NEnEaG3a2i3V7g15+aa97cFYM=
 		</data>
 		<key>Headers/CBLDeviceInfo.h</key>
 		<data>
@@ -422,7 +450,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		dBjNbhfN3dV7LC50Ln/Sc13MUuk=
+		MAW5AXvSEEblhCnpnub0sAwsor0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -487,6 +515,15 @@
 			<key>hash</key>
 			<data>
 			VbBhNnR1Xct357zSvvL0LJwg3TU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/CanonExposureSimulations.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			7xO3LkjmVMNoEMUZMhu4DEi1fnU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -567,7 +604,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Bkb8ElpmyNYX1v0m29XCmuw3DUM=
+			YbYde+/6QqveXbwEemrBAKZ8O/I=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -577,6 +614,15 @@
 			<key>hash</key>
 			<data>
 			GAz5YfCbbpYHiRecQ2hHYHvvcHA=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/CanonTemperatureInfos.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			IeqXi9x4qwf6jindVYhfSk8UKGo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -887,6 +933,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>de.lproj/SonyPTPDisplayEffects.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			Ezbjpn1x/RVnA/vWnrOYBdf1+v4=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/SonyPTPDriveModes.strings</key>
 		<dict>
 			<key>hash</key>
@@ -941,6 +996,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>de.lproj/SonyPTPFrameRates.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			4iW7XABOKfh4eWrrbB/c/KarwLQ=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/SonyPTPImageDestinations.strings</key>
 		<dict>
 			<key>hash</key>
@@ -977,6 +1041,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>de.lproj/SonyPTPOverheatingStates.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			JxEtiquh7ZPBlOZM5VKMSzw8vKo=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/SonyPTPPictureEffects.strings</key>
 		<dict>
 			<key>hash</key>
@@ -991,6 +1064,15 @@
 			<key>hash</key>
 			<data>
 			8wDf3ZvAk4l98O7XmV9HiJdXink=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/SonyPTPVideoFormats.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			mtN2LtCDMrBidF0e6w/EWRR9mvU=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1062,7 +1144,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ENR21vB8ftELDjSFh6Ydme6P3to=
+			UPAQpyB2lNULfKqKpOtObXaX/GI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1072,6 +1154,15 @@
 			<key>hash</key>
 			<data>
 			PczCQt+VUVHAo4ukeHRLLl4j7UU=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/UniversalThermalStates.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			0ehs4WkaY4J1Birq2Bs2W5O9JLE=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1126,6 +1217,13 @@
 			<key>hash2</key>
 			<data>
 			hj1R/dbl+IDCuCLIBwvaoZzzjK2qcyX90dflpxq+L+I=
+			</data>
+		</dict>
+		<key>Base.lproj/CanonExposureSimulations.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			prG9tvIXtjXsNzD0PahU5ZEMPkXsOHnpVEhWMECqOxA=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonFlashModes.strings</key>
@@ -1188,7 +1286,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			pgnn3qEQvuN/Htob+heWYbzIWPbNS1NMVRLAXVdiIS8=
+			PsKf4I7MnGdZjLt/sp4qX/Di9wwMyBF+p89jWyypA7U=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonShutterSpeeds.strings</key>
@@ -1196,6 +1294,13 @@
 			<key>hash2</key>
 			<data>
 			h1OymVlNgpk4I87qep3xSjjMWtMEPWkBTA6y8JJ6T8w=
+			</data>
+		</dict>
+		<key>Base.lproj/CanonTemperatureInfos.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			uAnO33u68sXi2C9johDSnLLJM/CudvMTXXdMy6X4lr0=
 			</data>
 		</dict>
 		<key>Base.lproj/CanonVideoFormats.strings</key>
@@ -1436,6 +1541,13 @@
 			zWiOl8SAm+gUU9SBSouXewfunJim1sCvMxfv8N/3AYE=
 			</data>
 		</dict>
+		<key>Base.lproj/SonyPTPDisplayEffects.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3bw/9b+1qUK10IHNDH0ZrTdoO7Tk2lr7WQ+MQSO/0kM=
+			</data>
+		</dict>
 		<key>Base.lproj/SonyPTPDriveModes.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -1478,6 +1590,13 @@
 			HBkH7gz4Kj5PKiOPPYPKdjw+fBV2I6UUNqlbPQnGuV8=
 			</data>
 		</dict>
+		<key>Base.lproj/SonyPTPFrameRates.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3h6a64gTLCTQ9kzzR/Mhy03E1iDPtmtRCWSiDnSOi9k=
+			</data>
+		</dict>
 		<key>Base.lproj/SonyPTPImageDestinations.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -1506,6 +1625,13 @@
 			Pe6H2m7ZX+CyMyUQ4CP7J9iIBuCKVaUMBe4BTsW+ZHA=
 			</data>
 		</dict>
+		<key>Base.lproj/SonyPTPOverheatingStates.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			p8cnnuarH75bSe9tDt/n5Rkz4YqyOAJyngNo3IwDdik=
+			</data>
+		</dict>
 		<key>Base.lproj/SonyPTPPictureEffects.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -1518,6 +1644,13 @@
 			<key>hash2</key>
 			<data>
 			Vyo9ajmYXzCm6J3oMVAJkW8BrQtRDV0c3Dy/0LjEPNU=
+			</data>
+		</dict>
+		<key>Base.lproj/SonyPTPVideoFormats.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/Ill5Cie1A1HqiRVOAjTvWGZ0ZZSu3nNgmRdyX8YUKo=
 			</data>
 		</dict>
 		<key>Base.lproj/SonyPTPWhiteBalances.strings</key>
@@ -1573,7 +1706,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			a6MkX00K5jxBepDkFiRk3afWN3gi/1YQzjGl9G4we4g=
+			34pnQUtbiNmT3C0Lbzg6reeo/0OkheFcW2wQ+pWnOu0=
 			</data>
 		</dict>
 		<key>Base.lproj/UniversalShutterSpeeds.strings</key>
@@ -1581,6 +1714,13 @@
 			<key>hash2</key>
 			<data>
 			BE5LzVZmxqmEBeRAOX+RuL6NyKQjmtrFA0Rwy+owLlU=
+			</data>
+		</dict>
+		<key>Base.lproj/UniversalThermalStates.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			5EdhxafWI45Ar42d6/Ea43uXlbajmQBNyaidI4HwB3g=
 			</data>
 		</dict>
 		<key>Headers/CBLCamera+Diagnostics.h</key>
@@ -1615,7 +1755,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mSXuJVQiNlN4XTCeekP1iJJF6IMrDxfU91dB40FIF0E=
+			XbPQzZSNiNeOQfeaYjznUMoNdrOp9jLxqcB7jko9t9E=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraInitiatedTransfer.h</key>
@@ -1636,7 +1776,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1I1nULtXvaLoTBBljHKuERaISff9+MFkTKzsOgHh5/Q=
+			OzBu/ikHGWZESTgLGB4z1CAleLJdpJNuGMdZezJLgnA=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraManualDiscovery.h</key>
@@ -1650,7 +1790,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			JI9OiSuQG7ptOkBUADCGtCwUf6rULtWVqtR5nREzXHQ=
+			jD6pKJ+9u9pHVT4HX12Ke+TyjPCrswS8EHKOVBOLo2U=
 			</data>
 		</dict>
 		<key>Headers/CBLCameraQRDecoding.h</key>
@@ -1678,7 +1818,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			M8sRqe72afq+Urft3RX11GDm3Y3NTOCrLdZuJePPjBk=
+			OsN7mqpe9ydPhFME4mUoMuvXP00pi+bUuCwV5d9pbns=
 			</data>
 		</dict>
 		<key>Headers/CBLDeviceInfo.h</key>
@@ -1877,6 +2017,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>de.lproj/CanonExposureSimulations.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dYVi4CPj4YPftuZBaEw9ak6HIAHskikUflxJJK6rxi0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/CanonFlashModes.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -1953,7 +2102,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r7iwdNU0CDOFI7AEUefKRj6dE6VTjpDJxBwukWDYqiI=
+			pKQEj5TgSQ4RNUv1eOJOZcRph1R3k7oa7JchgRGtdsI=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1963,6 +2112,15 @@
 			<key>hash2</key>
 			<data>
 			h1OymVlNgpk4I87qep3xSjjMWtMEPWkBTA6y8JJ6T8w=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/CanonTemperatureInfos.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fhfqHK66CCusCQ1KprBZcvqaTetB5ta3gM2IY8MCfV0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2273,6 +2431,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>de.lproj/SonyPTPDisplayEffects.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			d/Kq+tAKzP7vL2fKzr+KAO5OdmQLfEM7TRZNJveLOjc=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/SonyPTPDriveModes.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -2327,6 +2494,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>de.lproj/SonyPTPFrameRates.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3h6a64gTLCTQ9kzzR/Mhy03E1iDPtmtRCWSiDnSOi9k=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/SonyPTPImageDestinations.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -2363,6 +2539,15 @@
 			<key>optional</key>
 			<true/>
 		</dict>
+		<key>de.lproj/SonyPTPOverheatingStates.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			E1u2ywkZzI7eRQ0Y+saV+t0ZlJ9V6Fn+dHGaORO51ZI=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
 		<key>de.lproj/SonyPTPPictureEffects.strings</key>
 		<dict>
 			<key>hash2</key>
@@ -2377,6 +2562,15 @@
 			<key>hash2</key>
 			<data>
 			eYP75Ji9JQYB0XiCcTvIBUk7SJbsUKmYbUoNtxKcd80=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/SonyPTPVideoFormats.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/Ill5Cie1A1HqiRVOAjTvWGZ0ZZSu3nNgmRdyX8YUKo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2448,7 +2642,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			fsQ33yVzjyg/VT/r0w0HfP42kyD6tTErm75XncIHEtE=
+			URhAU+AXhjktsWUItZJiVBzi3Yxrfl4ust3JsEU4YN0=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -2458,6 +2652,15 @@
 			<key>hash2</key>
 			<data>
 			clqns9G5PuC0q7KQwB+WtVxnWi6k5P1cvxhnjSUIRI0=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>de.lproj/UniversalThermalStates.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			M+a0thwZlc7xLyGeMD4quAkB2mb+JhnZOCLsCQpzbcg=
 			</data>
 			<key>optional</key>
 			<true/>

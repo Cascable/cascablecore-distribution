@@ -82,6 +82,9 @@ NS_SWIFT_NAME(CameraDiscoveryService)
 /** Returns the service's transport. */
 @property (nonatomic, readonly) CBLCameraTransport transport;
 
+/** Returns the family of the camera this service will resolve to. May be `CBLCameraFamilyGeneric` until the service is resolved. */
+@property (nonatomic, readonly) CBLCameraFamily cameraFamily;
+
 /// ------- Properties
 
 /** The service's delegate. */

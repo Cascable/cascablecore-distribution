@@ -175,7 +175,7 @@ NS_SWIFT_NAME(LiveViewFrame)
 /** Translates the given point inside the given rect into a point inside the receiver's aspect. Useful for
  translating a point in a view into the live view aspect, for example.
 
- @param point The pont to translate.
+ @param point The point to translate.
  @param container The rect defining the bounds of the container containing `point`.
  @return The point representing `point` inside the receiver's aspect.
  */

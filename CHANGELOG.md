@@ -1,3 +1,48 @@
+# CascableCore 18.0
+
+### Expanded Video Recording Settings
+
+Added three new properties for working with video recording settings for cameras that split such settings out. [CORE-1171, CORE-1182]
+
+- `CBLPropertyIdentifierVideoRecordingResolution` for resolution.
+
+- `CBLPropertyIdentifierVideoRecordingFrameRate` for frame rate.
+
+- `CBLPropertyIdentifierVideoRecordingCompressionLevel` for compression level/video format.
+
+The properties all tend to depend on one another (i.e., changing the resolution will change what frame rates are available, etc).
+
+The combined `CBLPropertyIdentifierVideoRecordingFormat` property remains and its behaviour is unchanged for cameras that support it. These new properties are currently implemented by Sony and GoPro cameras (you'll need to update the GoPro plugin to version 1.2 or higher).
+
+As a note for Sony cameras: Since video resolution is often inferred from the compression level, values for the `CBLPropertyIdentifierVideoRecordingCompressionLevel` property can also contain the video resolution.
+
+### Thermal State
+
+CascableCore now provides thermal state information (i.e., "Is this camera overheating?") via the `CBLPropertyIdentifierThermalState` property for Canon, GoPro, Nikon, and Sony cameras when provided by the particular camera model. GoPro requires updating the GoPro plugin to version 1.2 or higher.
+
+Common values of this property will be `CBLPropertyCommonValueThermalStateNormal`, `CBLPropertyCommonValueThermalStateWarning`, or `CBLPropertyCommonValueThermalStateCritical`. When in the critical state, the camera is likely to limit available functionality and may shut off.
+
+### Exposure Simulation
+
+CascableCore now provides the "Exposure Simulation"/"Live View Display Effect" setting via the `CBLPropertyIdentifierExposureSimulation` property for Canon and Sony cameras when provided by the particular model.
+
+Common values of this property are contained in `CBLPropertyCommonValueExposureSimulation`.
+
+### Other Changes & Bug Fixes
+
+- Nikon Z-series cameras will no longer blank out their rear screen or lock their on-body controls when live view is active. [CORE-1201]
+
+- Leaving camera discovery running should no longer cause USB-connected Sony cameras to stop delivering filesystem events and camera-inititated transfers. [CORE-1172]
+
+- Live view zoom now works correctly on the Canon EOS R5 Mark II. [CORE-1000]
+
+- Fixed a bug in `-pointInAspectTranslatedFromPoint:inRect:` that would cause incorrect results to be returned for certain live view configurations, which in turn would affect autofocus point calculations. [CORE-1001]
+
+- Nikon Z8 and Z9 cameras will no longer only shoot one image when in continuous shooting modes. [CORE-1073]
+
+- Attempting to update a camera's clock will no longer cause an Err70 freeze on some Canon models when in some time zones. [CORE-1197]
+
+
 # CascableCore 17.1.1
 
 ### Improvements
