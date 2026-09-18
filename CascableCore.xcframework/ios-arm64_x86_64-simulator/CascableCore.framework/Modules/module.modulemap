@@ -7,5 +7,4 @@ framework module CascableCore {
 
 module CascableCore.Swift {
   header "CascableCore-Swift.h"
-  requires objc
 }

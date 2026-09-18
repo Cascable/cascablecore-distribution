@@ -1,3 +1,10 @@
+# CascableCore 18.0.1
+
+### Bug Fixes
+
+- Fixed a crash that could occur when disconnecting from a camera.
+
+
 # CascableCore 18.0
 
 ### Expanded Video Recording Settings
