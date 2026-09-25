@@ -1,3 +1,14 @@
+# CascableCore 18.0.2
+
+### Bug Fixes
+
+- The Canon EOS M50, EOS M50 Mark II, and EOS M6 Mark II now correctly advertise the `CBLCameraSupportedFunctionalityRemoteControlWithoutLiveView` functionality.
+
+- The Canon EOS M6 Mark II now correctly advertises the `CBLCameraSupportedFunctionalityLiveViewOrientation` and `CBLCameraSupportedFunctionalityUpdateClock` functionalities.
+
+- Fixed a bug that'd cause live view to fail to start on the Canon EOS M6 if the `CBLLiveViewOptionFavorHighFrameRate` flag was set to false.
+
+
 # CascableCore 18.0.1
 
 ### Bug Fixes
